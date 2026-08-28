@@ -108,6 +108,11 @@
             <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,10 M0,5 L10,5 M1.5,1.5 L8.5,8.5 M8.5,1.5 L1.5,8.5"/>
         </DrawingImage.Drawing>
     </DrawingImage>
+    <DrawingImage x:Key="IconTrigger">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#FF9800" Geometry="M0,8 L2,8 L3,3 L5,7 L7,2 L8,6 L10,4 M0,5 L10,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
     <DrawingImage x:Key="IconEvent">
         <DrawingImage.Drawing>
             <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L10,1 L10,9 L0,9 Z M0,3 L10,3 M3,0 L3,2 M7,0 L7,2"/>

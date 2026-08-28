@@ -40,6 +40,9 @@ public partial class MainWindow : Window
     private readonly float[] _fftBuffer = new float[2048];
     private int _fftBufferPos;
     private bool _frozen;
+    private DigitalFilter?[]? _channelFilters;
+    private TriggerService? _triggerService;
+    private bool _triggerEnabled;
 
     public MainWindow(AppServices services)
     {
@@ -145,6 +148,7 @@ public partial class MainWindow : Window
         _statsTimer.Stop();
         _dataStorage.Dispose();
         _playbackService?.Dispose();
+        _triggerService?.Dispose();
         _log.Info("主窗口关闭");
     }
 
@@ -309,6 +313,10 @@ public partial class MainWindow : Window
         if (_spectrumChart != null)
             _fftTimer.Start();
         _statsTimer.Start();
+
+        if (_triggerService != null && _triggerEnabled)
+            _triggerService.Start();
+
         _eventBus.Publish(new AcquisitionStartedEvent { EventName = eventName });
         PopulateProjectTree();
     }
@@ -329,6 +337,7 @@ public partial class MainWindow : Window
         _fftTimer.Stop();
         _statsTimer.Stop();
         _dataStorage.StopRecording();
+        _triggerService?.Stop();
         _eventBus.Publish(new AcquisitionStoppedEvent());
         PopulateProjectTree();
     }
@@ -341,7 +350,35 @@ public partial class MainWindow : Window
         {
             if (_recorderChart != null && e.SamplesRead > 0)
             {
-                _recorderChart.UpdateData(e.Data, _channelManager.Channels.Count);
+                var displayData = e.Data;
+
+                // 应用数字滤波器
+                if (_channelFilters != null)
+                {
+                    var channelCount = _channelManager.Channels.Count;
+                    var samplesPerCh = e.SamplesRead / channelCount;
+                    var filteredData = new float[e.SamplesRead];
+                    Array.Copy(e.Data, filteredData, e.SamplesRead);
+
+                    for (int ch = 0; ch < channelCount; ch++)
+                    {
+                        if (_channelFilters[ch] != null)
+                        {
+                            var chData = new float[samplesPerCh];
+                            for (int s = 0; s < samplesPerCh; s++)
+                                chData[s] = filteredData[s * channelCount + ch];
+
+                            var filtered = _channelFilters[ch]!.Process(chData);
+
+                            for (int s = 0; s < samplesPerCh; s++)
+                                filteredData[s * channelCount + ch] = filtered[s];
+                        }
+                    }
+
+                    displayData = filteredData;
+                }
+
+                _recorderChart.UpdateData(displayData, _channelManager.Channels.Count);
             }
 
             if (_dataStorage.IsRecording)
@@ -350,6 +387,12 @@ public partial class MainWindow : Window
             }
 
             _acqEngine.PushData(e.Data, e.SamplesRead);
+
+            // 触发检测
+            if (_triggerService != null && _triggerEnabled)
+            {
+                _triggerService.ProcessData(e.Data, e.SamplesRead);
+            }
 
             var samplesToCopy = Math.Min(e.SamplesRead, _fftBuffer.Length - _fftBufferPos);
             if (samplesToCopy > 0)
@@ -715,6 +758,234 @@ public partial class MainWindow : Window
         var chName = _channelManager.Channels[0].Name;
 
         StatusText.Text = $"[{chName}] RMS:{stats.Rms:F4}  峰值:{stats.Peak:F4}  峭度:{stats.Kurtosis:F3}  采样:{samplesPerChannel}点";
+    }
+
+    private void FilterConfig_Click(object sender, RoutedEventArgs e)
+    {
+        var win = new FilterConfigWindow(_channelManager, _channelManager.SampleRate)
+        {
+            Owner = this
+        };
+
+        if (win.ShowDialog() == true && win.FilterEnabled)
+        {
+            _channelFilters ??= new DigitalFilter[_channelManager.Channels.Count];
+
+            try
+            {
+                var filter = new DigitalFilter(
+                    win.FilterType,
+                    _channelManager.SampleRate,
+                    win.CutoffFreq1,
+                    win.Order,
+                    win.CutoffFreq2,
+                    win.FilterDesign);
+
+                _channelFilters[win.SelectedChannelIndex] = filter;
+
+                var chName = _channelManager.Channels[win.SelectedChannelIndex].Name;
+                StatusText.Text = $"已应用滤波器到 {chName}: {win.FilterDesign} {win.FilterType} {win.Order}阶";
+                _log.Info($"滤波器配置 - 通道:{chName} 类型:{win.FilterType} 设计:{win.FilterDesign} 阶数:{win.Order} 截止1:{win.CutoffFreq1}Hz 截止2:{win.CutoffFreq2}Hz");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"滤波器配置失败: {ex.Message}", "错误",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                _log.Error($"滤波器配置失败: {ex.Message}");
+            }
+        }
+    }
+
+    private void TriggerConfig_Click(object sender, RoutedEventArgs e)
+    {
+        var win = new TriggerConfigWindow(_channelManager, _channelManager.SampleRate)
+        {
+            Owner = this
+        };
+
+        if (win.ShowDialog() == true)
+        {
+            _triggerEnabled = win.TriggerEnabled;
+
+            if (_triggerEnabled)
+            {
+                _triggerService?.Dispose();
+                _triggerService = new TriggerService(
+                    _channelManager.Channels.Count,
+                    _channelManager.SampleRate);
+                _triggerService.TriggerChannelIndex = win.TriggerChannelIndex;
+                _triggerService.TriggerLevel = win.TriggerLevel;
+                _triggerService.Slope = win.Slope;
+                _triggerService.Mode = win.Mode;
+                _triggerService.PreTriggerSeconds = win.PreTriggerSeconds;
+                _triggerService.PostTriggerSeconds = win.PostTriggerSeconds;
+                _triggerService.Triggered += OnTriggered;
+
+                var chName = _channelManager.Channels[win.TriggerChannelIndex].Name;
+                StatusText.Text = $"触发已启用: {chName} @ {win.TriggerLevel} ({win.Slope})";
+                _log.Info($"触发配置 - 通道:{chName} 电平:{win.TriggerLevel} 斜率:{win.Slope} 模式:{win.Mode} 预触发:{win.PreTriggerSeconds}s 后触发:{win.PostTriggerSeconds}s");
+
+                if (_acqEngine.State == AcquisitionState.Acquiring)
+                    _triggerService.Start();
+            }
+            else
+            {
+                _triggerService?.Stop();
+                _triggerService?.Dispose();
+                _triggerService = null;
+                StatusText.Text = "触发已禁用";
+                _log.Info("触发已禁用");
+            }
+        }
+    }
+
+    private void OnTriggered(object? sender, TriggeredEventArgs e)
+    {
+        Dispatcher.Invoke(() =>
+        {
+            var triggerTime = e.TriggerTime.ToString("HH:mm:ss.fff");
+            StatusText.Text = $"触发! {triggerTime} - 共 {e.Data.Length / e.ChannelCount:N0} 样本";
+            _log.Info($"触发事件 - 时间:{triggerTime} 通道:{e.TriggerChannelIndex} 电平:{e.TriggerLevel} 样本数:{e.Data.Length / e.ChannelCount:N0}");
+
+            // 创建触发波形显示页
+            var tab = new TabItem { Header = $"触发 {triggerTime}" };
+            var panel = new StackPanel { Margin = new Thickness(10) };
+
+            var infoText = new TextBlock
+            {
+                Text = $"触发时间: {triggerTime} | 触发通道: 通道{e.TriggerChannelIndex + 1} | " +
+                       $"触发电平: {e.TriggerLevel} | 斜率: {e.Slope} | " +
+                       $"总时长: {e.PreTriggerSamples + e.PostTriggerSamples} 样本 ({(e.PreTriggerSamples + e.PostTriggerSamples) / e.SampleRate:F2}s)",
+                Foreground = System.Windows.Media.Brushes.LightGray,
+                Margin = new Thickness(0, 0, 0, 8)
+            };
+
+            var recorder = new RecorderChart { Title = "触发波形", Height = 350 };
+            var colors = new[]
+            {
+                System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+                System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+                System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+                System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+            };
+            for (int i = 0; i < e.ChannelCount && i < 4; i++)
+                recorder.AddChannel(i, $"通道{i + 1}", colors[i % colors.Length]);
+
+            recorder.UpdateData(e.Data, e.ChannelCount);
+
+            panel.Children.Add(infoText);
+            panel.Children.Add(recorder);
+            tab.Content = panel;
+            ChartTabControl.Items.Add(tab);
+            ChartTabControl.SelectedItem = tab;
+        });
+    }
+
+    private void ProjectTree_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        if (ProjectTree.SelectedItem is TreeViewItem item && item.Tag is DH.Core.Models.ExperimentEvent evt)
+        {
+            LoadEventData(evt);
+        }
+    }
+
+    private void LoadEventData(DH.Core.Models.ExperimentEvent evt)
+    {
+        if (string.IsNullOrEmpty(evt.DataFile) || !File.Exists(evt.DataFile))
+        {
+            MessageBox.Show($"数据文件不存在:\n{evt.DataFile}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        _playbackService?.Dispose();
+        _playbackService = new DataPlaybackService();
+
+        if (!_playbackService.Open(evt.DataFile))
+        {
+            MessageBox.Show("无法打开数据文件", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        var info = _playbackService.Info!;
+        StatusText.Text = $"已加载事件: {evt.Name} ({info.ChannelCount}ch, {info.SampleRate:F0}Hz, {info.DurationSeconds:F1}s)";
+        _log.Info($"加载事件数据: {evt.Name} 文件:{evt.DataFile}");
+
+        var tab = new TabItem { Header = evt.Name };
+        var panel = new StackPanel { Margin = new Thickness(10) };
+
+        var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
+        var btnPlay = new Button { Content = "播放", Width = 60, Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x2B, 0x5C, 0x8A)),
+            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
+        var btnPause = new Button { Content = "暂停", Width = 60, Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x3A, 0x3A, 0x52)),
+            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
+        var btnStop = new Button { Content = "停止", Width = 60, Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x3A, 0x3A, 0x52)),
+            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
+        var btnExport = new Button { Content = "导出CSV", Width = 75, Margin = new Thickness(10, 0, 0, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50)),
+            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
+
+        btnPlay.Click += (_, _) => _playbackService.Play();
+        btnPause.Click += (_, _) => _playbackService.Pause();
+        btnStop.Click += (_, _) => _playbackService.Stop();
+        btnExport.Click += (_, _) =>
+        {
+            var dlg = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "CSV 文件|*.csv|所有文件|*.*",
+                Title = "导出 CSV 数据",
+                FileName = $"{evt.Name}.csv"
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                var success = CsvExportService.ExportToCsv(evt.DataFile, dlg.FileName);
+                if (success)
+                    StatusText.Text = $"已导出: {dlg.FileName}";
+            }
+        };
+
+        btnPanel.Children.Add(btnPlay);
+        btnPanel.Children.Add(btnPause);
+        btnPanel.Children.Add(btnStop);
+        btnPanel.Children.Add(btnExport);
+
+        var infoText = new TextBlock
+        {
+            Text = $"事件: {evt.Name} | 采样率: {info.SampleRate:F0} Hz | 通道数: {info.ChannelCount} | " +
+                   $"时长: {info.DurationSeconds:F2}s | 数据点: {info.TotalSamples:N0}",
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var recorder = new RecorderChart { Title = evt.Name, Height = 400 };
+        var colors = new[]
+        {
+            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+            System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+            System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+            System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+            System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+        };
+        for (int i = 0; i < info.ChannelCount && i < 8; i++)
+            recorder.AddChannel(i, $"通道{i + 1}", colors[i % colors.Length]);
+
+        _playbackService.DataBlockRead += (data, chCount) =>
+        {
+            Dispatcher.Invoke(() => recorder.UpdateData(data, chCount));
+        };
+
+        panel.Children.Add(infoText);
+        panel.Children.Add(btnPanel);
+        panel.Children.Add(recorder);
+
+        tab.Content = panel;
+        ChartTabControl.Items.Add(tab);
+        ChartTabControl.SelectedItem = tab;
     }
 
     private void PopulateProjectTree()

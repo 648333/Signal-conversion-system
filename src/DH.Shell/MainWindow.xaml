@@ -43,6 +43,7 @@
                     <ribbon:RibbonButton Label="暂停" SmallImageSource="{StaticResource IconPause}" Click="PauseAcquisition_Click"/>
                     <ribbon:RibbonButton Label="停止" SmallImageSource="{StaticResource IconStop}" Click="StopAcquisition_Click"/>
                     <ribbon:RibbonButton Label="冻结" SmallImageSource="{StaticResource IconFreeze}" Click="FreezeAcquisition_Click"/>
+                    <ribbon:RibbonButton Label="触发" SmallImageSource="{StaticResource IconTrigger}" Click="TriggerConfig_Click"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="事件存储">
                     <ribbon:RibbonButton Label="新建事件" SmallImageSource="{StaticResource IconEvent}"/>
@@ -99,7 +100,7 @@
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="时域">
                     <ribbon:RibbonButton Label="积分/微分" SmallImageSource="{StaticResource IconIntegral}"/>
-                    <ribbon:RibbonButton Label="滤波" SmallImageSource="{StaticResource IconFilter}"/>
+                    <ribbon:RibbonButton Label="滤波" SmallImageSource="{StaticResource IconFilter}" Click="FilterConfig_Click"/>
                     <ribbon:RibbonButton Label="统计" SmallImageSource="{StaticResource IconStat}" Click="ShowStatistics_Click"/>
                     <ribbon:RibbonButton Label="相关" SmallImageSource="{StaticResource IconCorrelate}"/>
                 </ribbon:RibbonGroup>
@@ -206,7 +207,8 @@
             <Border Grid.Column="0" Background="{StaticResource SidebarBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,1,0">
                 <DockPanel>
                     <TextBlock DockPanel.Dock="Top" Text="工程管理器" FontWeight="Bold" Padding="8,6,0,6" Foreground="{StaticResource TextColor}"/>
-                    <TreeView x:Name="ProjectTree" Background="{StaticResource SidebarBackground}" BorderThickness="0">
+                    <TreeView x:Name="ProjectTree" Background="{StaticResource SidebarBackground}" BorderThickness="0"
+                              MouseDoubleClick="ProjectTree_MouseDoubleClick">
                         <TreeViewItem x:Name="TreeRoot" Header="工程" IsExpanded="True">
                             <TreeViewItem Header="设备列表" x:Name="TreeDevices"/>
                             <TreeViewItem Header="通道配置" x:Name="TreeChannels"/>
