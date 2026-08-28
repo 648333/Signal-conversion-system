@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+
 namespace DH.Core.Models;
 
 public enum ChannelType
@@ -45,7 +47,7 @@ public enum CouplingType
     ICP = 3
 }
 
-public enum IntegralType
+enum IntegralType
 {
     None = 0,
     SingleIntegral = 1,
@@ -56,28 +58,30 @@ public enum IntegralType
 
 public sealed class ChannelConfig
 {
-    public int Index { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string SerialNumber { get; set; } = string.Empty;
-    public ChannelType ChannelType { get; set; } = ChannelType.Analog;
-    public MeasureType MeasureType { get; set; } = MeasureType.InnerInput;
-    public string SensorModel { get; set; } = string.Empty;
-    public string SensorSerial { get; set; } = string.Empty;
-    public double Sensitivity { get; set; } = 1.0;
-    public string Unit { get; set; } = "mV";
-    public CouplingType Coupling { get; set; } = CouplingType.DC;
-    public double Range { get; set; } = 10000;
-    public double FilterCutoff { get; set; } = 10000;
-    public IntegralType Integration { get; set; } = IntegralType.None;
-    public string IntegralUnit { get; set; } = string.Empty;
-    public bool Enabled { get; set; } = true;
-    public double Offset { get; set; }
-    public double Gain { get; set; } = 1.0;
-    public string CalibrationDate { get; set; } = string.Empty;
-    public string Formula { get; set; } = string.Empty;
-    public int BridgeType { get; set; }
-    public double BridgeVoltage { get; set; }
+    [XmlAttribute] public int Index { get; set; }
+    [XmlAttribute] public string Name { get; set; } = string.Empty;
+    [XmlAttribute] public string SerialNumber { get; set; } = string.Empty;
+    [XmlAttribute] public ChannelType ChannelType { get; set; } = ChannelType.Analog;
+    [XmlAttribute] public MeasureType MeasureType { get; set; } = MeasureType.InnerInput;
+    [XmlAttribute] public string SensorModel { get; set; } = string.Empty;
+    [XmlAttribute] public string SensorSerial { get; set; } = string.Empty;
+    [XmlAttribute] public double Sensitivity { get; set; } = 1.0;
+    [XmlAttribute] public string Unit { get; set; } = "mV";
+    [XmlAttribute] public CouplingType Coupling { get; set; } = CouplingType.DC;
+    [XmlAttribute] public double Range { get; set; } = 10000;
+    [XmlAttribute] public double FilterCutoff { get; set; } = 10000;
+    [XmlAttribute] public IntegralType Integration { get; set; } = IntegralType.None;
+    [XmlAttribute] public string IntegralUnit { get; set; } = string.Empty;
+    [XmlAttribute] public bool Enabled { get; set; } = true;
+    [XmlAttribute] public double Offset { get; set; }
+    [XmlAttribute] public double Gain { get; set; } = 1.0;
+    [XmlAttribute] public string CalibrationDate { get; set; } = string.Empty;
+    [XmlAttribute] public string Formula { get; set; } = string.Empty;
+    [XmlAttribute] public int BridgeType { get; set; }
+    [XmlAttribute] public double BridgeVoltage { get; set; }
+    [XmlAttribute] public double SampleRate { get; set; } = 1000;
 
+    [XmlIgnore]
     public string ChannelTypeDisplay => ChannelType switch
     {
         ChannelType.Analog => "模拟量",
@@ -96,9 +100,10 @@ public sealed class ChannelConfig
         _ => ChannelType.ToString()
     };
 
-    public double SampleRate { get; set; } = 1000;
+    [XmlIgnore]
     public string SampleRateDisplay => SampleRate >= 1000 ? $"{SampleRate / 1000:F1} kHz" : $"{SampleRate:F0} Hz";
 
+    [XmlIgnore]
     public string StatusDisplay => Enabled ? "正常" : "禁用";
 }
 

@@ -15,7 +15,10 @@ public sealed class DataStorageService : IDisposable
 
     public bool IsRecording { get; private set; }
     public string? CurrentFile { get; private set; }
+    public string? LastDataFile { get; private set; }
     public long TotalBytesWritten { get; private set; }
+    public long TotalSamplesWritten { get; private set; }
+    private int _channelCount;
 
     public string StartRecording(string filePath, int channelCount, double sampleRate, SaveFormat format)
     {
@@ -33,8 +36,10 @@ public sealed class DataStorageService : IDisposable
             WriteHeader(channelCount, sampleRate, format);
 
             CurrentFile = filePath;
+            _channelCount = channelCount;
             IsRecording = true;
             TotalBytesWritten = HeaderSize;
+            TotalSamplesWritten = 0;
 
             return filePath;
         }
@@ -65,6 +70,7 @@ public sealed class DataStorageService : IDisposable
         {
             _writer.Write(data, 0, count);
             TotalBytesWritten += count * sizeof(float);
+            TotalSamplesWritten += count / Math.Max(_channelCount, 1);
         }
     }
 
@@ -96,6 +102,10 @@ public sealed class DataStorageService : IDisposable
             {
                 _dataStream.Dispose();
                 _dataStream = null;
+            }
+            if (IsRecording && CurrentFile != null)
+            {
+                LastDataFile = CurrentFile;
             }
             IsRecording = false;
         }

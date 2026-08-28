@@ -34,6 +34,9 @@ public sealed class ProjectInfo
     [XmlElement] public double SampleRate { get; set; } = 1000;
     [XmlElement] public SaveFormat SaveFormat { get; set; } = SaveFormat.Float;
     [XmlElement] public string Language { get; set; } = "zh-CN";
+    [XmlArray("Channels")]
+    [XmlArrayItem("Channel")]
+    public List<ChannelConfig> Channels { get; set; } = new();
     [XmlArray("Events")]
     [XmlArrayItem("Event")]
     public List<ExperimentEvent> Events { get; set; } = new();
