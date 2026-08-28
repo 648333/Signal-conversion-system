@@ -1,0 +1,136 @@
+<Window x:Class="DH.Shell.Views.FilterConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="数字滤波器配置" Height="420" Width="520"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E2E"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#2A2A3E"/>
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="BorderBrush" Value="#4A4A5A"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="#2A2A3E"/>
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="BorderBrush" Value="#4A4A5A"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2B5C8A"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="4,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 启用滤波 -->
+        <CheckBox x:Name="EnableFilterCheck" Grid.Column="0" Grid.ColumnSpan="4"
+                  Content="启用数字滤波" Margin="0,0,0,12"
+                  Checked="EnableFilter_Checked" Unchecked="EnableFilter_Checked"/>
+
+        <!-- 通道选择 -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="目标通道:" Margin="0,0,8,8"/>
+        <ComboBox x:Name="ChannelCombo" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                  Margin="0,0,0,8" SelectionChanged="ChannelCombo_SelectionChanged"/>
+
+        <!-- 滤波器类型 -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="滤波器类型:" Margin="0,0,8,8"/>
+        <ComboBox x:Name="FilterTypeCombo" Grid.Row="2" Grid.Column="1"
+                  Margin="0,0,8,8" SelectionChanged="FilterTypeCombo_SelectionChanged">
+            <ComboBoxItem Content="低通 (LowPass)" Tag="LowPass"/>
+            <ComboBoxItem Content="高通 (HighPass)" Tag="HighPass"/>
+            <ComboBoxItem Content="带通 (BandPass)" Tag="BandPass"/>
+            <ComboBoxItem Content="带阻 (BandStop)" Tag="BandStop"/>
+        </ComboBox>
+
+        <!-- 滤波器设计 -->
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="设计方法:" Margin="8,0,8,8"/>
+        <ComboBox x:Name="DesignCombo" Grid.Row="2" Grid.Column="3" Margin="0,0,0,8">
+            <ComboBoxItem Content="Butterworth" Tag="Butterworth"/>
+            <ComboBoxItem Content="Bessel" Tag="Bessel"/>
+            <ComboBoxItem Content="Chebyshev I" Tag="Chebyshev1"/>
+            <ComboBoxItem Content="Chebyshev II" Tag="Chebyshev2"/>
+        </ComboBox>
+
+        <!-- 截止频率1 -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="截止频率 1:" Margin="0,0,8,8"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,0,8,8">
+            <TextBox x:Name="Cutoff1Text" Width="100" Text="100" PreviewTextInput="NumberOnly_Preview"/>
+            <TextBlock Text="Hz" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 截止频率2 -->
+        <TextBlock x:Name="Cutoff2Label" Grid.Row="3" Grid.Column="2" Text="截止频率 2:" Margin="8,0,8,8"/>
+        <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBox x:Name="Cutoff2Text" Width="100" Text="500" PreviewTextInput="NumberOnly_Preview"/>
+            <TextBlock Text="Hz" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 阶数 -->
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="滤波器阶数:" Margin="0,0,8,8"/>
+        <ComboBox x:Name="OrderCombo" Grid.Row="4" Grid.Column="1" Margin="0,0,8,8">
+            <ComboBoxItem Content="1 阶" Tag="1"/>
+            <ComboBoxItem Content="2 阶" Tag="2"/>
+            <ComboBoxItem Content="3 阶" Tag="3"/>
+            <ComboBoxItem Content="4 阶" Tag="4" IsSelected="True"/>
+            <ComboBoxItem Content="5 阶" Tag="5"/>
+            <ComboBoxItem Content="6 阶" Tag="6"/>
+            <ComboBoxItem Content="7 阶" Tag="7"/>
+            <ComboBoxItem Content="8 阶" Tag="8"/>
+        </ComboBox>
+
+        <!-- 采样率 -->
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="采样率:" Margin="8,0,8,8"/>
+        <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBlock x:Name="SampleRateText" Text="1000" FontWeight="Bold" Foreground="#4CAF50"/>
+            <TextBlock Text="Hz" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 分隔线 -->
+        <Border Grid.Row="5" Grid.ColumnSpan="4" Height="1" Background="#3A3A52" Margin="0,8,0,8"/>
+
+        <!-- 预览/说明 -->
+        <GroupBox Grid.Row="6" Grid.ColumnSpan="4" Header="滤波器说明"
+                  Foreground="#E0E0E8" BorderBrush="#4A4A5A" Margin="0,0,0,8">
+            <TextBlock x:Name="FilterDescriptionText" TextWrapping="Wrap"
+                       Foreground="#A0A0B0" FontSize="12" Margin="8"/>
+        </GroupBox>
+
+        <!-- 底部按钮 -->
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="应用" Click="Apply_Click" IsDefault="True"/>
+            <Button Content="取消" Click="Cancel_Click" Background="#3A3A52" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

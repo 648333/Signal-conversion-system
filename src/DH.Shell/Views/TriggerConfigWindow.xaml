@@ -1,0 +1,118 @@
+<Window x:Class="DH.Shell.Views.TriggerConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="触发设置" Height="400" Width="480"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E1E2E"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#2A2A3E"/>
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="BorderBrush" Value="#4A4A5A"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="#2A2A3E"/>
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="BorderBrush" Value="#4A4A5A"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="#E0E0E8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2B5C8A"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="4,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 启用触发 -->
+        <CheckBox x:Name="EnableTriggerCheck" Grid.Column="0" Grid.ColumnSpan="4"
+                  Content="启用触发采集" Margin="0,0,0,12" IsChecked="True"/>
+
+        <!-- 触发源通道 -->
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="触发源:" Margin="0,0,8,8"/>
+        <ComboBox x:Name="SourceChannelCombo" Grid.Row="1" Grid.Column="1"
+                  Margin="0,0,8,8"/>
+
+        <!-- 触发模式 -->
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="触发模式:" Margin="8,0,8,8"/>
+        <ComboBox x:Name="ModeCombo" Grid.Row="1" Grid.Column="3" Margin="0,0,0,8">
+            <ComboBoxItem Content="普通 (Normal)" Tag="Normal"/>
+            <ComboBoxItem Content="自动 (Auto)" Tag="Auto" IsSelected="True"/>
+            <ComboBoxItem Content="单次 (Single)" Tag="Single"/>
+        </ComboBox>
+
+        <!-- 触发电平 -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="触发电平:" Margin="0,0,8,8"/>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,0,8,8">
+            <TextBox x:Name="LevelText" Width="100" Text="1000" PreviewTextInput="NumberOnly_Preview"/>
+            <TextBlock Text="mV" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 触发斜率 -->
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="触发斜率:" Margin="8,0,8,8"/>
+        <ComboBox x:Name="SlopeCombo" Grid.Row="2" Grid.Column="3" Margin="0,0,0,8">
+            <ComboBoxItem Content="上升沿" Tag="Rising" IsSelected="True"/>
+            <ComboBoxItem Content="下降沿" Tag="Falling"/>
+        </ComboBox>
+
+        <!-- 预触发时长 -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="预触发时长:" Margin="0,0,8,8"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,0,8,8">
+            <TextBox x:Name="PreTriggerText" Width="100" Text="0.5" PreviewTextInput="NumberOnly_Preview"/>
+            <TextBlock Text="秒" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 后触发时长 -->
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="后触发时长:" Margin="8,0,8,8"/>
+        <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBox x:Name="PostTriggerText" Width="100" Text="1.0" PreviewTextInput="NumberOnly_Preview"/>
+            <TextBlock Text="秒" Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- 分隔线 -->
+        <Border Grid.Row="4" Grid.ColumnSpan="4" Height="1" Background="#3A3A52" Margin="0,8,0,8"/>
+
+        <!-- 预览/说明 -->
+        <GroupBox Grid.Row="5" Grid.ColumnSpan="4" Header="触发设置说明"
+                  Foreground="#E0E0E8" BorderBrush="#4A4A5A" Margin="0,0,0,8">
+            <StackPanel Margin="8">
+                <TextBlock x:Name="TriggerInfoText" Foreground="#A0A0B0" FontSize="12" TextWrapping="Wrap"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- 底部按钮 -->
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="应用" Click="Apply_Click" IsDefault="True"/>
+            <Button Content="取消" Click="Cancel_Click" Background="#3A3A52" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
