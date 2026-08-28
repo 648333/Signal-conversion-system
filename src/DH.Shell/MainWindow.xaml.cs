@@ -2,11 +2,16 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Ribbon;
 using System.Windows.Threading;
+using DH.Acquisition;
+using DH.Channels;
 using DH.Core.Logging;
 using DH.Core.Models;
 using DH.Core.Services;
 using DH.Core.Events;
+using DH.Hardware;
 using DH.Shell.ViewModels;
+using DH.Shell.Views;
+using DH.Visualization;
 
 namespace DH.Shell;
 
@@ -18,6 +23,15 @@ public partial class MainWindow : Window
     private readonly DispatcherTimer _clockTimer;
     private readonly MainViewModel _viewModel;
 
+    private readonly HardwareManager _hardwareManager;
+    private readonly ChannelManager _channelManager;
+    private readonly AcquisitionEngine _acqEngine;
+    private readonly DataStorageService _dataStorage;
+    private readonly ProjectService _projectService;
+
+    private RecorderChart? _recorderChart;
+    private SimulatedDevice? _connectedDevice;
+
     public MainWindow(AppServices services)
     {
         InitializeComponent();
@@ -27,6 +41,13 @@ public partial class MainWindow : Window
         _viewModel = new MainViewModel(services);
         DataContext = _viewModel;
 
+        _hardwareManager = new HardwareManager();
+        _hardwareManager.RegisterDriver(new SimulatedDriver());
+        _channelManager = new ChannelManager();
+        _acqEngine = new AcquisitionEngine();
+        _dataStorage = new DataStorageService();
+        _projectService = new ProjectService();
+
         _clockTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
         _clockTimer.Tick += (_, _) => ClockText.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -34,6 +55,8 @@ public partial class MainWindow : Window
         _eventBus.Subscribe<DeviceDisconnectedEvent>(OnDeviceDisconnected);
         _eventBus.Subscribe<AcquisitionStartedEvent>(OnAcquisitionStarted);
         _eventBus.Subscribe<AcquisitionStoppedEvent>(OnAcquisitionStopped);
+
+        _acqEngine.PropertyChanged += OnAcqEngineStateChanged;
     }
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -42,21 +65,88 @@ public partial class MainWindow : Window
         _log.Info("主窗口加载完成");
         StatusText.Text = "就绪";
         UpdateAcqStatus(AcquisitionState.Idle);
+
+        InitDefaultChannels();
+        SetupRecorderChart();
+    }
+
+    private void InitDefaultChannels()
+    {
+        for (int i = 1; i <= 8; i++)
+        {
+            _channelManager.AddChannel(new ChannelConfig
+            {
+                Index = i,
+                Name = $"通道{i}",
+                ChannelType = ChannelType.Analog,
+                MeasureType = MeasureType.InnerInput,
+                Sensitivity = 100,
+                Unit = "mV",
+                Range = 10000,
+                Enabled = true
+            });
+        }
+        _viewModel.Channels.Clear();
+        foreach (var ch in _channelManager.Channels)
+            _viewModel.Channels.Add(ch);
+
+        ChannelGrid.ItemsSource = _viewModel.Channels;
+    }
+
+    private void SetupRecorderChart()
+    {
+        var colors = new[]
+        {
+            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+            System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+            System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+            System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+            System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+        };
+
+        _recorderChart = new RecorderChart { Title = "记录仪" };
+        for (int i = 0; i < _channelManager.Channels.Count; i++)
+        {
+            _recorderChart.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+        }
+
+        var tab = ChartTabControl.Items[0] as TabItem;
+        if (tab != null)
+        {
+            var grid = new Grid();
+            grid.Children.Add(_recorderChart);
+            tab.Content = grid;
+        }
     }
 
     private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
         _clockTimer.Stop();
+        _dataStorage.Dispose();
         _log.Info("主窗口关闭");
     }
 
     private void NewProject_Click(object sender, RoutedEventArgs e)
     {
-        var project = new ProjectInfo { Name = $"工程_{DateTime.Now:yyyyMMdd_HHmmss}" };
-        _services.GetService<AppState>().CurrentProject = project;
-        TreeRoot.Header = project.Name;
-        _log.Info($"新建工程: {project.Name}");
-        StatusText.Text = $"工程: {project.Name}";
+        var dlg = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "DH工程文件|*.dhproj",
+            Title = "新建工程",
+            FileName = $"工程_{DateTime.Now:yyyyMMdd}"
+        };
+        if (dlg.ShowDialog() == true)
+        {
+            var name = Path.GetFileNameWithoutExtension(dlg.FileName);
+            var dir = Path.GetDirectoryName(dlg.FileName) ?? "";
+            _projectService.NewProject(name, dir);
+            _services.GetService<AppState>().CurrentProject = _projectService.CurrentProject;
+            TreeRoot.Header = name;
+            _log.Info($"新建工程: {name}");
+            StatusText.Text = $"工程: {name}";
+        }
     }
 
     private void OpenProject_Click(object sender, RoutedEventArgs e)
@@ -68,13 +158,25 @@ public partial class MainWindow : Window
         };
         if (dlg.ShowDialog() == true)
         {
-            StatusText.Text = $"已加载: {dlg.FileName}";
-            _log.Info($"打开工程: {dlg.FileName}");
+            _projectService.LoadProject(dlg.FileName);
+            if (_projectService.CurrentProject != null)
+            {
+                _services.GetService<AppState>().CurrentProject = _projectService.CurrentProject;
+                TreeRoot.Header = _projectService.CurrentProject.Name;
+                StatusText.Text = $"已加载: {_projectService.CurrentProject.Name}";
+                _log.Info($"打开工程: {dlg.FileName}");
+            }
         }
     }
 
     private void SaveProject_Click(object sender, RoutedEventArgs e)
     {
+        if (_projectService.CurrentProject == null)
+        {
+            NewProject_Click(sender, e);
+            return;
+        }
+        _projectService.SaveProject();
         _log.Info("保存工程");
         StatusText.Text = "工程已保存";
     }
@@ -83,61 +185,180 @@ public partial class MainWindow : Window
     {
         _log.Info("扫描设备...");
         StatusText.Text = "正在扫描设备...";
+        _hardwareManager.ScanDevices();
+
         TreeDevices.Items.Clear();
-        TreeDevices.Items.Add(new TreeViewItem { Header = "(无设备)" });
-        StatusText.Text = "扫描完成: 未发现设备";
+        foreach (var dev in _hardwareManager.AvailableDevices)
+        {
+            TreeDevices.Items.Add(new TreeViewItem
+            {
+                Header = $"{dev.ModelName} [{dev.SerialNumber}]",
+                Tag = dev
+            });
+        }
+
+        var count = _hardwareManager.AvailableDevices.Count;
+        StatusText.Text = count > 0 ? $"扫描完成: 发现 {count} 台设备" : "扫描完成: 未发现设备";
     }
 
     private void ConnectDevice_Click(object sender, RoutedEventArgs e)
     {
-        _log.Info("连接设备");
-        StatusText.Text = "正在连接设备...";
-        DeviceStatus.Text = "设备: DH5922 [已连接]";
+        if (_hardwareManager.AvailableDevices.Count == 0)
+        {
+            MessageBox.Show("请先扫描设备", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var firstDev = _hardwareManager.AvailableDevices[0];
+        _connectedDevice = _hardwareManager.ConnectDevice(firstDev) as SimulatedDevice;
+
+        if (_connectedDevice != null)
+        {
+            _connectedDevice.SetSampleRate(_channelManager.SampleRate);
+            _connectedDevice.DataAvailable += OnDeviceDataAvailable;
+            _eventBus.Publish(new DeviceConnectedEvent
+            {
+                DeviceId = firstDev.Id,
+                DeviceName = firstDev.ModelName
+            });
+            _log.Info($"设备已连接: {firstDev.ModelName}");
+        }
     }
 
     private void DisconnectDevice_Click(object sender, RoutedEventArgs e)
     {
-        _log.Info("断开设备");
-        DeviceStatus.Text = "设备: 未连接";
+        if (_connectedDevice != null)
+        {
+            _connectedDevice.DataAvailable -= OnDeviceDataAvailable;
+            _hardwareManager.DisconnectDevice(_connectedDevice.Info.Id);
+            _eventBus.Publish(new DeviceDisconnectedEvent { DeviceId = _connectedDevice.Info.Id });
+            _connectedDevice = null;
+            _log.Info("设备已断开");
+        }
     }
 
     private void ChannelSetup_Click(object sender, RoutedEventArgs e)
     {
-        _log.Info("打开通道配置");
-        StatusText.Text = "通道配置";
+        var win = new ChannelConfigWindow(_channelManager) { Owner = this };
+        if (win.ShowDialog() == true)
+        {
+            _viewModel.Channels.Clear();
+            foreach (var ch in _channelManager.Channels)
+                _viewModel.Channels.Add(ch);
+
+            if (_recorderChart != null)
+            {
+                _recorderChart.Clear();
+                var colors = new[]
+                {
+                    System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+                    System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+                    System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+                    System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+                    System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+                    System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+                    System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+                    System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+                };
+                for (int i = 0; i < _channelManager.Channels.Count; i++)
+                {
+                    _recorderChart.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+                }
+            }
+
+            if (_connectedDevice != null)
+                _connectedDevice.SetSampleRate(_channelManager.SampleRate);
+
+            _log.Info($"通道配置已更新: {_channelManager.ActiveChannelCount} 个有效通道");
+        }
     }
 
     private void StartAcquisition_Click(object sender, RoutedEventArgs e)
     {
-        _log.Info("开始采集");
-        _eventBus.Publish(new AcquisitionStartedEvent { EventName = $"事件_{DateTime.Now:HHmmss}" });
+        if (_connectedDevice == null)
+        {
+            MessageBox.Show("请先连接设备", "提示", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
+        _connectedDevice.SetSampleRate(_channelManager.SampleRate);
+
+        var eventName = $"事件_{DateTime.Now:HHmmss}";
+        if (_projectService.IsProjectOpen)
+        {
+            var dataFile = Path.Combine(_projectService.GetDataDirectory(), eventName + ".dat");
+            _dataStorage.StartRecording(dataFile, _channelManager.ActiveChannelCount,
+                _channelManager.SampleRate, SaveFormat.Float);
+        }
+
+        _connectedDevice.StartAcquisition();
+        _acqEngine.Start();
+        _eventBus.Publish(new AcquisitionStartedEvent { EventName = eventName });
     }
 
     private void PauseAcquisition_Click(object sender, RoutedEventArgs e)
     {
+        _acqEngine.Pause();
+        if (_connectedDevice != null)
+            _connectedDevice.StopAcquisition();
         _log.Info("暂停采集");
-        UpdateAcqStatus(AcquisitionState.Paused);
     }
 
     private void StopAcquisition_Click(object sender, RoutedEventArgs e)
     {
-        _log.Info("停止采集");
+        if (_connectedDevice != null)
+            _connectedDevice.StopAcquisition();
+        _acqEngine.Stop();
+        _dataStorage.StopRecording();
         _eventBus.Publish(new AcquisitionStoppedEvent());
+    }
+
+    private void OnDeviceDataAvailable(object? sender, DataAvailableEventArgs e)
+    {
+        Dispatcher.Invoke(() =>
+        {
+            if (_recorderChart != null && e.SamplesRead > 0)
+            {
+                _recorderChart.UpdateData(e.Data, _channelManager.Channels.Count);
+            }
+
+            if (_dataStorage.IsRecording)
+            {
+                _dataStorage.WriteData(e.Data, e.SamplesRead);
+            }
+
+            _acqEngine.PushData(e.Data, e.SamplesRead);
+        });
+    }
+
+    private void OnAcqEngineStateChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(AcquisitionEngine.State))
+        {
+            Dispatcher.Invoke(() => UpdateAcqStatus(_acqEngine.State));
+        }
     }
 
     private void AddRecorder_Click(object sender, RoutedEventArgs e)
     {
-        var tab = new TabItem { Header = $"图表 {ChartTabControl.Items.Count + 1}" };
-        var grid = new Grid { Background = (System.Windows.Media.Brush)FindResource("ChartBackground") };
-        var text = new TextBlock
+        var tab = new TabItem { Header = $"记录仪 {ChartTabControl.Items.Count + 1}" };
+        var recorder = new RecorderChart { Title = "记录仪" };
+
+        var colors = new[]
         {
-            Text = "记录仪波形显示区",
-            HorizontalAlignment = HorizontalAlignment.Center,
-            VerticalAlignment = VerticalAlignment.Center,
-            FontSize = 18,
-            Foreground = System.Windows.Media.Brushes.Gray
+            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
         };
-        grid.Children.Add(text);
+
+        for (int i = 0; i < _channelManager.Channels.Count && i < 4; i++)
+        {
+            recorder.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+        }
+
+        var grid = new Grid();
+        grid.Children.Add(recorder);
         tab.Content = grid;
         ChartTabControl.Items.Add(tab);
         ChartTabControl.SelectedItem = tab;
