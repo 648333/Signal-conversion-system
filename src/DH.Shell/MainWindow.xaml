@@ -21,9 +21,9 @@
                     <ribbon:RibbonButton Label="工程另存为" SmallImageSource="{StaticResource IconSave}" Click="SaveProjectAs_Click"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="参数模板">
-                    <ribbon:RibbonButton Label="新建参数" SmallImageSource="{StaticResource IconParam}"/>
-                    <ribbon:RibbonButton Label="导入参数" SmallImageSource="{StaticResource IconImport}"/>
-                    <ribbon:RibbonButton Label="导出参数" SmallImageSource="{StaticResource IconExport}"/>
+                    <ribbon:RibbonButton Label="新建参数" SmallImageSource="{StaticResource IconParam}" Click="NewParamTemplate_Click"/>
+                    <ribbon:RibbonButton Label="导入参数" SmallImageSource="{StaticResource IconImport}" Click="ImportParamTemplate_Click"/>
+                    <ribbon:RibbonButton Label="导出参数" SmallImageSource="{StaticResource IconExport}" Click="ExportParamTemplate_Click"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
 
@@ -94,7 +94,8 @@
                     <ribbon:RibbonButton Label="虚拟通道" SmallImageSource="{StaticResource IconVirtual}"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="频域">
-                    <ribbon:RibbonButton Label="FFT频谱" SmallImageSource="{StaticResource IconFFT}"/>
+                    <ribbon:RibbonButton Label="FFT频谱" LargeImageSource="{StaticResource IconFFT}" Click="AddSpectrumChart_Click"/>
+                    <ribbon:RibbonButton Label="频谱设置" SmallImageSource="{StaticResource IconFFT}" Click="SpectrumConfig_Click"/>
                     <ribbon:RibbonButton Label="倍频程" SmallImageSource="{StaticResource IconOctave}"/>
                     <ribbon:RibbonButton Label="包络" SmallImageSource="{StaticResource IconEnvelope}"/>
                     <ribbon:RibbonButton Label="倒谱" SmallImageSource="{StaticResource IconCepstrum}"/>

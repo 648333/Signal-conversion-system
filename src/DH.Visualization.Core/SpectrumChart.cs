@@ -40,10 +40,14 @@ public sealed class SpectrumChart : FrameworkElement, IChartView
     public bool LogScaleY { get; set; } = true;
     public double YMin { get; set; } = -120;
     public double YMax { get; set; } = 10;
+    public double? XMax { get; set; }
     public bool ShowPeaks { get; set; } = true;
     public int MaxPeakCount { get; set; } = 5;
     public double PeakThreshold { get; set; } = 0.1;
     public bool ShowGrid { get; set; } = true;
+    public bool ShowCursors { get; set; }
+    public double Cursor1Frequency { get; set; }
+    public double Cursor2Frequency { get; set; }
     public string XLabel { get; set; } = "频率 (Hz)";
     public string YLabel { get; set; } = "幅值 (dB)";
 
@@ -131,6 +135,9 @@ public sealed class SpectrumChart : FrameworkElement, IChartView
 
         if (ShowPeaks && _multiSpectrum.Count > 0 && _multiSpectrum[0] != null)
             DrawPeaks(dc, plotArea, _multiSpectrum[0]);
+
+        if (ShowCursors)
+            DrawCursors(dc, plotArea);
 
         dc.DrawText(new FormattedText(Title,
             System.Globalization.CultureInfo.InvariantCulture,
@@ -299,6 +306,9 @@ public sealed class SpectrumChart : FrameworkElement, IChartView
 
     private double GetMaxFreq()
     {
+        if (XMax.HasValue)
+            return XMax.Value;
+
         if (_multiSpectrum.Count > 0 && _multiSpectrum[0] != null)
         {
             var freqs = _multiSpectrum[0].Frequencies;
@@ -306,5 +316,44 @@ public sealed class SpectrumChart : FrameworkElement, IChartView
                 return freqs[freqs.Length - 1];
         }
         return 1000;
+    }
+
+    private void DrawCursors(DrawingContext dc, Rect area)
+    {
+        var maxFreq = GetMaxFreq();
+        var cursor1Pen = new Pen(Brushes.Yellow, 1.2) { DashStyle = DashStyles.Dash };
+        var cursor2Pen = new Pen(Brushes.LightBlue, 1.2) { DashStyle = DashStyles.Dash };
+
+        // 光标1
+        if (Cursor1Frequency >= 0 && Cursor1Frequency <= maxFreq)
+        {
+            var xNorm = LogScaleX && Cursor1Frequency > 0
+                ? Math.Log10(Cursor1Frequency) / Math.Log10(maxFreq)
+                : Cursor1Frequency / maxFreq;
+            var x = area.Left + xNorm * area.Width;
+            dc.DrawLine(cursor1Pen, new Point(x, area.Top), new Point(x, area.Bottom));
+
+            var dpi = VisualTreeHelper.GetDpi(this).PixelsPerDip;
+            dc.DrawText(new FormattedText($"{Cursor1Frequency:F1}Hz",
+                System.Globalization.CultureInfo.InvariantCulture,
+                FlowDirection.LeftToRight, new Typeface("Consolas"), 10, Brushes.Yellow, dpi),
+                new Point(x + 4, area.Top + 4));
+        }
+
+        // 光标2
+        if (Cursor2Frequency >= 0 && Cursor2Frequency <= maxFreq)
+        {
+            var xNorm = LogScaleX && Cursor2Frequency > 0
+                ? Math.Log10(Cursor2Frequency) / Math.Log10(maxFreq)
+                : Cursor2Frequency / maxFreq;
+            var x = area.Left + xNorm * area.Width;
+            dc.DrawLine(cursor2Pen, new Point(x, area.Top), new Point(x, area.Bottom));
+
+            var dpi = VisualTreeHelper.GetDpi(this).PixelsPerDip;
+            dc.DrawText(new FormattedText($"{Cursor2Frequency:F1}Hz",
+                System.Globalization.CultureInfo.InvariantCulture,
+                FlowDirection.LeftToRight, new Typeface("Consolas"), 10, Brushes.LightBlue, dpi),
+                new Point(x + 4, area.Top + 20));
+        }
     }
 }

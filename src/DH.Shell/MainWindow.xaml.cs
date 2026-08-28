@@ -45,6 +45,9 @@ public partial class MainWindow : Window
     private bool _triggerEnabled;
     private string _currentEventName = string.Empty;
     private DateTime _acquisitionStartTime;
+    private int _spectrumChannelIndex;
+    private SpectrumType _spectrumType = SpectrumType.Magnitude;
+    private WindowType _spectrumWindow = WindowType.Hanning;
 
     public MainWindow(AppServices services)
     {
@@ -434,6 +437,113 @@ public partial class MainWindow : Window
         }
     }
 
+    private void NewParamTemplate_Click(object sender, RoutedEventArgs e)
+    {
+        var result = MessageBox.Show("新建参数模板将清空当前所有通道配置，是否继续？",
+            "新建参数", MessageBoxButton.YesNo, MessageBoxImage.Question);
+        if (result != MessageBoxResult.Yes) return;
+
+        _channelManager.ClearAll();
+        InitDefaultChannels();
+
+        if (_recorderChart != null)
+        {
+            _recorderChart.Clear();
+            var colors = new[]
+            {
+                System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+                System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+                System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+                System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+                System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+                System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+                System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+                System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+            };
+            for (int i = 0; i < _channelManager.Channels.Count; i++)
+            {
+                _recorderChart.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+            }
+        }
+
+        PopulateProjectTree();
+        _log.Info("已新建参数模板（恢复默认8通道）");
+        StatusText.Text = "已新建参数模板";
+    }
+
+    private void ImportParamTemplate_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new Microsoft.Win32.OpenFileDialog
+        {
+            Filter = "通道参数模板|*.xml|所有文件|*.*",
+            Title = "导入参数模板"
+        };
+        if (dlg.ShowDialog() != true) return;
+
+        if (_channelManager.ImportTemplate(dlg.FileName))
+        {
+            _viewModel.Channels.Clear();
+            foreach (var ch in _channelManager.Channels)
+                _viewModel.Channels.Add(ch);
+
+            if (_recorderChart != null)
+            {
+                _recorderChart.Clear();
+                var colors = new[]
+                {
+                    System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+                    System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+                    System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+                    System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+                    System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+                    System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+                    System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+                    System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+                };
+                for (int i = 0; i < _channelManager.Channels.Count; i++)
+                {
+                    _recorderChart.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+                }
+            }
+
+            if (_connectedDevice != null)
+                _connectedDevice.SetSampleRate(_channelManager.SampleRate);
+
+            PopulateProjectTree();
+            _log.Info($"参数模板导入成功: {dlg.FileName} ({_channelManager.Channels.Count} 通道)");
+            StatusText.Text = $"参数模板已导入: {_channelManager.Channels.Count} 通道";
+        }
+        else
+        {
+            MessageBox.Show("参数模板导入失败，请检查文件格式。", "错误",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+    private void ExportParamTemplate_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "通道参数模板|*.xml|所有文件|*.*",
+            Title = "导出参数模板",
+            FileName = $"通道模板_{DateTime.Now:yyyyMMdd}"
+        };
+        if (dlg.ShowDialog() != true) return;
+
+        if (_channelManager.ExportTemplate(dlg.FileName))
+        {
+            _log.Info($"参数模板导出成功: {dlg.FileName}");
+            StatusText.Text = $"参数模板已导出: {dlg.FileName}";
+            MessageBox.Show($"参数模板已成功导出到:\n{dlg.FileName}", "导出成功",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        else
+        {
+            MessageBox.Show("参数模板导出失败。", "错误",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
     private void StartAcquisition_Click(object sender, RoutedEventArgs e)
     {
         if (_connectedDevice == null)
@@ -709,23 +819,72 @@ public partial class MainWindow : Window
         _log.Info("FFT 频谱图已添加");
     }
 
+    private void SpectrumConfig_Click(object sender, RoutedEventArgs e)
+    {
+        if (_spectrumChart == null)
+        {
+            AddSpectrumChart_Click(sender, e);
+            if (_spectrumChart == null) return;
+        }
+
+        var win = new SpectrumConfigWindow(_channelManager, _channelManager.SampleRate)
+        {
+            Owner = this
+        };
+
+        if (win.ShowDialog() == true)
+        {
+            _spectrumChannelIndex = win.SelectedChannelIndex;
+            _spectrumType = win.SpectrumType;
+            _spectrumWindow = win.WindowType;
+            _spectrumAnalyzer.WindowType = win.WindowType;
+
+            _spectrumChart.LogScaleY = win.LogScaleY;
+            _spectrumChart.LogScaleX = win.LogScaleX;
+            _spectrumChart.ShowPeaks = win.ShowPeaks;
+            _spectrumChart.ShowGrid = win.ShowGrid;
+            _spectrumChart.YMin = win.YMin;
+            _spectrumChart.YMax = win.YMax;
+            _spectrumChart.XMax = win.FreqMax;
+            _spectrumChart.ShowCursors = win.CursorEnabled;
+            _spectrumChart.Cursor1Frequency = win.Cursor1Freq;
+            _spectrumChart.Cursor2Frequency = win.Cursor2Freq;
+
+            var chName = _channelManager.Channels[win.SelectedChannelIndex].Name;
+            StatusText.Text = $"频谱设置已更新: {chName}, {win.WindowType}, {win.SpectrumType}";
+            _log.Info($"频谱配置 - 通道:{chName} 类型:{win.SpectrumType} 窗函数:{win.WindowType} " +
+                     $"Y范围:[{win.YMin},{win.YMax}]dB 频率上限:{win.FreqMax}Hz");
+        }
+    }
+
     private void OnFftTimerTick(object? sender, EventArgs e)
     {
         if (_spectrumChart == null || _fftBufferPos < _fftBuffer.Length)
             return;
 
         var channelCount = _channelManager.Channels.Count;
-        if (channelCount <= 0) return;
+        if (channelCount <= 0 || _spectrumChannelIndex >= channelCount) return;
 
-        var channelData = new float[_fftBuffer.Length / channelCount];
-        for (int i = 0; i < channelData.Length; i++)
+        var samplesPerCh = _fftBuffer.Length / channelCount;
+        var channelData = new float[samplesPerCh];
+        for (int i = 0; i < samplesPerCh; i++)
         {
-            channelData[i] = _fftBuffer[i * channelCount];
+            channelData[i] = _fftBuffer[i * channelCount + _spectrumChannelIndex];
         }
 
-        var spectrum = _spectrumAnalyzer.ComputeMagnitudeSpectrum(channelData, _channelManager.SampleRate);
-        _spectrumChart.SetSpectrum(spectrum, 0);
+        SpectrumResult spectrum;
+        switch (_spectrumType)
+        {
+            case SpectrumType.Power:
+            case SpectrumType.PowerSpectralDensity:
+                spectrum = _spectrumAnalyzer.ComputePowerSpectrum(channelData, _channelManager.SampleRate);
+                break;
+            default:
+                spectrum = _spectrumAnalyzer.ComputeMagnitudeSpectrum(channelData, _channelManager.SampleRate);
+                break;
+        }
 
+        _spectrumChart.SetSpectrum(spectrum, 0);
         _fftBufferPos = 0;
     }
 
@@ -753,48 +912,227 @@ public partial class MainWindow : Window
         _log.Info($"打开数据文件: {dlg.FileName} ({info.ChannelCount}ch, {info.SampleRate}Hz, {info.DurationSeconds:F1}s)");
 
         var tab = new TabItem { Header = "数据回放" };
-        var panel = new StackPanel { Margin = new Thickness(10) };
+        var recorder = new RecorderChart { Title = "回放波形", Height = 400 };
+        var controlPanel = BuildPlaybackPanel(_playbackService, recorder);
 
-        var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
-        var btnPlay = new Button { Content = "播放", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
-        var btnPause = new Button { Content = "暂停", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
-        var btnStop = new Button { Content = "停止", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
-        btnPlay.Click += (_, _) => _playbackService.Play();
-        btnPause.Click += (_, _) => _playbackService.Pause();
-        btnStop.Click += (_, _) => _playbackService.Stop();
+        var panel = new DockPanel { Margin = new Thickness(10) };
+        panel.Children.Add(controlPanel);
+        DockPanel.SetDock(controlPanel, Dock.Top);
+        panel.Children.Add(recorder);
+
+        tab.Content = panel;
+        ChartTabControl.Items.Add(tab);
+        ChartTabControl.SelectedItem = tab;
+    }
+
+    private FrameworkElement BuildPlaybackPanel(DataPlaybackService playback, RecorderChart recorder)
+    {
+        var info = playback.Info!;
+        var panel = new StackPanel { Margin = new Thickness(0, 0, 0, 10) };
+
+        // 信息行
+        var infoText = new TextBlock
+        {
+            Text = $"采样率: {info.SampleRate:F0} Hz | 通道数: {info.ChannelCount} | 总采样: {info.TotalSamples:N0}",
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            Margin = new Thickness(0, 0, 0, 6)
+        };
+        panel.Children.Add(infoText);
+
+        // 进度条和时间
+        var progressPanel = new Grid { Margin = new Thickness(0, 0, 0, 6) };
+        progressPanel.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+        progressPanel.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+        progressPanel.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+
+        var timeCurrent = new TextBlock
+        {
+            Text = "00:00.000",
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(0, 0, 8, 0),
+            FontFamily = new System.Windows.Media.FontFamily("Consolas")
+        };
+        Grid.SetColumn(timeCurrent, 0);
+        progressPanel.Children.Add(timeCurrent);
+
+        var slider = new Slider
+        {
+            Minimum = 0,
+            Maximum = info.TotalSamples,
+            SmallChange = 1,
+            LargeChange = (int)(info.SampleRate),
+            IsSnapToTickEnabled = false,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        Grid.SetColumn(slider, 1);
+        progressPanel.Children.Add(slider);
+
+        var timeTotal = new TextBlock
+        {
+            Text = TimeSpan.FromSeconds(info.DurationSeconds).ToString(@"mm\:ss\.fff"),
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(8, 0, 0, 0),
+            FontFamily = new System.Windows.Media.FontFamily("Consolas")
+        };
+        Grid.SetColumn(timeTotal, 2);
+        progressPanel.Children.Add(timeTotal);
+
+        panel.Children.Add(progressPanel);
+
+        // 控制按钮行
+        var btnPanel = new StackPanel { Orientation = Orientation.Horizontal };
+
+        var btnPlay = new Button
+        {
+            Content = "▶ 播放",
+            Width = 70,
+            Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50)),
+            Foreground = System.Windows.Media.Brushes.White,
+            BorderThickness = new Thickness(0),
+            Padding = new Thickness(8, 4)
+        };
+        var btnPause = new Button
+        {
+            Content = "⏸ 暂停",
+            Width = 70,
+            Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00)),
+            Foreground = System.Windows.Media.Brushes.White,
+            BorderThickness = new Thickness(0),
+            Padding = new Thickness(8, 4)
+        };
+        var btnStop = new Button
+        {
+            Content = "⏹ 停止",
+            Width = 70,
+            Margin = new Thickness(0, 0, 5, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63)),
+            Foreground = System.Windows.Media.Brushes.White,
+            BorderThickness = new Thickness(0),
+            Padding = new Thickness(8, 4)
+        };
+
+        btnPlay.Click += (_, _) => playback.Play();
+        btnPause.Click += (_, _) => playback.Pause();
+        btnStop.Click += (_, _) =>
+        {
+            playback.Stop();
+            slider.Value = 0;
+            timeCurrent.Text = "00:00.000";
+        };
+
         btnPanel.Children.Add(btnPlay);
         btnPanel.Children.Add(btnPause);
         btnPanel.Children.Add(btnStop);
 
-        var infoText = new TextBlock
+        // 速度控制
+        var speedLabel = new TextBlock
         {
-            Text = $"采样率: {info.SampleRate:F0} Hz | 通道数: {info.ChannelCount} | 时长: {info.DurationSeconds:F2}s",
-            Margin = new Thickness(0, 0, 0, 10)
+            Text = "速度:",
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(15, 0, 4, 0)
         };
+        btnPanel.Children.Add(speedLabel);
 
-        var recorder = new RecorderChart { Title = "回放波形", Height = 400 };
+        var speedCombo = new ComboBox
+        {
+            Width = 70,
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x2A, 0x2A, 0x3E)),
+            Foreground = System.Windows.Media.Brushes.White,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        foreach (var s in new[] { "0.25x", "0.5x", "1x", "2x", "4x", "8x" })
+            speedCombo.Items.Add(s);
+        speedCombo.SelectedIndex = 2;
+        speedCombo.SelectionChanged += (_, e) =>
+        {
+            if (speedCombo.SelectedItem is string s)
+            {
+                var speedStr = s.Replace("x", "");
+                if (double.TryParse(speedStr, out var speed))
+                    playback.PlaybackSpeed = speed;
+            }
+        };
+        btnPanel.Children.Add(speedCombo);
+
+        // 导出按钮
+        var btnExport = new Button
+        {
+            Content = "导出CSV",
+            Width = 75,
+            Margin = new Thickness(15, 0, 0, 0),
+            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x2B, 0x5C, 0x8A)),
+            Foreground = System.Windows.Media.Brushes.White,
+            BorderThickness = new Thickness(0),
+            Padding = new Thickness(8, 4),
+            HorizontalAlignment = HorizontalAlignment.Right
+        };
+        btnExport.Click += (_, _) =>
+        {
+            var dlg = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "CSV 文件|*.csv|所有文件|*.*",
+                Title = "导出 CSV 数据",
+                FileName = $"回放数据_{DateTime.Now:yyyyMMdd_HHmmss}.csv"
+            };
+            if (dlg.ShowDialog() == true)
+            {
+                var success = CsvExportService.ExportToCsv(info.FilePath, dlg.FileName);
+                if (success)
+                    StatusText.Text = $"已导出: {dlg.FileName}";
+            }
+        };
+        btnPanel.Children.Add(btnExport);
+
+        panel.Children.Add(btnPanel);
+
+        // 设置图表数据绑定
         var colors = new[]
         {
             System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
             System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
             System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
             System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+            System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+            System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+            System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+            System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
         };
-        for (int i = 0; i < info.ChannelCount && i < 4; i++)
+        for (int i = 0; i < info.ChannelCount && i < 8; i++)
             recorder.AddChannel(i, $"通道{i + 1}", colors[i % colors.Length]);
 
-        _playbackService.DataBlockRead += (data, chCount) =>
+        // 进度条拖动定位
+        bool isDragging = false;
+        slider.PreviewMouseLeftButtonDown += (_, _) => isDragging = true;
+        slider.PreviewMouseLeftButtonUp += (_, _) =>
         {
-            Dispatcher.Invoke(() => recorder.UpdateData(data, chCount));
+            if (isDragging)
+            {
+                playback.SeekTo((long)slider.Value);
+                isDragging = false;
+            }
         };
 
-        panel.Children.Add(infoText);
-        panel.Children.Add(btnPanel);
-        panel.Children.Add(recorder);
+        // 数据块更新时更新进度
+        playback.DataBlockRead += (data, chCount) =>
+        {
+            Dispatcher.Invoke(() =>
+            {
+                recorder.UpdateData(data, chCount);
+                if (!isDragging)
+                {
+                    slider.Value = playback.CurrentSample;
+                    var ts = TimeSpan.FromSeconds(playback.CurrentTime);
+                    timeCurrent.Text = ts.ToString(@"mm\:ss\.fff");
+                }
+            });
+        };
 
-        tab.Content = panel;
-        ChartTabControl.Items.Add(tab);
-        ChartTabControl.SelectedItem = tab;
+        return panel;
     }
 
     private void ShowStatistics_Click(object sender, RoutedEventArgs e)
@@ -1079,76 +1417,12 @@ public partial class MainWindow : Window
         _log.Info($"加载事件数据: {evt.Name} 文件:{evt.DataFile}");
 
         var tab = new TabItem { Header = evt.Name };
-        var panel = new StackPanel { Margin = new Thickness(10) };
-
-        var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
-        var btnPlay = new Button { Content = "播放", Width = 60, Margin = new Thickness(0, 0, 5, 0),
-            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x2B, 0x5C, 0x8A)),
-            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
-        var btnPause = new Button { Content = "暂停", Width = 60, Margin = new Thickness(0, 0, 5, 0),
-            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x3A, 0x3A, 0x52)),
-            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
-        var btnStop = new Button { Content = "停止", Width = 60, Margin = new Thickness(0, 0, 5, 0),
-            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x3A, 0x3A, 0x52)),
-            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
-        var btnExport = new Button { Content = "导出CSV", Width = 75, Margin = new Thickness(10, 0, 0, 0),
-            Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50)),
-            Foreground = System.Windows.Media.Brushes.White, BorderThickness = new Thickness(0), Padding = new Thickness(10, 5) };
-
-        btnPlay.Click += (_, _) => _playbackService.Play();
-        btnPause.Click += (_, _) => _playbackService.Pause();
-        btnStop.Click += (_, _) => _playbackService.Stop();
-        btnExport.Click += (_, _) =>
-        {
-            var dlg = new Microsoft.Win32.SaveFileDialog
-            {
-                Filter = "CSV 文件|*.csv|所有文件|*.*",
-                Title = "导出 CSV 数据",
-                FileName = $"{evt.Name}.csv"
-            };
-            if (dlg.ShowDialog() == true)
-            {
-                var success = CsvExportService.ExportToCsv(evt.DataFile, dlg.FileName);
-                if (success)
-                    StatusText.Text = $"已导出: {dlg.FileName}";
-            }
-        };
-
-        btnPanel.Children.Add(btnPlay);
-        btnPanel.Children.Add(btnPause);
-        btnPanel.Children.Add(btnStop);
-        btnPanel.Children.Add(btnExport);
-
-        var infoText = new TextBlock
-        {
-            Text = $"事件: {evt.Name} | 采样率: {info.SampleRate:F0} Hz | 通道数: {info.ChannelCount} | " +
-                   $"时长: {info.DurationSeconds:F2}s | 数据点: {info.TotalSamples:N0}",
-            Foreground = System.Windows.Media.Brushes.LightGray,
-            Margin = new Thickness(0, 0, 0, 10)
-        };
-
         var recorder = new RecorderChart { Title = evt.Name, Height = 400 };
-        var colors = new[]
-        {
-            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
-            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
-            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
-            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
-            System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
-            System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
-            System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
-            System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
-        };
-        for (int i = 0; i < info.ChannelCount && i < 8; i++)
-            recorder.AddChannel(i, $"通道{i + 1}", colors[i % colors.Length]);
+        var controlPanel = BuildPlaybackPanel(_playbackService, recorder);
 
-        _playbackService.DataBlockRead += (data, chCount) =>
-        {
-            Dispatcher.Invoke(() => recorder.UpdateData(data, chCount));
-        };
-
-        panel.Children.Add(infoText);
-        panel.Children.Add(btnPanel);
+        var panel = new DockPanel { Margin = new Thickness(10) };
+        panel.Children.Add(controlPanel);
+        DockPanel.SetDock(controlPanel, Dock.Top);
         panel.Children.Add(recorder);
 
         tab.Content = panel;
