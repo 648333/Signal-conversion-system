@@ -18,6 +18,7 @@
                     <ribbon:RibbonButton Label="新建工程" LargeImageSource="{StaticResource IconNew}" Click="NewProject_Click"/>
                     <ribbon:RibbonButton Label="打开工程" LargeImageSource="{StaticResource IconOpen}" Click="OpenProject_Click"/>
                     <ribbon:RibbonButton Label="保存工程" LargeImageSource="{StaticResource IconSave}" Click="SaveProject_Click"/>
+                    <ribbon:RibbonButton Label="工程另存为" SmallImageSource="{StaticResource IconSave}" Click="SaveProjectAs_Click"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="参数模板">
                     <ribbon:RibbonButton Label="新建参数" SmallImageSource="{StaticResource IconParam}"/>
