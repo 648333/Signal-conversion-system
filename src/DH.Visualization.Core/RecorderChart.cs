@@ -121,6 +121,11 @@ public sealed class RecorderChart : FrameworkElement, IChartView
         _frozen = false;
     }
 
+    public void SetFrozen(bool frozen)
+    {
+        _frozen = frozen;
+    }
+
     protected override void OnRender(DrawingContext dc)
     {
         base.OnRender(dc);
