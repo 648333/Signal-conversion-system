@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>DH.Visualization</RootNamespace>
+    <AssemblyName>DH.Visualization.Core</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>DH-RTDAS</Company>
+    <Product>DH-RTDAS Visualization Core</Product>
+    <Description>可视化引擎核心：显示框架、图表接口、布局管理</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
+  </ItemGroup>
+
+</Project>

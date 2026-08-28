@@ -1,0 +1,45 @@
+<DH>
+  <Sensors>
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="813f15c7-2887-4f4a-b963-460b9728ebd0" SensorModel="DH201-050" SerialNumber="2010" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="d317a0a3-0401-4de5-8223-219e6a43215f" SensorModel="DH201-100" SerialNumber="2011" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="dee5888c-8915-42eb-8138-1d4bac818eae" SensorModel="DH201-200" SerialNumber="2012" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="5fc92b9b-0c60-4922-b811-9ed3f26fe134" SensorModel="DH201-500" SerialNumber="2013" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="139e283b-d480-4f46-a8f2-b3e2470da47e" SensorModel="DH202-002" SerialNumber="2014" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="817fdb5f-7cf6-489e-9801-2643fd1dd5ee" SensorModel="DH202-005" SerialNumber="2015" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="46a62e9d-10cd-42db-8a9a-15131671e001" SensorModel="DH202-010" SerialNumber="2016" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoresistive Transducer" SensorID="a276d49e-c998-4a22-b52b-ef23eefdaa4d" SensorModel="DH203-2000" SerialNumber="2017" Meterage="" Unit="" Transfor="1" />
+
+    <Sensor SensorType="Capacitive Transducer" SensorID="b37c670b-4b6d-4407-b97a-d45361b6b5d1" SensorModel="DH301" SerialNumber="2018" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Capacitive Transducer" SensorID="53f015f0-dd3f-46bd-81b2-bd7f4f489494" SensorModel="DH302" SerialNumber="2019" Meterage="" Unit="" Transfor="1" />
+
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="1584d05c-cfe6-4080-bc63-77ddda9ced2d" SensorModel="DH105" SerialNumber="2020" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="7ee09f6b-c0ec-4e2c-a1a6-88ea0d6b1c7b" SensorModel="DH112" SerialNumber="2021" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="de1af867-9f44-4827-8787-496c86fb70bb" SensorModel="DH131" SerialNumber="2022" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="21e40dad-f1dd-4bc7-92e4-8b9818bdefe5" SensorModel="DH132" SerialNumber="2023" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="6beb7416-ef35-4854-b30f-8ce685ab1db8" SensorModel="DH151" SerialNumber="2024" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="7261c0c0-4f4d-4fec-9a98-8c3d6306ca2c" SensorModel="DH161" SerialNumber="2025" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="3cd1fde7-7ef0-4087-9a74-5f6b93d76ee2" SensorModel="DH311" SerialNumber="2026" Meterage="" Unit="" Transfor="1" />
+
+    <Sensor SensorType="IEPE" SensorID="d780fe0d-2442-495d-bc5f-fc74bf147e75" SensorModel="DH105E" SerialNumber="201" Meterage="Voltage" Unit="mV" Transfor="1" />
+    <Sensor SensorType="IEPE" SensorID="058973b6-9f97-4eec-bdb1-a6afabd26cd1" SensorModel="DH131E" SerialNumber="202" Meterage="Voltage" Unit="mV" Transfor="1" />
+    <Sensor SensorType="IEPE" SensorID="25589ca1-56d0-4d55-b87e-79caf46c8e04" SensorModel="DH186E" SerialNumber="203" Meterage="Voltage" Unit="mV" Transfor="1" />
+    <Sensor SensorType="IEPE" SensorID="c6e14f34-8345-4517-8184-b5c0990a15ac" SensorModel="DH186ET" SerialNumber="204" Meterage="Voltage" Unit="mV" Transfor="1" />
+    <Sensor SensorType="IEPE" SensorID="0d9037c1-10f6-416b-9041-c2599a1d3202" SensorModel="DH311E" SerialNumber="205" Meterage="Voltage" Unit="mV" Transfor="1" />
+
+    <Sensor SensorType="Electro-dynamic Transducer" SensorID="fe16dc6f-7361-4ccd-9994-368852a6147c" SensorModel="DH610" SerialNumber="206" Meterage="Voltage" Unit="mV" Transfor="1" />
+    <Sensor SensorType="Electro-dynamic Transducer" SensorID="5ecfccc8-583f-495c-9533-549ecbdfc8eb" SensorModel="DH620" SerialNumber="207" Meterage="Voltage" Unit="mV" Transfor="1" />
+
+
+    <Sensor SensorType="Draw wire displacement sensor" SensorID="e659c7b4-0f44-4abc-a4fe-0780542ec148" SensorModel="DH801-I" SerialNumber="2027" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Draw wire displacement sensor" SensorID="af511521-f651-4159-97e1-b5a46dede21a" SensorModel="DH801-U" SerialNumber="2028" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Draw wire displacement sensor" SensorID="031a8d9b-104b-4fcf-837d-8641c1419820" SensorModel="DH801-R" SerialNumber="2029" Meterage="" Unit="" Transfor="1" />
+
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="43aec089-ecc5-41cb-86c5-8564c0bda9b5" SensorModel="753" SerialNumber="2030" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="0b4fc76d-cea3-4612-82d0-84212c7e02cc" SensorModel="1003A" SerialNumber="2031" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="eaa8062b-c493-4c13-b281-1f6b3d6e592f" SensorModel="1003B" SerialNumber="2032" Meterage="" Unit="" Transfor="1" />
+    <Sensor SensorType="Piezoelectric Transducer" SensorID="ab39703d-7b8c-472d-bde1-1ebeb61507b9" SensorModel="1008D" SerialNumber="2033" Meterage="" Unit="" Transfor="1" />
+
+    <Sensor SensorType="Photoelectric Tachometer" SensorID="e4c1679e-de1c-43e6-a54e-74a5926a4706" SensorModel="DH5640" SerialNumber="2034" Meterage="" Unit="" Transfor="1" />
+
+  </Sensors>
+</DH>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>DH.Channels</RootNamespace>
+    <AssemblyName>DH.Channels</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>DH-RTDAS</Company>
+    <Product>DH-RTDAS Channels</Product>
+    <Description>通道与传感器配置模块</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
+    <ProjectReference Include="..\DH.Hardware.Abstractions\DH.Hardware.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

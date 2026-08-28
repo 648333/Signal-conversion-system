@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Formulas>
+  <Formula Name="VoltageValue">
+    <Item Version="Common" Text="((@MeasureStandard-@MeasureZero) - (@RevisoryStandard-@StandardZero))/(@RevisoryStandard-@StandardZero)"/>
+    <Item Version="ChengFei" Text="((@MeasureStandard-@MeasureZero) - (@RevisoryStandard-@StandardZero))/@Scope"/>
+  </Formula>
+</Formulas>

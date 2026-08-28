@@ -1,0 +1,264 @@
+<Window x:Class="DH.Shell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
+        Title="DH-RTDAS 实时数据测量与分析系统" Height="900" Width="1600"
+        WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary Source="Resources/Theme.xaml"/>
+    </Window.Resources>
+
+    <DockPanel>
+        <!-- 顶部 Ribbon 菜单 -->
+        <ribbon:Ribbon DockPanel.Dock="Top" x:Name="MainRibbon" Background="{StaticResource RibbonBackground}">
+            <!-- 工程管理 -->
+            <ribbon:RibbonTab Header="工程管理" x:Name="TabProject">
+                <ribbon:RibbonGroup Header="工程">
+                    <ribbon:RibbonButton Label="新建工程" LargeImageSource="{StaticResource IconNew}" Click="NewProject_Click"/>
+                    <ribbon:RibbonButton Label="打开工程" LargeImageSource="{StaticResource IconOpen}" Click="OpenProject_Click"/>
+                    <ribbon:RibbonButton Label="保存工程" LargeImageSource="{StaticResource IconSave}" Click="SaveProject_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="参数模板">
+                    <ribbon:RibbonButton Label="新建参数" SmallImageSource="{StaticResource IconParam}"/>
+                    <ribbon:RibbonButton Label="导入参数" SmallImageSource="{StaticResource IconImport}"/>
+                    <ribbon:RibbonButton Label="导出参数" SmallImageSource="{StaticResource IconExport}"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 测量/采集 -->
+            <ribbon:RibbonTab Header="测量" x:Name="TabMeasure">
+                <ribbon:RibbonGroup Header="设备">
+                    <ribbon:RibbonButton Label="扫描设备" LargeImageSource="{StaticResource IconScan}" Click="ScanDevices_Click"/>
+                    <ribbon:RibbonButton Label="连接设备" LargeImageSource="{StaticResource IconConnect}" Click="ConnectDevice_Click"/>
+                    <ribbon:RibbonButton Label="断开设备" SmallImageSource="{StaticResource IconDisconnect}" Click="DisconnectDevice_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="通道设置">
+                    <ribbon:RibbonButton Label="通道配置" LargeImageSource="{StaticResource IconChannel}" Click="ChannelSetup_Click"/>
+                    <ribbon:RibbonButton Label="传感器标定" SmallImageSource="{StaticResource IconCalibrate}"/>
+                    <ribbon:RibbonButton Label="采样率" SmallImageSource="{StaticResource IconSampleRate}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="采集控制">
+                    <ribbon:RibbonButton Label="开始采集" LargeImageSource="{StaticResource IconStart}" Click="StartAcquisition_Click"/>
+                    <ribbon:RibbonButton Label="暂停" SmallImageSource="{StaticResource IconPause}" Click="PauseAcquisition_Click"/>
+                    <ribbon:RibbonButton Label="停止" SmallImageSource="{StaticResource IconStop}" Click="StopAcquisition_Click"/>
+                    <ribbon:RibbonButton Label="冻结" SmallImageSource="{StaticResource IconFreeze}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="事件存储">
+                    <ribbon:RibbonButton Label="新建事件" SmallImageSource="{StaticResource IconEvent}"/>
+                    <ribbon:RibbonButton Label="数据回收" SmallImageSource="{StaticResource IconRecover}"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 可视化/图表 -->
+            <ribbon:RibbonTab Header="视图" x:Name="TabView">
+                <ribbon:RibbonGroup Header="图表类型">
+                    <ribbon:RibbonButton Label="记录仪" LargeImageSource="{StaticResource IconRecorder}" Click="AddRecorder_Click"/>
+                    <ribbon:RibbonButton Label="FFT频谱" LargeImageSource="{StaticResource IconFFT}"/>
+                    <ribbon:RibbonButton Label="二维曲线" LargeImageSource="{StaticResource Icon2D}"/>
+                    <ribbon:RibbonButton Label="数字量" SmallImageSource="{StaticResource IconDigital}"/>
+                    <ribbon:RibbonButton Label="仪表盘" SmallImageSource="{StaticResource IconMeter}"/>
+                    <ribbon:RibbonButton Label="柱状图" SmallImageSource="{StaticResource IconBar}"/>
+                    <ribbon:RibbonButton Label="表格" SmallImageSource="{StaticResource IconTable}"/>
+                    <ribbon:RibbonButton Label="极坐标" SmallImageSource="{StaticResource IconPolar}"/>
+                    <ribbon:RibbonButton Label="三维曲线" SmallImageSource="{StaticResource Icon3D}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="布局">
+                    <ribbon:RibbonButton Label="记录仪布局" SmallImageSource="{StaticResource IconLayout}"/>
+                    <ribbon:RibbonButton Label="FFT布局" SmallImageSource="{StaticResource IconLayout}"/>
+                    <ribbon:RibbonButton Label="自定义布局" SmallImageSource="{StaticResource IconLayout}"/>
+                    <ribbon:RibbonButton Label="水平排列" SmallImageSource="{StaticResource IconLayoutH}"/>
+                    <ribbon:RibbonButton Label="垂直排列" SmallImageSource="{StaticResource IconLayoutV}"/>
+                    <ribbon:RibbonButton Label="关闭所有" SmallImageSource="{StaticResource IconCloseAll}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="样式">
+                    <ribbon:RibbonComboBox x:Name="StyleCombo" Width="120">
+                        <ribbon:RibbonGallery>
+                            <ribbon:RibbonGalleryCategory>
+                                <ribbon:RibbonGalleryItem Content="深色" Tag="Dark" Selected="StyleItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="黑色" Tag="Black" Selected="StyleItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="白色" Tag="White" Selected="StyleItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="自定义" Tag="Custom" Selected="StyleItem_Selected"/>
+                            </ribbon:RibbonGalleryCategory>
+                        </ribbon:RibbonGallery>
+                    </ribbon:RibbonComboBox>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 信号处理 -->
+            <ribbon:RibbonTab Header="信号处理" x:Name="TabSignal">
+                <ribbon:RibbonGroup Header="流水线">
+                    <ribbon:RibbonButton Label="流程设计器" LargeImageSource="{StaticResource IconFlow}"/>
+                    <ribbon:RibbonButton Label="虚拟通道" SmallImageSource="{StaticResource IconVirtual}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="频域">
+                    <ribbon:RibbonButton Label="FFT频谱" SmallImageSource="{StaticResource IconFFT}"/>
+                    <ribbon:RibbonButton Label="倍频程" SmallImageSource="{StaticResource IconOctave}"/>
+                    <ribbon:RibbonButton Label="包络" SmallImageSource="{StaticResource IconEnvelope}"/>
+                    <ribbon:RibbonButton Label="倒谱" SmallImageSource="{StaticResource IconCepstrum}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="时域">
+                    <ribbon:RibbonButton Label="积分/微分" SmallImageSource="{StaticResource IconIntegral}"/>
+                    <ribbon:RibbonButton Label="滤波" SmallImageSource="{StaticResource IconFilter}"/>
+                    <ribbon:RibbonButton Label="统计" SmallImageSource="{StaticResource IconStat}"/>
+                    <ribbon:RibbonButton Label="相关" SmallImageSource="{StaticResource IconCorrelate}"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 工程分析 -->
+            <ribbon:RibbonTab Header="分析" x:Name="TabAnalysis">
+                <ribbon:RibbonGroup Header="专项分析">
+                    <ribbon:RibbonButton Label="频响分析" LargeImageSource="{StaticResource IconFreqResp}"/>
+                    <ribbon:RibbonButton Label="索力分析" SmallImageSource="{StaticResource IconCable}"/>
+                    <ribbon:RibbonButton Label="阶次分析" SmallImageSource="{StaticResource IconOrder}"/>
+                    <ribbon:RibbonButton Label="动平衡" SmallImageSource="{StaticResource IconBalance}"/>
+                    <ribbon:RibbonButton Label="扭矩" SmallImageSource="{StaticResource IconTorque}"/>
+                    <ribbon:RibbonButton Label="疲劳" SmallImageSource="{StaticResource IconFatigue}"/>
+                    <ribbon:RibbonButton Label="振动舒适性" SmallImageSource="{StaticResource IconComfort}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="模态试验">
+                    <ribbon:RibbonButton Label="模态分析" LargeImageSource="{StaticResource IconModal}"/>
+                    <ribbon:RibbonButton Label="3D模型" SmallImageSource="{StaticResource Icon3DModel}"/>
+                    <ribbon:RibbonButton Label="振型动画" SmallImageSource="{StaticResource IconAnimate}"/>
+                    <ribbon:RibbonButton Label="MAC验证" SmallImageSource="{StaticResource IconMAC}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="声学NVH">
+                    <ribbon:RibbonButton Label="声压" SmallImageSource="{StaticResource IconSound}"/>
+                    <ribbon:RibbonButton Label="声强" SmallImageSource="{StaticResource IconIntensity}"/>
+                    <ribbon:RibbonButton Label="声功率" SmallImageSource="{StaticResource IconPower}"/>
+                    <ribbon:RibbonButton Label="TPA" SmallImageSource="{StaticResource IconTPA}"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="数据回放">
+                    <ribbon:RibbonButton Label="打开数据" LargeImageSource="{StaticResource IconOpenData}"/>
+                    <ribbon:RibbonButton Label="范围截取" SmallImageSource="{StaticResource IconRange}"/>
+                    <ribbon:RibbonButton Label="重新计算" SmallImageSource="{StaticResource IconRecompute}"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 报告导出 -->
+            <ribbon:RibbonTab Header="报告" x:Name="TabReport">
+                <ribbon:RibbonGroup Header="导出">
+                    <ribbon:RibbonButton Label="Excel" LargeImageSource="{StaticResource IconExcel}"/>
+                    <ribbon:RibbonButton Label="Word报告" LargeImageSource="{StaticResource IconWord}"/>
+                    <ribbon:RibbonButton Label="TXT" SmallImageSource="{StaticResource IconTxt}"/>
+                    <ribbon:RibbonButton Label="MATLAB" SmallImageSource="{StaticResource IconMatlab}"/>
+                    <ribbon:RibbonButton Label="UFF" SmallImageSource="{StaticResource IconUff}"/>
+                    <ribbon:RibbonButton Label="图片" SmallImageSource="{StaticResource IconImage}"/>
+                    <ribbon:RibbonButton Label="打印" SmallImageSource="{StaticResource IconPrint}"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+
+            <!-- 工具/设置 -->
+            <ribbon:RibbonTab Header="工具" x:Name="TabTools">
+                <ribbon:RibbonGroup Header="软件包">
+                    <ribbon:RibbonComboBox x:Name="PackageCombo" Width="150">
+                        <ribbon:RibbonGallery>
+                            <ribbon:RibbonGalleryCategory>
+                                <ribbon:RibbonGalleryItem Content="常规测试" Tag="CommonSoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="桥梁模态" Tag="BridgeSoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="阶次分析" Tag="OrderSoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="PCB板" Tag="PcbSoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="冲击实验" Tag="ShockSoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="传递路径" Tag="TPASoft" Selected="PackageItem_Selected"/>
+                                <ribbon:RibbonGalleryItem Content="纯模态" Tag="PureModesSoft" Selected="PackageItem_Selected"/>
+                            </ribbon:RibbonGalleryCategory>
+                        </ribbon:RibbonGallery>
+                    </ribbon:RibbonComboBox>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="语言">
+                    <ribbon:RibbonButton Label="中文" SmallImageSource="{StaticResource IconChinese}" Click="SetChinese_Click"/>
+                    <ribbon:RibbonButton Label="English" SmallImageSource="{StaticResource IconEnglish}" Click="SetEnglish_Click"/>
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup Header="帮助">
+                    <ribbon:RibbonButton Label="关于" SmallImageSource="{StaticResource IconAbout}" Click="About_Click"/>
+                </ribbon:RibbonGroup>
+            </ribbon:RibbonTab>
+        </ribbon:Ribbon>
+
+        <!-- 底部状态栏 -->
+        <StatusBar DockPanel.Dock="Bottom" Height="28" Background="{StaticResource StatusBarBackground}">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusText" Text="就绪"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="DeviceStatus" Text="设备: 未连接"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <TextBlock x:Name="AcqStatus" Text="采集: 停止"/>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="ClockText" Text=""/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- 主内容区域 -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" MinWidth="150" MaxWidth="400"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 左侧工具栏 -->
+            <Border Grid.Column="0" Background="{StaticResource SidebarBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,1,0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="工程管理器" FontWeight="Bold" Padding="8,6,0,6" Foreground="{StaticResource TextColor}"/>
+                    <TreeView x:Name="ProjectTree" Background="{StaticResource SidebarBackground}" BorderThickness="0">
+                        <TreeViewItem x:Name="TreeRoot" Header="工程" IsExpanded="True">
+                            <TreeViewItem Header="设备列表" x:Name="TreeDevices"/>
+                            <TreeViewItem Header="通道配置" x:Name="TreeChannels"/>
+                            <TreeViewItem Header="事件数据" x:Name="TreeEvents"/>
+                            <TreeViewItem Header="分析结果" x:Name="TreeResults"/>
+                        </TreeViewItem>
+                    </TreeView>
+                </DockPanel>
+            </Border>
+
+            <GridSplitter Grid.Column="1" Width="4" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="{StaticResource SplitterColor}"/>
+
+            <!-- 中央显示区 -->
+            <Border Grid.Column="2" Background="{StaticResource DisplayAreaBackground}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 图表显示区 -->
+                    <TabControl x:Name="ChartTabControl" Grid.Row="0" Background="{StaticResource DisplayAreaBackground}" BorderThickness="0">
+                        <TabItem Header="记录仪" x:Name="TabRecorder">
+                            <Grid Background="{StaticResource ChartBackground}">
+                                <TextBlock Text="记录仪波形显示区" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#666"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+
+                    <!-- 通道信息栏 -->
+                    <Border Grid.Row="1" Height="120" Background="{StaticResource ChannelInfoBackground}" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,1,0,0">
+                        <DockPanel>
+                            <TextBlock DockPanel.Dock="Top" Text="通道信息" FontWeight="Bold" Padding="8,4,0,2" Foreground="{StaticResource TextColor}"/>
+                            <DataGrid x:Name="ChannelGrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      HeadersVisibility="Column" GridLinesVisibility="Horizontal" Background="{StaticResource ChannelInfoBackground}"
+                                      RowBackground="{StaticResource ChannelInfoBackground}" Foreground="{StaticResource TextColor}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="通道" Width="50" Binding="{Binding Index}"/>
+                                    <DataGridTextColumn Header="名称" Width="100" Binding="{Binding Name}"/>
+                                    <DataGridTextColumn Header="类型" Width="80" Binding="{Binding ChannelTypeDisplay}"/>
+                                    <DataGridTextColumn Header="传感器" Width="100" Binding="{Binding SensorModel}"/>
+                                    <DataGridTextColumn Header="量程" Width="80" Binding="{Binding Range}"/>
+                                    <DataGridTextColumn Header="单位" Width="50" Binding="{Binding Unit}"/>
+                                    <DataGridTextColumn Header="灵敏度" Width="80" Binding="{Binding Sensitivity}"/>
+                                    <DataGridTextColumn Header="采样率" Width="80" Binding="{Binding SampleRateDisplay}"/>
+                                    <DataGridTextColumn Header="状态" Width="60" Binding="{Binding StatusDisplay}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

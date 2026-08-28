@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DH.Hardware</RootNamespace>
+    <AssemblyName>DH.Hardware.Abstractions</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>DH-RTDAS</Company>
+    <Product>DH-RTDAS Hardware Abstractions</Product>
+    <Description>硬件驱动抽象层：设备、驱动、通道接口定义</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
+  </ItemGroup>
+
+</Project>

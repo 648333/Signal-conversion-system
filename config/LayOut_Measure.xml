@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DH>
+	<item ID="recorder" name="" namekey="27401" cmdID="LayoutRecorderFunc" image="measureRecorder.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="1" Height="1" ScreenIndex="0"/>
+	</item>
+	<item ID="fft" name="" namekey="27402"  cmdID="LayoutFFTFunc" image="measureFFTlayout.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="499716D9-63DD-4FBA-854A-0AEE1FED679E" X="0" Y="0.5" Width="1" Height="0.5" ScreenIndex="0"/>
+	</item>
+	<item ID="2D" name="" namekey="27406"  cmdID="Layout2DFunc" image="measureRecorder.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0" Y="0.5" Width="1" Height="0.5" ScreenIndex="0"/>
+	</item>
+	<item ID="spectrum" name="" namekey="27403"  cmdID="LayoutSpectrumFunc" image="MeasureSpectrumLay.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="0.5" Height="0.33" ScreenIndex="0"/>
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0.5" Y="0" Width="0.5" Height="0.33" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0" Y="0.33" Width="0.5" Height="0.33" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0.5" Y="0.33" Width="0.5" Height="0.33" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0" Y="0.66" Width="0.5" Height="0.34" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0.5" Y="0.66" Width="0.5" Height="0.34" ScreenIndex="0"/>
+	</item>
+	<item ID="SaoFreq" name="" namekey="27404"  cmdID="LayoutSaoFreqFunc" image="measureRecorder.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0" Y="0.5" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="02F83D6A-EA48-41CB-8276-3DC072F61581" X="0.8" Y="0" Width="0.125" Height="0.1" ScreenIndex="0"/>
+	</item>
+	<item ID="SRS" name="" namekey="27405"  cmdID="LayoutSRSFunc" image="measureRecorder.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" X="0" Y="0.5" Width="1" Height="0.5" ScreenIndex="0"/>
+	</item>
+	<item ID="LayoutDigitalFunc" name="" namekey="27408" cmdID="LayoutDigitalFunc" image="DigitalLayout.png">
+		<panel ID="02F83D6A-EA48-41CB-8276-3DC072F61581" X="0" Y="0" Width="1" Height="1" ScreenIndex="0"/>
+	</item>
+	<item ID="LayoutShockCoiefFunc" name="" namekey="27410" cmdID="LayoutShockCoiefFunc" image="ShockCoefLayout.png">
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" PrjID ="282E698D-4395-4620-BEB4-E4BB898E95BE" X="0" Y="0" Width="1" Height="1" ScreenIndex="0"/>
+	</item>
+	<item ID="LayoutCableFunc" name="" namekey="27411" cmdID="LayoutCableFunc" image="CableLayout.png">
+		<panel ID="85C950BE-936A-436B-A267-351613C422ED" PrjID ="37318100-98F6-4A6B-B9D2-1DA68C9395E3" X="0" Y="0" Width="1" Height="0.5" ScreenIndex="0"/>
+		<panel ID="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" X="0" Y="0.5" Width="1" Height="0.5" ScreenIndex="0"/>
+	</item>
+	<item ID="LayoutModelFunc" name="" namekey="27412" cmdID="LayoutModelFunc" image="ModelLayOut.png">
+		<panel ID="D1F3273F-7E9D-4947-8912-B9B3D3CF0554" X="0" Y="0" Width="1" Height="1" ScreenIndex="0"/>
+	</item>
+	<item ID="LayoutStaticFunc" name="" namekey="27413" cmdID="LayoutStaticFunc" image="StaticLayout.png">
+		<panel ID="add65ae9-d56e-43dc-ac5b-e24a7a98d085" X="0" Y="0" Width="1" Height="1" ScreenIndex="0"/>
+	</item>
+</DH>

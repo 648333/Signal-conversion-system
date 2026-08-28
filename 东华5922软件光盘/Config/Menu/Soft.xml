@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Soft>
+	<!--常规软件-->
+	<CustomSoft id="CommonSoft" dllname="" classname="" namekey="26700" default="1">
+		<!--常规测试-->
+		<Package id = "CommonTestPackage" namekey="26800" image="acttest.png" menu="commonmenu.xml"/>
+	</CustomSoft>
+
+	<!--桥梁模态-->
+	<CustomSoft id="BridgeSoft" dllname="" classname=""  namekey="26701" default="0">
+		<!--静载试验-->
+		<Package id = "StaticTestPackage" namekey="26801" image="statictest.png" menu="statictestmenu.xml"/>
+		<!--动载试验-->
+		<Package id = "ActTestPackage" namekey="26802" image="acttest.png" menu="acttestmenu.xml"/>
+		<!--索力测试-->
+		<Package id = "CableTestPackage" namekey="26803" image="cabletest.png" menu="cabletestmenu.xml"/>
+		<!--模态试验-->
+		<Package id = "ModalTestPackage" namekey="26804" image="modaltest.png" menu="modaltestmenu.xml"/>
+	</CustomSoft>
+
+	<!--阶次软件-->
+	<CustomSoft id="OrderSoft" dllname="" classname="" namekey="26702" default="0">
+		<!--常规测试-->
+		<Package id = "OrderTestPackage" namekey="26805" image="acttest.png" menu="OrderMenu.xml"/>
+	</CustomSoft>
+
+	<!--海外软件-->
+	<CustomSoft id="FremdSoft" dllname="" classname="" namekey="26703" default="0">
+		<!--常规测试-->
+		<Package id = "FremdTestPackage" namekey="26806" image="acttest.png" menu="FremdMenu.xml"/>
+	</CustomSoft>
+
+	<!--PCB板软件-->
+	<CustomSoft id="PcbSoft" dllname="" classname="" namekey="31901" default="0">
+		<!--常规测试-->
+		<Package id = "PcbTestPackage" namekey="31901" image="acttest.png" menu="PcbMenu.xml"/>
+	</CustomSoft>
+
+	<!--中石油软件-->
+	<CustomSoft id="ZsySoft" dllname="" classname="" namekey="26704" default="0">
+		<!--常规测试-->
+		<Package id = "ZsyTestPackage" namekey="26807" image="acttest.png" menu="ZsyMenu.xml"/>
+	</CustomSoft>
+
+  <!--贵飞导管软件-->
+  <CustomSoft id="VesselSoft" dllname="" classname="" namekey="26705" default="0">
+    <!--常规测试-->
+    <Package id = "VesselTestPackage" namekey="26808" image="acttest.png" menu="Vesselmenu.xml"/>
+  </CustomSoft>
+
+  <!--调理器设置软件-->
+  <CustomSoft id="AmplifierSoft" dllname="" classname="" namekey="26706" default="0">
+    <!--常规测试-->
+    <Package id = "AmplifierTestPackage" namekey="26809" image="acttest.png" menu="Amplifiermenu.xml"/>
+  </CustomSoft>
+
+  <!--设备状态软件-->
+  <CustomSoft id="MachineStatusSoft" dllname="" classname="" namekey="34301" default="0">
+    <!--常规测试-->
+    <Package id = "MachineStatusTestPackage" namekey="34301" image="acttest.png" menu="MachineStausMenu.xml"/>
+  </CustomSoft>
+
+  <!--国防科技大学-->
+  <CustomSoft id="ShockExperimentSoft" dllname="" classname="" namekey="34701" default="0">
+    <!--常规测试-->
+    <Package id = "ShockExperimentTestPackage" namekey="34701" image="acttest.png" menu="ShockMenu.xml"/>
+  </CustomSoft>
+
+  <!--应力合成-->
+  <CustomSoft id="StressComSoft" dllname="" classname="" namekey="36201" default="0">
+    <!--应力合成-->
+    <Package id = "StressComTestPackage" namekey="36201" image="acttest.png" menu="StressComMenu.xml"/>
+  </CustomSoft>
+
+  <!--Moog-->
+  <CustomSoft id="MoogSoft" dllname="" classname="" namekey="36604" default="0">
+    <!--应力合成-->
+    <Package id = "MoogTestPackage" namekey="36605" image="acttest.png" menu="MoogMenu.xml"/>
+  </CustomSoft>
+
+  <!--静态软件-->
+  <CustomSoft id="StaticStatSoft" dllname="" classname="" namekey="36608" default="0">
+    <!--应力合成-->
+    <Package id = "StaticStatTestPackage" namekey="36609" image="acttest.png" menu="StaticStatMenu.xml"/>
+  </CustomSoft>
+
+  <!--校准软件-->
+  <CustomSoft id="CalibrateSystemSoft" dllname="" classname="" namekey="40501" default="0">
+    <!--校准软件-->
+    <Package id = "CalibrateSystemTestPackage" namekey="40502" image="acttest.png" menu="CalibrateSystemMenu.xml"/>
+  </CustomSoft>
+
+  <!--纯模态 软件-->
+  <CustomSoft id="PureModesSoft" dllname="" classname="" namekey="41203" default="0">
+    <!--校准软件-->
+    <Package id = "PureModesTestPackage" namekey="41204" image="acttest.png" menu="PureModesMenu.xml"/>
+  </CustomSoft>
+
+  <!--TPA传递路径软件-->
+  <CustomSoft id="TPASoft" dllname="" classname="" namekey="50026" default="0">
+    <!--校准软件-->
+    <Package id = "TPATestPackage" namekey="50027" image="acttest.png" menu="TPAMenu.xml"/>
+  </CustomSoft>
+  
+	<!--参数管理-->
+	<Module id="ParamModule" dllname="ParamModule" classname="ParamModule" namekey="26900"/>
+	<!--参数设置-->
+	<Module id="ChnSetupModule" dllname="ChnSetupModule" classname="ChnSetupModule" namekey="26901"/>
+	<!--算法设置-->
+	<Module id="MathSetupModule" dllname="MathSetupModule" classname="MathSetupModule" namekey="26902"/>
+	<!--存储规则-->
+	<Module id="StoreModule" dllname="StoreModule" classname="StoreModule" namekey="26903"/>
+	<!--事件信息-->
+	<Module id="EventModule" dllname="EventModule" classname="EventModule" namekey="26904"/>
+	<!--通道信息-->
+	<Module id="ChannelModule" dllname="ChannelModule" classname="ChannelModule" namekey="26905"/>
+	<!--打印-->
+	<Module id="PrintModule" dllname="PrintModule" classname="PrintModule" namekey="26906"/>
+	<!--工程管理-->
+	<Module id="ProjectModule" dllname="ProjectModule" classname="ProjectModule" namekey="26907"/>
+	<!--输出-->
+	<Module id="OutputModule" dllname="OutputModule" classname="OutputModule" namekey="26908"/>
+	<!--测量-->
+	<Module id="MeasureModule" dllname="MeasureModule" classname="MeasureModule" namekey="26909"/>
+	<!--分析-->
+	<Module id="AnalysisModule" dllname="AnalysisModule" classname="AnalysisModule" namekey="26910"/>
+	<!--模态建模-->
+	<Module id="ModelModule" dllname="ModelModule" classname="ModelModule" namekey="26911"/>
+	<!--模态数据选择-->
+	<Module id="ModalDataModule" dllname="ModalDatasModule" classname="ModalDataModule" namekey="26912"/>
+	<!--数据删除-->
+	<Module id="DataDelModule" dllname="DataDelModule" classname="DataDelModule" namekey="26913"/>
+	<!--模态参数识别-->
+	<Module id="ModalIdentifyModule" dllname="ModalIdentifyModule" classname="ModalIdentifyModule" namekey="26914"/>
+	<!--振型显示-->
+	<Module id="ModalVibModelModule" dllname="ModalVibModelModule" classname="ModalVibModelModule" namekey="26915"/>
+	<!--模型验证-->
+	<Module id="ModalModelValidateModule" dllname="ModalModelValidateModule" classname="ModalModelValidateModule" namekey="26916"/>
+  <!--贵飞导管数据处理-->
+  <Module id="VesselDataModule" dllname="VesselDataModule" classname="VesselDataModule" namekey="26808"/>
+  <!--设备状态模块-->
+  <Module id="MachineStatusModule" dllname="MachineStatusModule" classname="MachineStatusModule" namekey="34301"/>
+  <!--冲击实验-->
+  <Module id="ShockModule" dllname="ShockModule" classname="ShockModule" namekey="34701"/>
+  <!--应力合成-->
+  <Module id="StressComModule" dllname="StressComModule" classname="StressComModule" namekey="36201"/>
+  <!--Moog-->
+  <Module id="MoogModule" dllname="MoogModule" classname="MoogModule" namekey="36601"/>
+
+  <!--传感器选择-->
+  <Module id="SensorSelectModule" dllname="SensorSelectModule" classname="SensorSelectModule" namekey="40503"/>
+  <!--灵敏度校准-->
+  <Module id="SensitiveModule" dllname="SensitiveModule" classname="SensitiveModule" namekey="40504"/>
+  <!--频率响应校准-->
+  <Module id="FreqRespondModule" dllname="FreqRespondModule" classname="FreqRespondModule" namekey="40505"/>
+  <!--线性度校准-->
+  <Module id="LinearModule" dllname="LinearModule" classname="LinearModule" namekey="40506"/>
+  <!--谐振频率-->
+  <Module id="ResonanceFreqModule" dllname="ResonanceFreqModule" classname="ResonanceFreqModule" namekey="40507"/>
+
+  <!-- 激励方案-->
+  <Module id="SpiritModule" dllname="SpiritModule" classname="SpiritModule" namekey="41201"/>
+  <!--参数识别-->
+  <Module id="IdentifyModule" dllname="IdentifyModule" classname="IdentifyModule" namekey="41202"/>
+  <!--调谐分析(纯模态振型显示)-->
+  <Module id="TuneAnalysisModule" dllname="TuneAnalysisModule" classname="TuneAnalysisModule" namekey="41269"/>
+  <!--纯模态振型显示-->
+  <Module id="PurityVibModelMoule" dllname="PurityVibModelMoule" classname="PurityVibModelMoule" namekey="41269"/>
+
+  <!--TPA-->
+  <Module id="TPAModule" dllname="TPAModule" classname="TPAModule" namekey="50026"/>
+
+	<!--信号处理自定义算法-->
+	<Plugin id="MathSelfDefineModuleAnalysis" type="PluginMathSetupType" guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="" />
+	<!--信号处理-->
+	<Plugin id="GeneralMathModuleAnalysis" type="PluginMathSetupType" guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="" />
+	<!--倍频程-->
+	<Plugin id="GeneralOctaveMathModuleAnalysis" type="PluginMathChildSetupType" guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="5b7da958-4493-438e-95c5-05fa1c227159" />
+	<!--残余应力-->
+	<Plugin id="GeneralRemainStressMathModuleAnalysis" type="PluginMathChildSetupType" guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="1fe89102-016a-43c7-977a-e8c4d2a0fa1f" />
+	<!--冲击响应谱-->
+	<Plugin id="GeneralStockMathModuleAnalysis" type="PluginMathChildSetupType" guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="f3da880b-e423-4b00-92b1-df38abf5e279" />
+	<!--倒谱分析-->
+	<Plugin id="GeneralCepMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="39033cd2-74ff-4ebd-a3fb-934e979ceb39" />
+	<!--幅值分析-->
+	<Plugin id="GeneralDensityMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="942a9bbe-f7c0-42a9-8d77-5816520dacc9" />
+	<!--FIR滤波设计-->
+	<Plugin id="GeneralFIRFilterMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="8ea05bdf-3226-40a3-a3fa-2da57ff84810" />
+	<!--IIR滤波设计-->
+	<Plugin id="GeneralIIRFilterMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="3ce1b318-f70d-4ebd-a6c1-eb86828a5a79" />
+	<!--扭矩测量-->
+	<Plugin id="GeneralTorqueMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="24175ee7-f1fc-4dbb-803d-618c50a64165" />
+	<!--FFT-->
+	<Plugin id="GeneralFFTMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="722274ec-9710-4d5a-a888-ca660cbe3669" />
+	<!--大容量FFT slb-->
+	<Plugin id="GeneralLargeFFTMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="9ac8e871-2ff3-471f-ae33-eb1d0657e89f" ShowType="3"/>
+	<!--曲线拟合-->
+	<Plugin id="GeneralImpersonateMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="ACEE4D87-BE12-40E8-A999-4FCFDF2AB469" ShowType="3"/>
+	<!--热流计算-->
+	<Plugin id="GeneralHeatFlowMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="3B810AA7-D7CD-4CAE-A58C-8D155FF8C0DA" ShowType="3"/>
+	<!--扫频分析-->
+	<Plugin id="GeneralSweptFreqMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="0ea92cae-fd54-4019-8afd-1e27f9e1d1b9" />
+	<!--失真度-->
+	<Plugin id="GeneralDistortionMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="4b0ced28-42bb-4824-9489-3d83972bfbe8" />
+	<!--四光标计算-->
+	<Plugin id="GeneralTunnelMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="720fb6fa-d941-4faa-ac32-db12f026fa29" ShowType="3"/>
+	<!--统计-->
+	<Plugin id="GeneralStatMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="978afc74-92c2-4cca-a305-5408aeae3479" />
+	<!--一次积分-->
+	<Plugin id="GeneralOneIntegralMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="38b2e9c7-2b46-4ada-858d-5e0f0a1378c9" />
+	<!--二次积分 slb-->
+	<Plugin id="GeneralTwoIntegralMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="b559db6b-5162-4ab5-865b-3e4395be3171" />
+	<!--一次微分-->
+	<Plugin id="GeneralOneDiffMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="d7b8c8d3-f742-4a43-adc9-8be826f4bb39" />
+	<!--二次微分 slb-->
+	<Plugin id="GeneralTwoDiffMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="a1dec928-dcdc-46c0-a693-2be6706d3cc2" />
+	<!--相关分析-->
+	<Plugin id="GeneralCorrelationMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="aaa0656e-7747-4239-b851-2f1bd6b95ae9" />
+	<!--虚拟通道-->
+	<Plugin id="GeneralVirChnMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="849a6689-ab0c-4591-9d91-fb4a2d8de139" />
+	<!--应变花-->
+	<Plugin id="GeneralYBHMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="5ac96e7e-f5df-4c16-b46c-52eb229bc7b9" />
+	<!--应力合成-->
+	<Plugin id="GeneralStressComMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="03DB4828-F0A2-45AC-945F-68BAAA006835" />
+	<!--雨流分析-->
+	<Plugin id="GeneralRainFlowMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="26417d6a-d5a6-4370-9450-0315b8998609" ShowType="3"/>
+	<!--重采样-->
+	<Plugin id="GeneralResampleMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="f57e3280-1754-4a01-8086-24800202c7ea" ShowType="3"/>
+	<!--轴功率-->
+	<Plugin id="GeneralShaftPowerMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="b043e718-d213-491c-a4d2-608feecf8ad1" />
+	<!--逆傅里叶变换-->
+	<Plugin id="GeneralFourierMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="b3179a18-fec8-4a4b-b4dd-d9ab6e03741b" />
+  <!--互谱变换-->
+  <Plugin id="GeneralHPMathModuleAnalysis" type="PluginMathChildSetupType"  guid="ADA510AF-AF13-4B86-A8AE-F58B40DE9012" assicateguid="03F82952-EA80-4D4D-9183-82753960432D" />
+
+	<!--频响分析-->
+	<Plugin id="SpectrumMathModuleAnalysis" type="PluginMathSetupType" guid="85D1EA8B-AEF5-4FF3-9EAF-F9436E94C21F" assicateguid="" />
+	<!--索力测试-->
+	<Plugin id="CableMathModuleAnalysis" type="PluginMathSetupType" guid="09A04832-3FEF-4B65-BA8B-88CBC4D63442" assicateguid="" />
+	<!--海装阶次分析-->
+	<Plugin id="SeaOrderMathModuleAnalysis" type="PluginMathSetupType" guid="FC95877B-5D5A-4635-B503-2433DBACEA29" assicateguid="" />
+	<!--阶次分析-->
+	<Plugin id="OrderMathModuleAnalysis" type="PluginMathSetupType" guid="FC95877B-5D5A-4635-B503-2433DBACEA29" assicateguid="" />
+	<!--运行平稳性分析-->
+	<Plugin id="StableMathModuleAnalysis" type="PluginMathSetupType" guid="0F3EE9B0-9639-484C-9DEB-C100FAAE9FEF" assicateguid="" />
+	<!--PCB分析-->
+	<Plugin id="PcbMathModuleAnalysis" type="PluginMathSetupType" guid="D5644EA6-EAA1-41FB-B610-9790D06A7ABE" assicateguid="" />
+  <!--疲劳分析-->
+  <Plugin id="FatigueMathModuleAnalysis" type="PluginMathSetupType" guid="D2883A1B-E15E-4C0F-9F6B-D5CA6DA855E4" assicateguid="" />
+  <!--振动舒适性-->
+  <Plugin id="ShakeMathModuleAnalysis" type="PluginMathSetupType" guid="B9838987-3C05-4283-B9F6-86BD7F4E8DE6" assicateguid="" />
+	<!--振动舒适性-->
+	<Plugin id="AlarmMathModuleAnalysis" type="PluginMathSetupType" guid="0ab8b473-b4ef-43cf-86b7-c86f18b14aee" assicateguid="" />
+  <!--频域报警-->
+  <Plugin id="FFTAlarmMathModuleAnalysis" type="PluginMathSetupType" guid="258F7A66-B376-48F6-8C98-E60931EA6FEC" assicateguid="" />
+  <!--叶片疲劳-->
+  <Plugin id="StrainMathModuleAnalysis" type="PluginMathSetupType" guid="5B59DE35-DFA8-4526-8500-CEAC09CCAD0A" assicateguid="" />
+
+	<!--声学分析-->
+	<Plugin id="AcousticsMathModuleAnalysis" type="PluginMathSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="" />
+	<!--声压-->
+	<Plugin id="AcousticsPressMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="06D617BD-0111-45DC-ABDA-84AA9CBD5D39" />
+	<!--声强-->
+	<Plugin id="AcousticsStrengMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="5EC263E7-B233-449E-9748-CFD1C9EF983C" />
+	<!--声评价-->
+	<Plugin id="AcousticsEvaluateMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="03304F14-6321-4D18-B075-6052E654CED0" />
+	<!--声阵列-->
+	<Plugin id="AcousticsMaxtrixMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="C6A55BFD-C523-4215-88AD-3CFE6162DC68" />
+	<!--声功率-->
+	<Plugin id="AcousticsPowerMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="AE31FE31-EEB7-41C5-80C1-9C4A8ABC7679" />
+	<!--声强映射-->
+	<Plugin id="AcousticsStrengMapMathModuleAnalysis" type="PluginMathChildSetupType" guid="4735A532-3D51-4356-9EBA-BEB2F7A13611" assicateguid="D961EA21-908D-4764-854C-74589202C761" />
+
+	<!--Acess输出-->
+	<Plugin id="AcessOutputModuleAnalysis" type="PluginOutputType" guid="BB6C403D-2554-4722-B19C-01094F4017D3" assicateguid="" />
+	<!--Excel输出-->
+	<Plugin id="ExcelOutputModuleAnalysis" type="PluginOutputType" guid="33CC2B2C-A92D-4FE7-ACBF-27305DE29270" assicateguid="" />
+	<!--Matlab输出-->
+	<Plugin id="MatLabOutputModuleAnalysis" type="PluginOutputType" guid="ECEA6178-B93C-4E86-B97E-CFAB8BFAC06E" assicateguid="" />
+	<!--UFF输出-->
+	<Plugin id="UFFOutputModuleAnalysis" type="PluginOutputType" guid="1B6813A7-458F-4F57-9418-6B56A79ED4EA" assicateguid="" />
+	<!--txt输出-->
+	<Plugin id="TxtOutputModuleAnalysis" type="PluginOutputType" guid="323687D2-201A-48EE-B15D-AE3E48B14F8D" assicateguid="" />
+	<!--图片输出-->
+	<Plugin id="PicOutputModuleAnalysis" type="PluginOutputType" guid="5CC3AEC8-637B-46C7-A796-815B66AD46E3" assicateguid="" />
+	<!--word输出-->
+	<Plugin id="WordOutputModuleAnalysis" type="PluginOutputType" guid="29A03B3C-7628-4114-81B3-EDF5FC00CC9D" assicateguid="" />
+	<!--东华软件输出-->
+	<Plugin id="DHSoftOutputModuleAnalysis" type="PluginOutputType" guid="3ACB790A-3326-4F83-9F13-15F58C889ED1" assicateguid="" />
+	<!--报表输出 slb-->
+	<Plugin id="ReportOutputModuleAnalysis" type="PluginOutputType" guid="2b351e2b-7153-49d5-98c1-6fef0d8f03f3" assicateguid="" />
+
+	<!--模拟通道-->
+	<Plugin id="AnalogParamModuleAnalysis" type="PluginParamSetupType" guid="575F7D0E-2283-49AA-AA17-E898F9BC5B32" assicateguid="" />
+	<!--转速通道-->
+	<Plugin id="TachoParamModuleAnalysis" type="PluginParamSetupType" guid="BE4C2A86-8708-431C-BE21-582EF50090A9" assicateguid="" />
+	<!--信号源-->
+	<Plugin id="SignalParamModuleAnalysis" type="PluginParamSetupType" guid="408328BB-2584-47DC-A3AB-B496B0EF3C61" assicateguid="" />
+	<!--GPS-->
+	<Plugin id="GPSParamModuleAnalysis" type="PluginParamSetupType" guid="E28D62D3-1353-4A6F-AD77-1B6F71A74058" assicateguid="" />
+	<!--CAN-->
+	<Plugin id="CANParamModuleAnalysis" type="PluginParamSetupType" guid="523CBEB6-920F-412C-BE24-23A3A60EB44B" assicateguid="" />
+	<!--视频-->
+	<Plugin id="VideoParamModuleAnalysis" type="PluginParamSetupType" guid="E9279C3D-6BA5-4268-ABDD-17B59A15A9A4" assicateguid="" />
+	<!--计数器-->
+	<Plugin id="CounterParamModuleAnalysis" type="PluginParamSetupType" guid="7383822d-b949-4e6e-913d-df51c56dc250" assicateguid="" />
+	<!--音频-->
+	<Plugin id="AudioParamModuleAnalysis" type="PluginParamSetupType" guid="9dbab9a2-256e-45ee-a767-7ed48c1c4011" assicateguid="" />
+	<!--外部数据源-->
+	<Plugin id="OutDataParamModuleAnalysis" type="PluginParamSetupType" guid="984ea03b-2e49-4cdf-9aed-348a931bf0c5" assicateguid="" />
+	<!--数字量-->
+	<Plugin id="DigitalParamModuleAnalysis" type="PluginParamSetupType" guid="31f9037f-cf51-4168-8842-4852d9930acd" assicateguid="" />
+	<!--合力设置-->
+	<Plugin id="ForceParamModuleAnalysis" type="PluginParamSetupType" guid="74fab3a4-66f0-4486-b43c-a09a4238a8aa" assicateguid="" />
+	<!--标定-->
+	<Plugin id="CalibrateParamModuleAnalysis" type="PluginParamSetupType" guid="DE42E3EE-C3DD-4E68-BDE9-636BD87B8BF4" assicateguid="" />
+  <!--Mic-->
+  <Plugin id="MicParamModuleAnalysis" type="PluginParamSetupType" guid="4BECA797-09DE-4FA0-9E07-C6301B706C9A" assicateguid="" />
+  <!--PCI1553-->
+  <Plugin id="PCI1553ParamModuleAnalysis" type="PluginParamSetupType" guid="955193FA-073D-4905-B515-FAE630104B72" assicateguid="" />
+  <!--Moog-->
+  <Plugin id="MoogParamModuleAnalysis" type="PluginParamSetupType" guid="006479E7-6BB9-4405-98B8-C35F437E1088" assicateguid="" />
+  <!--DIO-->
+  <Plugin id="DIOParamModuleAnalysis" type="PluginParamSetupType" guid="1F293E27-40A1-46F1-9935-9FB168E5D1F2" assicateguid="" />
+  <!--轴系设置-->
+  <Plugin id="AxisParamModuleAnalysis" type="PluginParamSetupType" guid="00DE8CF1-A71F-4A23-9372-C8A3E3D782D2" assicateguid="" />
+  
+	<!--记录仪-->
+	<Plugin id="ChatRecordModuleAnalysis" type="PluginChatType" guid="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" assicateguid="" />
+	<!--示波演示-->
+	<Plugin id="ChatOscilloscopeModuleAnalysis" type="PluginChatType" guid="08654D60-5B5F-40FF-B5B5-065BE55D3FCF" assicateguid="" />
+	<!--XY记录仪-->
+	<Plugin id="ChatXYRecordModuleAnalysis" type="PluginChatType" guid="8BFCC171-30F3-43FF-B466-AE2F7EE24F4E" assicateguid="" />
+	<!--FFT视图-->
+	<Plugin id="ChatFFTModuleAnalysis" type="PluginChatType" guid="499716D9-63DD-4FBA-854A-0AEE1FED679E" assicateguid="" />
+	<!--倍频程视图-->
+	<Plugin id="ChatOctaveModuleAnalysis" type="PluginChatType" guid="34765AF1-77D7-4F0A-83B9-E3EEE4A90B66" assicateguid="" />
+	<!--极坐标视图-->
+	<Plugin id="ChatPolarModuleAnalysis" type="PluginChatType" guid="D177FA95-FD0E-430F-8C96-250FF303585C" assicateguid="" />
+	<!--散点图-->
+	<Plugin id="ChatScatterModuleAnalysis" type="PluginChatType" guid="576EE4B6-C07E-4BB5-9EE7-77407A40AEDD" assicateguid="" />
+	<!--2D-->
+	<Plugin id="Chat2DModuleAnalysis" type="PluginChatType" guid="85C950BE-936A-436B-A267-351613C422ED" assicateguid="" />
+	<!--3D-->
+	<Plugin id="Chat3DModuleAnalysis" type="PluginChatType" guid="86F8FFBD-A233-4712-8000-1F4391C05FBB" assicateguid="" />
+	<!--音频视图-->
+	<Plugin id="ChatAudioModuleAnalysis" type="PluginChatType" guid="4b9257da-ec8a-44cb-98e2-e32df005ede2" assicateguid="" />
+	<!--视频-->
+	<Plugin id="ChatVideoModuleAnalysis" type="PluginChatType" guid="39E31744-D1C3-4222-BA10-FBAE7235E9B5" assicateguid="" />
+	<!--仪表盘-->
+	<Plugin id="ChatMeterModuleAnalysis" type="PluginChatType" guid="D3C67B6D-3359-4215-9660-E4F6A760A121" assicateguid="" />
+	<!--数字表插件-->
+	<Plugin id="ChatDigitalModuleAnalysis" type="PluginChatType" guid="02F83D6A-EA48-41CB-8276-3DC072F61581" assicateguid="" />
+	<!--棒图插件-->
+	<Plugin id="ChatBarModuleAnalysis" type="PluginChatType" guid="5218217E-36E8-4C34-A10F-D8F24FD7AC2D" assicateguid="" />
+	<!--表格-->
+	<Plugin id="ChatTableModuleAnalysis" type="PluginChatType" guid="E2B9E3E3-3CC3-42F9-9EC8-36779A9CAD07" assicateguid="" />
+	<!--运行平稳性表-->
+	<Plugin id="ChatStableModuleAnalysis" type="PluginChatType" guid="9AD59777-F2EE-4C3A-A98C-4363CC26BEAB" assicateguid="" />
+	<!--幅值频次统计表-->
+	<Plugin id="ChatStattableModuleAnalysis" type="PluginChatType" guid="C6556D55-FE48-4A9E-9E8D-7F82E897169A" assicateguid="" />
+	<!--模型-->
+	<Plugin id="ChatModalModuleAnalysis" type="PluginChatType" guid="D1F3273F-7E9D-4947-8912-B9B3D3CF0554" assicateguid="" />
+	<!--纯模态-->
+	<Plugin id="ChatNormalModeModuleAnalysis" type="PluginChatType" guid="08295F48-E307-46CC-93AC-25856D5566BD" assicateguid="" />
+	<!--公里标-->
+	<Plugin id="ChatGongliBiaoModuleAnalysis" type="PluginChatType" guid="DFDAC901-F4CE-459D-A28C-949A42002F69" assicateguid="" />
+	<!--标定-->
+	<Plugin id="ChatDemarcateModuleAnalysis" type="PluginChatType" guid="5265e868-57b5-42c9-a0bb-86cde4756f46" assicateguid="" />
+	<!--空调检测-->
+	<Plugin id="ChatAirConditionModuleAnalysis" type="PluginChatType" guid="78D368A3-DF49-45DB-AFFE-179472126243" assicateguid="" />
+	<!--动平衡-->
+	<Plugin id="ChatBalanceModuleAnalysis" type="PluginChatType" guid="E037F1DA-2F32-4978-A0DB-BC95408EB691" assicateguid="" />
+	<!--小波分析-->
+	<Plugin id="ChatWaveletModuleAnalysis" type="PluginChatType" guid="FFBC7834-20D6-4BF7-8388-30B6A5013F1B" assicateguid="" />
+	<!--液压阀-->
+	<Plugin id="ChatHydrovalveModuleAnalysis" type="PluginChatType" guid="33595EB2-E920-4E59-8AB4-4659C93AC96D" assicateguid="" />
+	<!--霍布金森杆插件-->
+	<Plugin id="ChatHopkinsonBarModuleAnalysis" type="PluginChatType" guid="089685BB-1851-4A5B-AD66-3E937F9CE3EE" assicateguid="" />
+	<!--材料特性-->
+	<Plugin id="ChatMaterialModuleAnalysis" type="PluginChatType" guid="EA512F3E-4F6E-4867-A267-77FD37D5C866" assicateguid="" />
+	<!--时域阻尼比-->
+	<Plugin id="ChatTimeDumpModuleAnalysis" type="PluginChatType" guid="68AECEEA-53CC-41AF-A4D7-B661A92C8424" assicateguid="" />
+	<!--冲击波形检测-->
+	<Plugin id="ChatStockWaveModuleAnalysis" type="PluginChatType" guid="68A2CEEA-53C9-41AF-A4D7-B661A92C8411" assicateguid="" />
+	<!--阶次表格-->
+	<Plugin id="ChatOrderModuleAnalysis" type="PluginChatType" guid="6360083f-9e38-451e-ba2f-6e5dfb2e858d" assicateguid="" />
+	<!--划斜率-->
+	<Plugin id="ChatSlopeModuleAnalysis" type="PluginChatType" guid="d50ff5fa-36eb-438c-8e62-860cd60dab90" assicateguid="" />
+	<!--静载-->
+	<Plugin id="ChatStaticModuleAnalysis" type="PluginChatType" guid="add65ae9-d56e-43dc-ac5b-e24a7a98d085" assicateguid="" />
+  <!--新的静载视图-->
+  <Plugin id="ChatExperimentModuleAnalysis" type="PluginChatType" guid="BF9A42E3-4312-4C6E-98E2-015EB6B17FB7" assicateguid="" />
+  <!--试验台视图-->
+  <Plugin id="TrialChatModuleAnalysis" type="PluginChatType" guid="7A7DE594-324C-4FE4-BC0A-117B16F37A0C" assicateguid="" />
+  <!--云图-->
+	<Plugin id="ChatCloud3DModuleAnalysis" type="PluginChatType" guid="DB603BAF-3610-4AB4-81D7-51B56619F0D0" assicateguid="" />
+  <!--格力空调检测-->
+  <Plugin id="ChatAirConditionExModuleAnalysis" type="PluginChatType" guid="86F6CBBB-AB0A-41C0-9B08-BDE8BF08F59A" assicateguid="" />
+  <!--3D轴心轨迹插件-->
+  <Plugin id="ChatPathTrack3DModuleAnalysis" type="PluginChatType" guid="4C51DCFF-BFF2-41D2-8998-99A8AB998C59" assicateguid="" />
+  <!--扭振分析-->
+  <Plugin id="ChatWrestShakeModuleAnalysis" type="PluginChatType" guid="A403CC07-C7AE-47E3-8026-40AB355FFFF7" assicateguid="" />
+  <!--带振型的模型-->
+  <Plugin id="ChatModelParamModuleAnalysis" type="PluginChatType" guid="EC30985A-CF53-4E91-A3C4-56BF64C173A6" assicateguid="" />
+  <!--508加载实验-->
+  <Plugin id="ChatLoadExprtimenetModuleAnalysis" type="PluginChatType" guid="6744A03C-3C5C-450E-B31D-EF551EC6C10A" assicateguid="" />
+  <!--设备状态视图-->
+  <Plugin id="ChatMachineStatusModuleAnalysis" type="PluginChatType" guid="BDEF1953-AD34-4100-8654-5878CAE0EA2F" assicateguid="" />
+  <!--多棒图视图-->
+  <Plugin id="MultiBarControlModuleAnalysis" type="PluginChatType" guid="49773DD2-E854-489C-8314-19541557F2A6" assicateguid="" />
+  <!--混响时间视图-->
+  <Plugin id="SoundStatModuleAnalysis" type="PluginChatType" guid="E1093A0B-17BD-4189-9A8B-C8778589619F" assicateguid="" />
+  <!--谐分量动平衡视图-->
+  <Plugin id="HarmonicBalanceModuleAnalysis" type="PluginChatType" guid="F1DDA371-9178-40C3-9153-7C9A2916175C" assicateguid="" />
+  <!--DO手动控制-->
+  <Plugin id="ChatCtlBtnModuleAnalysis" type="PluginChatType" guid="241CED13-8313-4F7D-8DA3-47483B1CEF0A" assicateguid="" />
+  <!--GPS轨迹图-->
+  <Plugin id="ChatGpsRouteModuleAnalysis" type="PluginChatType" guid="5CAF4ED8-7ED5-41FC-90D7-7DA8C6139680" assicateguid="" />
+  <!--封头外压实验-->
+  <Plugin id="WaterGasChatModuleAnalysis" type="PluginChatType" guid="3F15C94B-4EC7-4936-8F3E-EEBA197679BC" assicateguid="" />
+  <!--水压加载实验-->
+  <Plugin id="WaterPressChatModuleAnalysis" type="PluginChatType" guid="F644DA0A-25F7-4EEA-93FC-172CD01E99FE" assicateguid="" />
+
+  <!--索力计算-->
+	<Plugin id="ChatCableModelModuleAnalysis" type="PluginPrjChatType" guid="37318100-98F6-4A6B-B9D2-1DA68C9395E3" assicateguid="85C950BE-936A-436B-A267-351613C422ED" />
+	<!--冲击系数-->
+	<Plugin id="ChatShockCoefModuleAnalysis" type="PluginPrjChatType" guid="282E698D-4395-4620-BEB4-E4BB898E95BE" assicateguid="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" />
+	<!--桩机检测-->
+	<Plugin id="ChatStakeModelModuleAnalysis" type="PluginPrjChatType" guid="092451DF-A4FA-4609-9B52-CFB023E77E62" assicateguid="68A2CEEA-53C9-41AF-A4D7-B661A92C8424" />
+	<!--阻尼比-->
+	<Plugin id="ChatDumpModuleAnalysis" type="PluginPrjChatType" guid="BABA9C87-9C43-4A7B-81F4-9B35B8AA8A1F" assicateguid="499716D9-63DD-4FBA-854A-0AEE1FED679E" />
+  <!--损耗因子-->
+  <Plugin id="ChatSpoilageGeneModuleAnalysis" type="PluginPrjChatType" guid="ECE2080D-A140-46B3-919F-76E61B7DB5AA" assicateguid="499716D9-63DD-4FBA-854A-0AEE1FED679E" />
+  <!--幅值拟合-->
+  <Plugin id="ChatAmpModuleAnalysis" type="PluginChatType" guid="E6F09C10-55DA-4E35-934D-1DAA42009814" assicateguid="" />
+
+  <!--演示视图-->
+  <Plugin id="ChatExampleModuleAnalysis" type="PluginChatType" guid="042ef801-dcb7-4046-b327-c2d83bc99077" assicateguid="" />
+
+  <!--Light-->
+  <Plugin id="LightModuleAnalysis" type="PluginChatType" guid="F704CF13-CEA6-4427-8840-321ACABCDD83" assicateguid="" />
+  <!--经纬度-->
+  <Plugin id="ChatLatAndLongitutdeModuleAnalysis" type="PluginChatType" guid="AAB38DDA-3E99-4322-9F70-23BCEC95E5F4" assicateguid="" />
+</Soft>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <FrequeOrder>5</FrequeOrder>
+  <!--频率数据刻度-->
+  <FrequeMaxMinCoord Max="10" Min="0"></FrequeMaxMinCoord>
+  <!--报警数据、统计数据刻度-->
+  <AlarmMaxMinCoord Max="10" Min="-10"></AlarmMaxMinCoord>
+</Config>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Decmarcate>
+  <Maps>
+    <Instrument Code="8">
+      <Item Name="StrainValue" />
+      <Item Name="StrainNonlinear" />
+      <Item Name="StrainZeroExcursion" />
+      <Item Name="StrainValueStability" />
+      <Item Name="StrainBalanceScope" />
+      <Item Name="VoltageValue" />
+      <Item Name="VoltageNonlinear" />
+      <Item Name="VoltageBalanceScope" />
+      <Item Name="UpperFreqPrecision" />
+      <Item Name="LowerFreqPrecision" />
+      <Item Name="FrequenceResponse" />
+      <Item Name="LowerFilter" />
+      <Item Name="AntiConfusionFilter" />
+    </Instrument>
+    <Instrument Code="50">
+      <Item Name="StrainValue" />
+      <Item Name="StrainNonlinear" />
+      <Item Name="StrainZeroExcursion" />
+      <Item Name="StrainValueStability" />
+      <Item Name="StrainBalanceScope" />
+    </Instrument>
+    <Instrument Code="33">
+      <Item Name="StrainValue" />
+      <Item Name="StrainNonlinear" />
+      <Item Name="StrainZeroExcursion" />
+      <Item Name="StrainValueStability" />
+      <Item Name="VoltageValue" />
+      <Item Name="VoltageNonlinear" />
+      <Item Name="UpperFreqPrecision" />
+      <Item Name="LowerFreqPrecision" />
+      <Item Name="FrequenceResponse" />
+      <Item Name="LowerFilter" />
+      <Item Name="AntiConfusionFilter" />
+    </Instrument>
+    <Instrument Code="39">
+      <Item Name="VoltageValue" />
+      <Item Name="VoltageNonlinear" />
+      <Item Name="FrequenceResponse" />
+    </Instrument>
+    <Instrument Code="27">
+      <Item Name="StrainValue" />
+      <Item Name="VoltageValue" />
+      <Item Name="SensorMagLinear" />
+      <Item Name="SensorCalibration" />
+    </Instrument>
+  </Maps>
+</Decmarcate>

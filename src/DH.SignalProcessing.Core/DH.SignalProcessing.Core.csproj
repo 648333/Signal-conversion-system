@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>DH.SignalProcessing</RootNamespace>
+    <AssemblyName>DH.SignalProcessing.Core</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>DH-RTDAS</Company>
+    <Product>DH-RTDAS Signal Processing Core</Product>
+    <Description>信号处理引擎核心：算法接口、流水线、虚拟通道</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
+  </ItemGroup>
+
+</Project>

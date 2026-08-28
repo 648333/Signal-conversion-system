@@ -1,0 +1,393 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ========== 颜色定义 ========== -->
+    <Color x:Key="PrimaryColor">#2B5C8A</Color>
+    <Color x:Key="AccentColor">#3A7AB5</Color>
+    <Color x:Key="DarkColor">#1E1E2E</Color>
+    <Color x:Key="MidDarkColor">#2D2D3F</Color>
+    <Color x:Key="MidColor">#3D3D50</Color>
+    <Color x:Key="LightColor">#E8E8F0</Color>
+    <Color x:Key="TextColorDark">#E0E0E8</Color>
+    <Color x:Key="TextColorLight">#1A1A2E</Color>
+
+    <!-- ========== 画笔定义 ========== -->
+    <SolidColorBrush x:Key="RibbonBackground" Color="#3A3A52"/>
+    <SolidColorBrush x:Key="RibbonTabActive" Color="#2B5C8A"/>
+    <SolidColorBrush x:Key="StatusBarBackground" Color="#2B2B40"/>
+    <SolidColorBrush x:Key="SidebarBackground" Color="#33334A"/>
+    <SolidColorBrush x:Key="DisplayAreaBackground" Color="#1E1E2E"/>
+    <SolidColorBrush x:Key="ChartBackground" Color="#1A1A2A"/>
+    <SolidColorBrush x:Key="ChannelInfoBackground" Color="#2D2D40"/>
+    <SolidColorBrush x:Key="BorderColor" Color="#4A4A5A"/>
+    <SolidColorBrush x:Key="SplitterColor" Color="#4A4A5A"/>
+    <SolidColorBrush x:Key="TextColor" Color="#E0E0E8"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#3A7AB5"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="#4CAF50"/>
+    <SolidColorBrush x:Key="WarningBrush" Color="#FF9800"/>
+    <SolidColorBrush x:Key="ErrorBrush" Color="#F44336"/>
+
+    <!-- ========== 图标定义 (使用矢量几何图形) ========== -->
+    <DrawingImage x:Key="IconNew">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L10,0 L10,10 L0,10 Z M4,2 L4,8 M2,5 L8,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconOpen">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,2 L4,2 L5,0 L10,0 L10,8 L0,8 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconSave">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L7,0 L10,3 L10,10 L0,10 Z M1,4 L5,4 L5,7 L1,7 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconParam">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L10,1 M0,5 L10,5 M0,9 L6,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconImport">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,7 M2,5 L5,8 L8,5 M0,8 L0,10 L10,10 L10,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconExport">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,7 M2,3 L5,0 L8,3 M0,8 L0,10 L10,10 L10,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconScan">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,3 L10,3 M0,7 L10,7 M3,0 L3,10 M7,0 L7,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconConnect">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#4CAF50" Geometry="M0,3 L3,3 L3,0 L7,0 L7,3 L10,3 L10,7 L7,7 L7,10 L3,10 L3,7 L0,7 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconDisconnect">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#F44336" Geometry="M0,4 L4,4 L4,0 L6,0 L6,4 L10,4 L10,6 L6,6 L6,10 L4,10 L4,6 L0,6 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconChannel">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,2 L3,2 L3,0 L7,0 L7,2 L10,2 L10,5 L7,5 L7,7 L3,7 L3,5 L0,5 Z M0,8 L10,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconCalibrate">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 A5,5 0 1 1 4.9,0 L5,3 M3.5,6.5 L6.5,3.5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconSampleRate">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M1,5 L3,5 L4,2 L6,8 L7,5 L9,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconStart">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#4CAF50" Geometry="M2,1 L9,5 L2,9 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconPause">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#FF9800" Geometry="M2,1 L4,1 L4,9 L2,9 Z M6,1 L8,1 L8,9 L6,9 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconStop">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#F44336" Geometry="M1,1 L9,1 L9,9 L1,9 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFreeze">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,10 M0,5 L10,5 M1.5,1.5 L8.5,8.5 M8.5,1.5 L1.5,8.5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconEvent">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L10,1 L10,9 L0,9 Z M0,3 L10,3 M3,0 L3,2 M7,0 L7,2"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconRecover">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 A5,5 0 1 0 10,5 L8,5 A3,3 0 1 1 5,2 L5,4 L8,1 L5,-2 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconRecorder">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,3 L2,3 L2,7 L0,7 M2,5 L4,2 L4,8 M4,5 L6,3 L6,7 M6,5 L8,1 L8,9 M8,5 L10,4 L10,6"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFFT">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,9 L1,7 L2,4 L3,2 L4,5 L5,3 L6,6 L7,5 L8,7 L9,8 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon2D">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,9 L2,6 L4,3 L6,5 L8,1 L10,4 M0,9 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconDigital">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L3,0 L3,3 L0,3 Z M5,0 L10,0 L10,3 L5,3 Z M0,5 L3,5 L3,10 L0,10 Z M5,5 L10,5 L10,10 L5,10 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconMeter">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,5 A5,5 0 0 1 10,5 L8,5 A3,3 0 0 0 5,2 Z M5,5 L7,3"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconBar">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M1,7 L3,7 L3,10 L1,10 Z M4,4 L6,4 L6,10 L4,10 Z M7,1 L9,1 L9,10 L7,10 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconTable">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L10,0 L10,10 L0,10 Z M0,3 L10,3 M0,6 L10,6 M3,0 L3,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconPolar">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,5 A5,5 0 1 1 5,4.9 M5,5 L10,5 M5,5 L5,0 M5,5 L0,5 M5,5 L3.5,8.5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon3D">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,4 L5,0 L10,4 L5,8 Z M0,4 L0,8 L5,12 L5,8 M10,4 L10,8 L5,12"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconLayout">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L10,0 L10,10 L0,10 Z M0,3 L10,3 M3,3 L3,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconLayoutH">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,3 L10,3 M0,7 L10,7"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconLayoutV">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M3,0 L3,10 M7,0 L7,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconCloseAll">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#F44336" Geometry="M0,0 L10,10 M10,0 L0,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFlow">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,2 L3,2 L3,0 L6,0 L6,2 L9,2 L9,5 L6,5 L6,7 L3,7 L3,5 L0,5 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconVirtual">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,5 Q2.5,0 5,5 T10,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconOctave">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,8 L2,8 L2,5 L4,5 L4,2 L6,2 L6,4 L8,4 L8,6 L10,6"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconEnvelope">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,5 Q2.5,0 5,5 T10,5 M0,5 Q2.5,10 5,5 T10,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconCepstrum">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,9 L1,9 L2,3 L3,9 L4,9 L5,1 L6,9 L7,9 L8,4 L9,9 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconIntegral">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L0,10 M0,2 Q5,2 5,5 Q5,8 0,8 M5,0 L5,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFilter">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L10,0 L6,5 L6,10 L4,10 L4,5 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconStat">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M1,8 L1,2 M3,8 L3,4 M5,8 L5,1 M7,8 L7,3 M9,8 L9,5 M0,8 L10,8"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconCorrelate">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,5 Q2,1 4,5 T8,5 L10,5 M0,3 L10,3 M0,7 L10,7"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFreqResp">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,9 L1,9 L2,8 L3,5 L4,2 L5,3 L6,4 L7,6 L8,7 L9,8 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconCable">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,5 Q2.5,1 5,5 T10,5 M0,5 Q2.5,9 5,5 T10,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconOrder">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,9 L2,7 L4,4 L6,2 L8,1 L10,0 M0,9 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconBalance">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,10 M0,3 L10,3 M3,3 A3,3 0 1 1 7,3"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconTorque">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M3,5 A3,3 0 1 1 6,5 M6,5 L6,2 M6,5 L9,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconFatigue">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M0,5 Q2,1 4,5 T8,5"/>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M8,5 L10,5 M0,9 L10,9"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconComfort">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,3 Q2.5,3 2.5,5 Q2.5,7 0,7 M10,3 Q7.5,3 7.5,5 Q7.5,7 10,7 M3,1 L3,9 M7,1 L7,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconModal">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 L5,10 M0,5 L10,5"/>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M1.5,1.5 L8.5,8.5 M8.5,1.5 L1.5,8.5"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Icon3DModel">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,4 L5,0 L10,4 L5,8 Z M0,4 L0,8 L5,12 L5,8 M10,4 L10,8 L5,12"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconAnimate">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M2,5 A3,3 0 1 1 8,5 A3,3 0 1 1 2,5"/>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M2,5 L0,3 M2,5 L0,7 M8,5 L10,3 M8,5 L10,7"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconMAC">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L8,0 L8,8 L0,8 Z M2,2 L6,2 L6,6 L2,6 Z M0,0 L2,0 L2,2 M6,6 L8,6 L8,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconSound">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,4 L2,4 L5,1 L5,9 L2,6 L0,6 Z M6,3 Q7,5 6,7 M8,1 Q10,5 8,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconIntensity">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M0,4 L2,4 L5,1 L5,9 L2,6 L0,6 Z"/>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M7,2 Q9,5 7,8"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconPower">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 A5,5 0 1 1 4.9,0 L5,3 M5,0 L5,2"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconTPA">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L3,1 L3,9 L0,9 Z M7,1 L10,1 L10,9 L7,9 Z"/>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M3,5 L7,5"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconOpenData">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,2 L3,2 L4,0 L10,0 L10,8 L0,8 Z M5,3 L5,7 M3,5 L7,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconRange">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L0,9 M0,5 L10,5 M10,1 L10,9 M1,0 L1,1 M1,9 L1,10 M9,0 L9,1 M9,9 L9,10"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconRecompute">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M5,1 A4,4 0 1 1 1,5 L3,5 M5,9 A4,4 0 1 0 9,5 L7,5"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconExcel">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#4CAF50" Geometry="M0,1 L4,1 L4,0 L6,0 L6,1 L10,1 L10,9 L0,9 Z M2,3 L5,7 M5,3 L2,7"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconWord">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#2196F3" Geometry="M0,1 L6,1 L6,0 L10,0 L10,1 L10,10 L0,10 Z M2,4 L8,4 M2,6 L8,6 M2,8 L6,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconTxt">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L7,0 L10,3 L10,10 L0,10 Z M7,0 L7,3 L10,3 M2,5 L8,5 M2,7 L8,7 M2,9 L6,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconMatlab">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#FF6600" Geometry="M0,9 L1,7 L2,3 L3,5 L4,1 L5,4 L6,2 L7,6 L8,4 L9,8 L10,9"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconUff">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,0 L3,0 L3,2 L5,2 L5,0 L10,0 L10,10 L0,10 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconImage">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,1 L10,1 L10,9 L0,9 Z M0,8 L3,5 L5,7 L7,4 L10,9 M2,3 A1,1 0 1 1 2.1,3"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconPrint">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#7CC4FF" Geometry="M0,4 L2,4 L2,0 L8,0 L8,4 L10,4 L10,8 L8,8 L8,10 L2,10 L2,8 L0,8 Z M2,4 L8,4 M3,7 L7,7"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconChinese">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#F44336" Geometry="M0,0 L10,0 L10,10 L0,10 Z M2,5 L5,2 L8,5 L8,8 L2,8 Z"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconEnglish">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="#2196F3" Geometry="M0,3 L3,0 L7,0 L10,3 L10,7 L7,10 L3,10 L0,7 Z M2,5 L8,5 M5,2 L5,8"/>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="IconAbout">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="#7CC4FF" Geometry="M5,0 A5,5 0 1 1 4.9,0"/>
+                <GeometryDrawing Brush="White" Geometry="M4,3 L6,3 L6,8 L4,8 Z"/>
+                <GeometryDrawing Brush="White" Geometry="M4,1 L6,1 L6,2.5 L4,2.5 Z"/>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+</ResourceDictionary>

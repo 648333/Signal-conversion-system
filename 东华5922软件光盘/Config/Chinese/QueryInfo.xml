@@ -1,0 +1,1687 @@
+﻿<Measure>
+	<InstrumentType id ="4"  name="DH3817"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="8"  name="DH5920N"  rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5920.png"/>
+	<InstrumentType id ="12" name="DH5923"   rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5923.png"/>
+	<InstrumentType id ="13" name="DH5902"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="14" name="DH5906"   rebackdata="0" move="0" editid="0" image="InterfaceImages/ZIGBEE/DH5906.png"/>
+	<InstrumentType id ="17" name="DH5905"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="18" name="DH5907A"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="19" name="DH5928"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="21" name="DH5908(L)"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="24" name="DH8305"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="26" name="DH3817F"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="27" name="DH5922"   rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5922.png"/>
+	<InstrumentType id ="28" name="DH3817J"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="30" name="DH5927"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="31" name="DH5957"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="32" name="DH5927N"  rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="33" name="DH5929"   rebackdata="1" move="1" editid="1" image="InterfaceImages/USB/DH5929.png"/>
+	<InstrumentType id ="34" name="DH5959"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="35" name="DH5910"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="36" name="DH5956"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="37" name="DH5960"   rebackdata="1" move="1" editid="1" image="InterfaceImages/USB/DH5960.png"/>
+	<InstrumentType id ="38" name="DH8300"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="39" name="DH8301"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="40" name="DH5957N"  rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="41" name="DH8301EX" rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="48" name="DH5910" rebackdata="1" move="1" editid="0" image="InterfaceImages/ZIGBEE/DH5910Net.png"/>
+	<InstrumentType id ="49" name="DH3816"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="50" name="DH3820"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="51" name="DH3821"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="52" name="DH3819"   rebackdata="0" move="0" editid="0" image="InterfaceImages/ZIGBEE/DH3819.png"/>
+	<InstrumentType id ="53" name="DH5905W"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="54" name="DH5907N"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="55" name="DH5921"   rebackdata="0" move="1" editid="1" image="InterfaceImages/USB/DH5921.png"/>
+	<InstrumentType id ="56" name="DH8302"  rebackdata="0" move="1" editid="1" image="InterfaceImages/USB/DH8302.png"/>
+	<InstrumentType id ="57" name="DH5916"  rebackdata="1" move="0" editid="0" image="InterfaceImages/USB/DH5916.png"/>
+	<InstrumentType id ="58" name="DH5907K"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="59" name="DH5905H"  rebackdata="1" move="0" editid="0" image="InterfaceImages/USB/DH5905H.png"/>
+	<InstrumentType id ="60" name="DH5991"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="61" name="DH5930old"  rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5930.png"/>
+	<InstrumentType id ="62" name="DH1205W"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="63" name="DH5916H"  rebackdata="1" move="0" editid="0" image="InterfaceImages/USB/DH5916H.png"/>
+	<InstrumentType id ="64" name="DH5981"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="65" name="DH5638"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="66" name="DH5916A"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="67" name="DH5982"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="68" name="DH5908K"   rebackdata="1" move="0" editid="0" image="InterfaceImages/USB/DH5908K.png"/>
+	<InstrumentType id ="69" name="DH8303"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="70" name="TTC"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="71" name="DH3818N"   rebackdata="0" move="1" editid="1" image="InterfaceImages/USB/DH3818N_4.png"/>
+	<InstrumentType id ="72" name="DH8306"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="73" name="DH8306A" rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="74" name="DH5906Z"   rebackdata="1" move="0" editid="0" image="InterfaceImages/ZIGBEE/DH5906Z.png"/>
+	<InstrumentType id ="75" name="DH3843"   rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH3843.png"/>
+	<InstrumentType id ="77" name="DH3818N-20"   rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH3818N-20.png"/>
+	<InstrumentType id ="78" name="DH5965"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="79" name="DH5966"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="80" name="DH5930Ex"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="81" name="DH3822"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="82" name="DH5631"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="83" name="DH3816N"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="85" name="DH5930"  rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="86" name="DH5916B"  rebackdata="1" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="87" name="DH5953E"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="88" name="DH5908L"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="89" name="Pressure_System9016"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="90" name="DH3818-3A"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="91" name="DH3817F"  rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="92" name="DHElecChem"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="93" name="DH5902N"  rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="94" name="DH5902Ex"  rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="95" name="TKC"  rebackdata="1" move="0" editid="0" image="InterfaceImages/USB/DH5916.png"/>
+	<InstrumentType id ="96" name="5862K"  rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5929.png"/>
+	<InstrumentType id ="97" name="DH3823"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="98" name="DH5983"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="99" name="DH8304"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="100" name="DH5916D"  rebackdata="1" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="101" name="DH8300N"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="102" name="DH5907_1394"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="103" name="DH5905ZA"  rebackdata="1" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="104" name="DH5927N"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="105" name="DH5902"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="106" name="DH8303B"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="107" name="DH8301N"   rebackdata="0" move="1" editid="1"  image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="108" name="DH5960E"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="109" name="ROMS"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="110" name="DTSC"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="111" name="DH3841G"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="112" name="DH5862B"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="113" name="DH5902B"   rebackdata="0" move="0" editid="0" image="InterfaceImages/USB/DH5960.png"/>
+	<InstrumentType id ="114" name="DH5925N"   rebackdata="0" move="0" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="115" name="DH5977"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="116" name="DH3818Y"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="117" name="DH5980"   rebackdata="1" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="118" name="DH5979"   rebackdata="1" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="119" name="DH8301_3"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="120" name="DH5928W"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="121" name="DH5922D"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+  <InstrumentType id ="122" name="DH3840W"  rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+  <InstrumentType id ="123" name="DH5978"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="124" name="DH8300"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="125" name="DH5968"   rebackdata="0" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+  <InstrumentType id ="126" name="DH5902_Integral"   rebackdata="1" move="1" editid="1" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="127" name="DH5960D"   rebackdata="0" move="1" editid="1" image="InterfaceImages/USB/DH5960.png"/>
+	<InstrumentType id ="128" name="DH5907Ex"  rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="129" name="DH3820N"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+	<InstrumentType id ="130" name="DH3821N"   rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+  <InstrumentType id ="131" name="HUMS"      rebackdata="0" move="1" editid="0" image="InterfaceImages/InterMachine.png"/>
+
+
+	<!--不同接口移除状态不同-->
+	<InstrumentTypeMove id="27">
+		<Move item="6" value= "1"/>
+		<Move item="7" value= "1"/>
+	</InstrumentTypeMove>
+
+  <InstrumentTypeMove id="120">
+    <Move item="7" value= "1"/>
+    <Move item="2" value= "0"/>
+  </InstrumentTypeMove>
+
+	<InstrumentTypeMove id="55">
+		<Move item="2" value= "0"/>
+	</InstrumentTypeMove>
+	<InstrumentTypeMove id="37">
+		<Move item="2" value= "0"/>
+	</InstrumentTypeMove>
+	<InstrumentTypeMove id="56">
+		<Move item="2" value= "0"/>
+	</InstrumentTypeMove>
+	<InstrumentTypeMove id="33">
+		<Move item="2" value= "0"/>
+	</InstrumentTypeMove>
+	<InstrumentTypeMove id="14">
+		<Move item="6" value= "1"/>
+	</InstrumentTypeMove>
+
+	<!--不同接口编辑仪器ID不同-->
+	<InstrumentTypeEditID id="27">
+		<EditID item="6" value= "1"/>
+		<EditID item="7" value= "1"/>
+	</InstrumentTypeEditID>
+
+  <InstrumentTypeEditID id="120">
+    <EditID item="2" value= "0"/>
+    <EditID item="7" value= "1"/>
+  </InstrumentTypeEditID>
+
+	<InstrumentTypeEditID id="55">
+		<EditID item="2" value= "0"/>
+	</InstrumentTypeEditID>
+	<InstrumentTypeEditID id="37">
+		<EditID item="2" value= "0"/>
+	</InstrumentTypeEditID>
+	<InstrumentTypeEditID id="56">
+		<EditID item="2" value= "0"/>
+	</InstrumentTypeEditID>
+	<InstrumentTypeEditID id="33">
+		<EditID item="2" value= "0"/>
+	</InstrumentTypeEditID>
+
+	<!--不同接口不同名称-->
+	<InstrumentTypeName id="12">
+		<Name item="1" value= "DH5923"/>
+		<Name item="2" value= "DH5956N"/>
+	</InstrumentTypeName>
+
+	<InstrumentTypeName id="27">
+		<Name item="1" value= "DH5922"/>
+		<Name item="2" value= "DH5922N"/>
+		<Name item="6" value= "DH5922N"/>
+		<Name item="7" value= "DH5922N"/>
+	</InstrumentTypeName>
+
+	<InstrumentTypeName id="19">
+		<Name item="1" value= "DH5928"/>
+		<Name item="2" value= "DH5918"/>
+	</InstrumentTypeName>
+
+	<InstrumentTypeName id="14">
+		<Name item="3" value= "DH5906"/>
+		<Name item="6" value= "DH5906W"/>
+	</InstrumentTypeName>
+
+	<!--不同接口不同回收方式-->
+	<InstrumentTypeBackData id="33">
+		<BackData item="2" value= "0"/>
+		<BackData item="7" value= "0"/>
+	</InstrumentTypeBackData>
+	<InstrumentTypeBackData id="37">
+		<BackData item="2" value= "0"/>
+		<BackData item="7" value= "0"/>
+	</InstrumentTypeBackData>
+
+	<InterfaceType id ="0" name="EPP接口"/>
+	<InterfaceType id ="1" name="1394接口"/>
+	<InterfaceType id ="2" name="USB接口"/>
+	<InterfaceType id ="3" name="Zigbee接口"/>
+	<InterfaceType id ="4" name="DEMO"/>
+	<InterfaceType id ="5" name="EISA接口"/>
+	<InterfaceType id ="6" name="网络接口"/>
+	<InterfaceType id ="7" name="千兆网络接口"/>
+	<InterfaceType id ="8" name="4G"/>
+	<InterfaceType id ="9" name="PCI"/>
+
+	<MeasureType id="0" name="电压测量" default="10">
+		<AllowMeterage id="10"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="6"/>
+		<AllowMeterage id="26"/>
+		<AllowMeterage id="35"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+		<Param id="132" name="力臂a(m)"/>
+		<Param id="133" name="力臂b(m)"/>
+		<Param id="134" name="测点ID"/>
+		<Param id="135" name="测点方向"/>
+	</MeasureType>
+	<MeasureType id="1" name="外输入数采" default="10">
+		<AllowMeterage id="10"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="9"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="2" name="应变应力" default="6">
+		<AllowMeterage id="6"/>
+		<AllowMeterage id="7"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="显示类型"/>
+		<Param id="7" name="单位"/>
+		<Param id="28" name="桥路类型"/>
+		<Param id="29" name="应变计阻值(Ω)"/>
+		<Param id="30" name="导线电阻(Ω)"/>
+		<Param id="31" name="灵敏度系数"/>
+		<Param id="32" name="泊松比"/>
+		<Param id="33" name="弹性模量(GPa)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="35" name="桥压"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="3" name="电荷测量" default="12">
+		<AllowMeterage id="12"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(pC/EU)"/>
+		<Param id="90" name="量程(pC)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+		<Param id="132" name="力臂a(m)"/>
+		<Param id="133" name="力臂b(m)"/>
+		<Param id="134" name="测点ID"/>
+		<Param id="135" name="测点方向"/>
+	</MeasureType>
+	<MeasureType id="4" name="桥式传感器" default="10">
+		<AllowMeterage id="10"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="9"/>
+		<AllowMeterage id="6"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="35" name="桥压"/>
+		<Param id="28" name="桥路方式"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="5" name="铂电阻测温" default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程(℃)"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="38" name="铂电阻类型"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="6" name="热电偶测温" default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程(℃)"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="40" name="热电偶类型"/>
+		<Param id="41" name="冷端温度"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="7" name="转速测量" default="13">
+		<AllowMeterage id="13"/>
+		<AllowMeterage id="14"/>
+		<AllowMeterage id="27"/>
+		<AllowMeterage id="31"/>
+	</MeasureType>
+	<MeasureType id="8" name="信号发生器" />
+	<MeasureType id="9" name="差动直流" />
+	<MeasureType id="10" name="单端直流" />
+	<MeasureType id="11" name="单端交流" />
+	<MeasureType id="12" name="内置IEPE" default="3">
+		<AllowMeterage id="3"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="13" name="外置IEPE" default="3">
+		<AllowMeterage id="3"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="14" name="外置IEPE" default="3">
+		<AllowMeterage id="3"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="15" name="电流测试" default="11">
+		<AllowMeterage id="11"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="9"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mA/EU)"/>
+		<Param id="90" name="量程(mA)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="16" name="应变式扭矩测量" />
+	<MeasureType id="17" name="脉冲计数器测量" default="13">
+		<AllowMeterage id="13"/>
+		<AllowMeterage id="14"/>
+		<AllowMeterage id="27"/>
+		<AllowMeterage id="31"/>
+	</MeasureType>
+	<MeasureType id="18" name="压力测试" default="12">
+		<AllowMeterage id="10"/>
+		<AllowMeterage id="12"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="102" name="工作类型"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="11" name="下限频率"/>
+		<Param id="35" name="供桥电压"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="19" name="特殊测试" />
+	<MeasureType id="20" name="热电阻测热"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="11" name="下限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="8" name="积分网络"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="21" name="激光测距" />
+	<MeasureType id="22" name="动挠度" />
+	<MeasureType id="23" name="10mV/PC适调器" default="12">
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="12"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(pC/EU)"/>
+		<Param id="90" name="量程(pC)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="24" name="1mV/PC适调器"  default="12">
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="12"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(pC/EU)"/>
+		<Param id="90" name="量程(pC)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="25" name="0.1mV/PC适调器"  default="12">
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="12"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(pC/EU)"/>
+		<Param id="90" name="量程(pC)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+
+	<MeasureType id="26" name="热电阻测温" />
+	<MeasureType id="27" name="热电偶测温" />
+	<MeasureType id="28" name="薄壁量热计测温" />
+	<MeasureType id="29" name="计数器传感器" default="1">
+		<AllowMeterage id="1"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+
+	<MeasureType id="30" name="GPS测量"   default="19"/>
+	<MeasureType id="31" name="CAN测量" default="30">
+		<AllowMeterage id="30"/>
+	</MeasureType>
+	<MeasureType id="32" name="IO测量" />
+	<MeasureType id="33" name="视频" default="15">
+		<AllowMeterage id="15"/>
+	</MeasureType>
+	<MeasureType id="34" name="音频测量" default="16">
+		<AllowMeterage id="16"/>
+	</MeasureType>
+	<MeasureType id="35" name="热电偶测热"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程(℃)"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="11" name="下限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="8" name="积分网络"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="37" name="数字量测量"  default="20">
+		<AllowMeterage id="20"/>
+	</MeasureType>
+	<MeasureType id="41" name="风速测量"  default="17">
+		<AllowMeterage id="17"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="42" name="风压测量"  default="18">
+		<AllowMeterage id="18"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="213" name="流水号"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="44" name="Moog测量"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+	</MeasureType>
+	<MeasureType id="45" name="合力测量"  default="4">
+		<AllowMeterage id="4"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+	</MeasureType>
+	<MeasureType id="46" name="合力信号源"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+	</MeasureType>
+	<MeasureType id="47" name="转速测量"  default="13">
+		<AllowMeterage id="13"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+	</MeasureType>
+	<MeasureType id="48" name="电压测量"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+	</MeasureType>
+	<MeasureType id="49" name="热电偶测温"  default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+	</MeasureType>
+	<MeasureType id="50" name="铂电阻测温"  default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+	</MeasureType>
+	<MeasureType id="51" name="RS422"  default="8">
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+	</MeasureType>
+	<MeasureType id="52" name="统计"  default="1">
+		<AllowMeterage id="1"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+	</MeasureType>
+	<MeasureType id="53" name="转速测量"  default="13">
+		<AllowMeterage id="13"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+	</MeasureType>
+	<MeasureType id="54" name="电压测量"  default="1">
+		<AllowMeterage id="1"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+	</MeasureType>
+	<MeasureType id="55" name="NTP误差"  default="23">
+		<AllowMeterage id="23"/>
+	</MeasureType>
+	<MeasureType id="56" name="采集时间"  default="24">
+		<AllowMeterage id="24"/>
+	</MeasureType>
+	<MeasureType id="57" name="NTP服务器时间"  default="24">
+		<AllowMeterage id="24"/>
+	</MeasureType>
+	<MeasureType id="58" name="采集毫秒时间"  default="29">
+		<AllowMeterage id="29"/>
+	</MeasureType>
+	<MeasureType id="59" name="NTP服务器毫秒时间"  default="29">
+		<AllowMeterage id="29"/>
+	</MeasureType>
+	<MeasureType id="60" name="气压测量"  default="5">
+		<AllowMeterage id="5"/>
+	</MeasureType>
+	<MeasureType id="61" name="位移测量"  default="3">
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="1"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="12" name="输入方式"/>
+	</MeasureType>
+	<MeasureType id="62" name="时间线测量" default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+	</MeasureType>
+	<MeasureType id="63" name="TTC应变"  default="6">
+		<AllowMeterage id="6"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<param id="172" name="行"/>
+		<param id="173" name="列"/>
+	</MeasureType>
+	<MeasureType id="64" name="TTC电压"  default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<param id="172" name="行"/>
+		<param id="173" name="列"/>
+	</MeasureType>
+	<MeasureType id="65" name="PTINVALID"  default="10">
+		<AllowMeterage id="10"/>
+	</MeasureType>
+	<MeasureType id="66" name="InSide"  default="8">
+		<AllowMeterage id="8"/>
+	</MeasureType>
+	<MeasureType id="67" name="频率测量"  default="14">
+		<AllowMeterage id="14"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="10" name="上限频率"/>
+	</MeasureType>
+	<MeasureType id="68" name="电阻测量" default="25">
+		<AllowMeterage id="25"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="3" name="通道开关"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="8" name="积分类型"/>
+		<Param id="9" name="积分单位"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+		<Param id="14" name="抗混滤波"/>
+		<Param id="82" name="滤波器类型"/>
+		<Param id="81" name="隔离"/>
+		<Param id="132" name="力臂a(m)"/>
+		<Param id="133" name="力臂b(m)"/>
+		<Param id="134" name="测点ID"/>
+		<Param id="135" name="测点方向"/>
+	</MeasureType>
+	<MeasureType id="69" name="应变" default="6">
+		<AllowMeterage id="6"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="35" name="桥压"/>
+		<Param id="28" name="桥路方式"/>
+		<Param id="10" name="上限频率"/>
+	</MeasureType>
+	<MeasureType id="70" name="IEPE" default="10">
+		<AllowMeterage id="10"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="10" name="上限频率"/>
+	</MeasureType>
+	<MeasureType id="73" name="DA输出" />
+	<MeasureType id="74" name="噪声测量" default="5">
+		<AllowMeterage id="5"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+		<Param id="12" name="输入方式"/>
+		<Param id="10" name="上限频率"/>
+	</MeasureType>
+	<MeasureType id="75" name="压力测量" default="5">
+		<AllowMeterage id="5"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="80" name="测量量"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(mV)"/>
+	</MeasureType>
+	<MeasureType id="77" name="铂电阻测温" default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(℃)"/>
+		<Param id="178" name="零度阻值(^8)"/>
+	</MeasureType>
+
+	<MeasureType id="78" name="压力扫描阀电压测量" default="28">
+		<AllowMeterage id="28"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+		<Param id="90" name="量程"/>
+		<Param id="6" name="灵敏度"/>
+	</MeasureType>
+
+	<MeasureType id="79" name="电流测量" default="11">
+		<AllowMeterage id="11"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="9"/>
+	</MeasureType>
+	<MeasureType id="80" name="电压测量" default="10">
+		<AllowMeterage id="10"/>
+		<AllowMeterage id="1"/>
+		<AllowMeterage id="2"/>
+		<AllowMeterage id="3"/>
+		<AllowMeterage id="4"/>
+		<AllowMeterage id="5"/>
+		<AllowMeterage id="6"/>
+		<AllowMeterage id="26"/>
+	</MeasureType>
+	<MeasureType id="81" name="信号源测量"/>
+	<MeasureType id="83" name="陀螺仪—角速度">
+		<AllowMeterage id="35"/>
+	</MeasureType>
+	<MeasureType id="84" name="陀螺仪—温度">
+		<AllowMeterage id="8"/>
+	</MeasureType>
+	<MeasureType id="85" name="废气压力" default="5"/>
+	<AllowMeterage id="5"/>
+	<MeasureType id="86" name="汽缸压力" default="5"/>
+	<AllowMeterage id="5"/>
+	<MeasureType id="87" name="起动电流" default="11"/>
+	<AllowMeterage id="11"/>
+	<MeasureType id="88" name="流量" default="27"/>
+	<AllowMeterage id="27"/>
+	<MeasureType id="89" name="转速" default="10"/>
+	<AllowMeterage id="10"/>
+	<MeasureType id="90" name="汽缸温度" default="8">
+		<AllowMeterage id="8"/>
+		<Param id="106" name="通道"/>
+		<Param id="107" name="通道名称"/>
+		<Param id="108" name="测点描述"/>
+		<Param id="7" name="单位"/>
+		<Param id="6" name="灵敏度(mV/EU)"/>
+		<Param id="90" name="量程(℃)"/>
+		<Param id="178" name="零度阻值(^8)"/>
+	</MeasureType>
+	<MeasureType id="91" name="应变测量" default="6">
+		<AllowMeterage id="6"/>
+	</MeasureType>
+	<MeasureType id="92" name="热电偶" />
+  <MeasureType id="93" name="PT1000" default="8">
+    <AllowMeterage id="8"/>
+  </MeasureType>
+	<MeasureType id="94" name="PT100" />
+	<MeasureType id="95" name="压力" />
+	<MeasureType id="96" name="频率" />
+	<MeasureType id="97" name="数字信号" default="34">
+		<AllowMeterage id="34"/>
+	</MeasureType>
+	<MeasureType id="98" name="风速测量" default="17">
+		<AllowMeterage id="17"/>
+	</MeasureType>
+	<MeasureType id="99" name="开关量测量" />
+	<MeasureType id="100" name="风向测量" default="9">
+		<AllowMeterage id="9"/>
+	</MeasureType>
+	<MeasureType id="101" name="DTSC-T" default="8">
+		<AllowMeterage id="8"/>
+	</MeasureType>
+	<MeasureType id="102" name="DTSC-PK" default="10">
+		<AllowMeterage id="10"/>
+	</MeasureType>
+	<MeasureType id="103" name="DTSC-P0" default="5">
+		<AllowMeterage id="5"/>
+	</MeasureType>
+	<MeasureType id="104" name="DTSC-IGV" default="8">
+		<AllowMeterage id="8"/>
+	</MeasureType>
+	<MeasureType id="105" name="DTSC-X2" default="1">
+		<AllowMeterage id="1"/>
+	</MeasureType>
+	<MeasureType id="106" name="DTSC-X6" default="8">
+		<AllowMeterage id="8"/>
+	</MeasureType>
+	<MeasureType id="107" name="DTSC-P3" default="5">
+		<AllowMeterage id="5"/>
+	</MeasureType>
+	<MeasureType id="108" name="DTSC-P6" default="5">
+		<AllowMeterage id="5"/>
+	</MeasureType>
+  <MeasureType id="109" name="直流电压" default="10">
+    <AllowMeterage id="10"/>
+  </MeasureType>
+  <MeasureType id="110" name="交流电压" default="10">
+    <AllowMeterage id="10"/>
+  </MeasureType>
+  <MeasureType id="111" name="直流电流" default="10">
+    <AllowMeterage id="11"/>
+  </MeasureType>
+  <MeasureType id="112" name="交流电流" default="10">
+    <AllowMeterage id="11"/>
+  </MeasureType>
+
+  <EditParamName id="3" name="通道开关"/>
+	<EditParamName id="4" name="测量类型"/>
+	<EditParamName id="5" name="量程范围"/>
+	<EditParamName id="6" name="传感器灵敏度"/>
+	<EditParamName id="7" name="工程单位"/>
+	<EditParamName id="8" name="积分类型"/>
+	<EditParamName id="9" name="积分单位"/>
+	<EditParamName id="10" name="上限频率"/>
+	<EditParamName id="11" name="下限频率"/>
+	<EditParamName id="12" name="输入方式"/>
+	<EditParamName id="14" name="抗混滤波"/>
+	<EditParamName id="28" name="桥路类型"/>
+	<EditParamName id="29" name="应变计阻值"/>
+	<EditParamName id="30" name="导线电阻"/>
+	<EditParamName id="31" name="灵敏度系数"/>
+	<EditParamName id="32" name="泊松比"/>
+	<EditParamName id="33" name="弹性模量(GPa)"/>
+	<EditParamName id="35" name="供桥电压"/>
+	<EditParamName id="38" name="铂电阻类型"/>
+	<EditParamName id="40" name="热电偶类型"/>
+	<EditParamName id="41" name="冷端温度"/>
+	<EditParamName id="80" name="测量量"/>
+	<EditParamName id="81" name="隔离"/>
+	<EditParamName id="82" name="滤波器类型"/>
+	<EditParamName id="90" name="量程"/>
+	<EditParamName id="106" name="通道"/>
+	<EditParamName id="107" name="通道名称"/>
+	<EditParamName id="108" name="测点描述"/>
+	<EditParamName id="110" name="采样频率"/>
+	<EditParamName id="132" name="力臂a(m)"/>
+	<EditParamName id="133" name="力臂b(m)"/>
+	<EditParamName id="134" name="测点ID"/>
+	<EditParamName id="135" name="测点方向"/>
+	<EditParamName id="138" name="系数类型"/>
+	<EditParamName id="139" name="灵敏度/标定系数/标定"/>
+	<EditParamName id="159" name="零点"/>
+	<EditParamName id="174" name="频率阀值电压"/>
+	<EditParamName id="213" name="流水号"/>
+
+	<Meterage id="0" name="未知" default="mV">
+	</Meterage>
+	<Meterage id="1" name="位移" default="mm">
+		<EU name="mm" />
+		<EU name="^4" />
+	</Meterage>
+	<Meterage id="2" name="速度" default="mm/s">
+		<EU name="m/s" />
+		<EU name="mm/s" />
+	</Meterage>
+	<Meterage id="3" name="加速度" default="m/s^2">
+		<EU name="m/s^2" />
+		<EU name="g" />
+	</Meterage>
+	<Meterage id="4" name="力" default="N">
+		<EU name="N" />
+		<EU name="kN" />
+		<EU name="kg" />
+	</Meterage>
+	<Meterage id="5" name="压力" default="Pa">
+		<EU name="Pa" />
+		<EU name="kPa" />
+		<EU name="MPa" />
+	</Meterage>
+	<!--με-->
+	<Meterage id="6" name="应变" default="^3">
+		<EU name="^3" />
+	</Meterage>
+	<Meterage id="7" name="应力" default="MPa">
+		<EU name="Pa" />
+		<EU name="kPa" />
+		<EU name="MPa" />
+	</Meterage>
+	<Meterage id="8" name="温度" default="^5">
+		<EU name="^5" />
+		<EU name="^6" />
+	</Meterage>
+	<Meterage id="9" name="角度" default="^9">
+		<EU name="^9" />
+	</Meterage>
+	<Meterage id="10" name="电压" default="mV">
+		<EU name="V" />
+		<EU name="mV" />
+	</Meterage>
+	<Meterage id="11" name="电流" default="mA">
+		<EU name="A" />
+		<EU name="mA" />
+	</Meterage>
+	<Meterage id="12" name="电荷" default="pC">
+		<EU name="pC" />
+	</Meterage>
+	<Meterage id="13" name="转速" default="rpm">
+		<EU name="rpm" />
+		<EU name="km/h" />
+	</Meterage>
+	<Meterage id="14" name="频率" default="Hz">
+		<EU name="Hz" />
+	</Meterage>
+
+	<Meterage id="15" name="视频" default="Video">
+		<EU name="Video" />
+	</Meterage>
+
+	<Meterage id="16" name="音频" default="Audio">
+		<EU name="Audio" />
+	</Meterage>
+
+	<Meterage id="17" name="风速" default="mV">
+		<EU name="V" />
+		<EU name="mV" />
+	</Meterage>
+
+	<Meterage id="18" name="风压" default="mV">
+		<EU name="V" />
+		<EU name="mV" />
+	</Meterage>
+
+	<Meterage id="19" name="GPS" default="m/s">
+		<EU name="m/s" />
+	</Meterage>
+
+	<Meterage id="20" name="digital" default="">
+		<EU name="" />
+	</Meterage>
+
+	<Meterage id="21" name="统计" default="">
+		<EU name="" />
+	</Meterage>
+
+	<Meterage id="22" name="RS422" default="">
+		<EU name="" />
+	</Meterage>
+
+	<Meterage id="23" name="时间" default="ms">
+		<EU name="ms" />
+	</Meterage>
+
+	<Meterage id="24" name="时间" default="s">
+		<EU name="s" />
+	</Meterage>
+
+	<Meterage id="25" name="电阻" default="^8">
+		<EU name="^8" />
+	</Meterage>
+
+	<Meterage id="26" name="流速" default="L/min">
+		<EU name="L/min" />
+		<EU name="L/h" />
+	</Meterage>
+
+	<Meterage id="27" name="流量" default="L/min">
+		<EU name="L" />
+		<EU name="L/min" />
+	</Meterage>
+
+	<Meterage id="28" name="压力扫描" default="PSID">
+		<EU name="PSID" />
+		<EU name="MPa" />
+	</Meterage>
+	<Meterage id="29" name="时间" default="us">
+		<EU name="us" />
+	</Meterage>
+	<Meterage id="30" name="CAN" default="">
+		<EU name="" />
+	</Meterage>
+	<Meterage id="31" name="扭矩" default="A">
+		<EU name="A" />
+		<EU name="N·m" />
+	</Meterage>
+	<Meterage id="32" name="推力" default="kN">
+		<EU name="kN" />
+	</Meterage>
+	<Meterage id="33" name="称重" default="kg">
+		<EU name="kg" />
+	</Meterage>
+	<Meterage id="34" name="行驶状态" default="">
+		<EU name="" />
+	</Meterage>
+	<Meterage id="35" name="角速度" default="^12">
+		<!--°/s-->
+		<EU name="^12" />
+	</Meterage>
+
+
+	<ChannelUse item="ON" value="1"/>
+	<ChannelUse item="OFF" value="0"/>
+
+	<TriggerUse item="√" value="1"/>
+	<TriggerUse item="×" value="0"/>
+
+	<calibrationUse item="√" value="1"/>
+	<calibrationUse item="×" value="0"/>
+
+	<SigChange item="不交换" value="0"/>
+	<SigChange item="交换" value="1"/>
+
+	<SigMode item="正交编码" value="0"/>
+	<SigMode item="时钟/方向" value="1"/>
+
+	<ShowMV item="显示工程量" value="0"/>
+	<ShowMV item="显示电压量" value="1"/>
+
+	<OctaveMulti item="1倍频" value="0"/>
+	<OctaveMulti item="2倍频" value="1"/>
+	<OctaveMulti item="4倍频" value="2"/>
+
+	<ResetMode item="计数设定值" value="0"/>
+	<ResetMode item="索引脉冲" value="1"/>
+
+	<AntiFilter item="OFF" value="0"/>
+	<AntiFilter item="ON" value="1"/>
+
+	<StrainType item="应变" value="0"/>
+	<StrainType item="应力" value="1"/>
+
+	<BridgeMode item="恒压" value="0"/>
+	<BridgeMode item="恒流" value="1"/>
+
+	<CoiefType item="灵敏度" value="0"/>
+	<CoiefType item="标定系数" value="1"/>
+	<CoiefType item="标定" value="2"/>
+
+	<ThermoType item="K型(镍铬-镍硅)" value ="0"/>
+	<ThermoType item="E型(镍铬-康铜)" value ="1"/>
+	<ThermoType item="T型(铜-康铜)" value ="2"/>
+	<ThermoType item="J型(铁-康铜)" value ="3"/>
+	<ThermoType item="B型(铂铑30-铂)" value ="4"/>
+	<ThermoType item="S型(铂铑10-铂)" value ="5"/>
+	<ThermoType item="R型(铂铑13-铂)" value ="6"/>
+	<ThermoType item="N型(镍铬硅-镍硅)" value ="7"/>
+	<ThermoType item="钨铼(Re3)" value ="10"/>
+	<ThermoType item="钨铼(Re5)" value ="11"/>
+
+	<Integral item="无积分" value="0" default="1"/>
+	<Integral item="一次积分" value="1"/>
+	<Integral item="二次积分" value="2"/>
+
+	<HeatFlowIntegral item="无积分" value="0" default="1"/>
+	<HeatFlowIntegral item="热流积分" value="1"/>
+	<HeatFlowIntegral item="二次积分" value="2"/>
+
+	<SensorLevel item="灵敏度" value="0" default="1"/>
+	<SensorLevel item="高灵敏度" value="1"/>
+	<SensorLevel item="低灵敏度" value="2"/>
+
+	<Filter item="无" value="0"/>
+	<Filter item="巴特沃兹" value="1"/>
+	<Filter item="切比雪夫" value="2"/>
+
+	<Solate item="否" value="0"/>
+	<Solate item="是" value="1"/>
+
+  <CoiefModify item="不启用" value="0"/>
+  <CoiefModify item="启用" value="1"/>
+
+  <CANBaudrate item="8K" value="8192"/>
+	<CANBaudrate item="10K" value="10240"/>
+	<CANBaudrate item="16K" value="16384"/>
+	<CANBaudrate item="20K" value="20480"/>
+	<CANBaudrate item="32K" value="32768"/>
+	<CANBaudrate item="40K" value="40960"/>
+	<CANBaudrate item="50K" value="51200"/>
+	<CANBaudrate item="80K" value="81920"/>
+	<CANBaudrate item="100K" value="102400"/>
+	<CANBaudrate item="125K" value="128000"/>
+	<CANBaudrate item="200K" value="204800"/>
+	<CANBaudrate item="250K" value="256000"/>
+	<CANBaudrate item="320K" value="327680"/>
+	<CANBaudrate item="400K" value="409600"/>
+	<CANBaudrate item="500K" value="512000"/>
+	<CANBaudrate item="666K" value="681984"/>
+	<CANBaudrate item="800K" value="819200"/>
+	<CANBaudrate item="1M" value="1048576"/>
+
+	<VideoFrame item="1" value="1"/>
+	<VideoFrame item="2" value="2"/>
+	<VideoFrame item="3" value="3"/>
+	<VideoFrame item="4" value="4"/>
+	<VideoFrame item="5" value="5"/>
+	<VideoFrame item="6" value="6"/>
+	<VideoFrame item="7" value="7"/>
+	<VideoFrame item="8" value="8"/>
+	<VideoFrame item="9" value="9"/>
+	<VideoFrame item="10" value="10"/>
+	<VideoFrame item="11" value="11"/>
+	<VideoFrame item="12" value="12"/>
+	<VideoFrame item="13" value="13"/>
+	<VideoFrame item="14" value="14"/>
+	<VideoFrame item="15" value="15"/>
+	<VideoFrame item="16" value="16"/>
+	<VideoFrame item="17" value="17"/>
+	<VideoFrame item="18" value="18"/>
+	<VideoFrame item="19" value="19"/>
+	<VideoFrame item="20" value="20"/>
+	<VideoFrame item="21" value="21"/>
+	<VideoFrame item="22" value="22"/>
+	<VideoFrame item="23" value="23"/>
+	<VideoFrame item="24" value="24"/>
+	<VideoFrame item="25" value="25"/>
+
+	<!-- 通用摄像头 -->
+	<VideoRect0 item ="160*120" value ="2"/>
+	<VideoRect0 item ="240*180" value ="4"/>
+	<VideoRect0 item ="320*240" value ="7"/>
+	<VideoRect0 item ="320*480" value ="15"/>
+	<VideoRect0 item ="640*240" value ="15"/>
+	<VideoRect0 item ="640*480" value ="30"/>
+
+	<!-- Vis摄像头 -->
+	<VideoRect1 item ="640*480" value ="30"/>
+	<VideoRect1 item ="1024*768" value ="78"/>
+	<VideoRect1 item ="1280*720" value ="92"/>
+	<VideoRect1 item ="1280*960" value ="122"/>
+	<VideoRect1 item ="1600*1200" value ="192"/>
+	<VideoRect1 item ="1920*1080" value ="207"/>
+	<VideoRect1 item ="2048*1536" value ="314"/>
+	<VideoRect1 item ="2560*1920" value ="491"/>
+	<VideoRect1 item ="2592*1944" value ="503"/>
+
+	<!-- Inno亿维 -->
+	<!--<VideoRect2 item ="704*576" value ="40"/>-->
+	<VideoRect2 item ="1280*720" value ="92"/>
+	<!--<VideoRect2 item ="1280*960" value ="122"/>
+	<VideoRect2 item ="1920*1080" value ="207"/>-->
+
+	<!--<BridgeTypeBT item="半桥" value="3"/>
+	<BridgeTypeBT item="全桥" value="5" default="1"/>-->
+
+  <!-- 海康 -->
+  <VideoRect3 item ="1280*720" value ="92"/>
+
+	<BridgeTypeBTSpecial default="1" >
+		<BridgeTypeBT item="半桥" value="3"/>
+		<BridgeTypeBT item="全桥" value="5" default="1"/>
+	</BridgeTypeBTSpecial>
+	<BridgeTypeBTSpecial>
+		<SupportInstrID item="89" />
+		<BridgeTypeBT item="全桥" value="5" default="1"/>
+	</BridgeTypeBTSpecial>
+	<BridgeTypeBTSpecial>
+		<SupportInstrID item="103" />
+		<BridgeTypeBT item="全桥" value="5" default="1"/>
+	</BridgeTypeBTSpecial>
+
+	<BridgeTypeM item="全桥" value="5" />
+	<BridgeTypeM item="半桥" value="3" />
+	<BridgeTypeM item="1/4桥" value="0" />
+
+	<WaveSaoType item="线性" value="0"/>
+	<WaveSaoType item="对数" value="1"/>
+
+	<WaveSaoDirection item="往复扫频" value="0"/>
+	<!--WaveSaoDirection item="单程扫频" value="1"/-->
+	<WaveSaoDirection item="单向扫频" value="2"/>
+
+	<PressSensorType item="压电测压" value="0"/>
+	<PressSensorType item="压阻测压" value="1"/>
+
+	<HeatSensorType item="热电阻测热" value="0"/>
+	<HeatSensorType item="热电偶测热" value="1"/>
+
+	<WithFreq item="窄频" value="0"/>
+	<WithFreq item="宽频" value="1"/>
+
+	<ExtraTrigType item="TTL高电平" value="0"/>
+	<ExtraTrigType item="TTL低电平" value="1"/>
+	<ExtraTrigType item="TTL上升沿" value="2"/>
+	<ExtraTrigType item="TTL下降沿" value="3"/>
+
+	<SensorCoief item="传感器1" value="8.149,26.35,-0.5904,0.08461,-0.002313,-0.0001266"/>
+	<SensorCoief item="传感器2" value="-14.59,27.95,-0.2326,0.004688,-0.00002554"/>
+	<SensorCoief item="传感器3" value="-13.2,27.953,-0.2099,0.003948,-0.00001677"/>
+
+	<StaticTachoShowType item="百分比" value="0"/>
+	<StaticTachoShowType item="转速值" value="1"/>
+
+	<ChannelCoreType item="双核" value="0"/>
+	<ChannelCoreType item="单核1" value="1"/>
+	<ChannelCoreType item="单核2" value="2"/>
+
+	<ElectrodeType item="三电极" value="0"/>
+	<ElectrodeType item="四电极" value="1"/>
+
+	<ElectrolyticCellType item="外部电解池" value="0"/>
+	<ElectrolyticCellType item="内部电解池" value="1"/>
+
+	<!--<ElectrolyticCellOnOff item="关" value="0"/>
+	<ElectrolyticCellOnOff item="开" value="1"/>-->
+  <ElectrolyticCellOnOffSpecial default="1">
+    <ElectrolyticCellOnOff item="关" value="0"/>
+    <ElectrolyticCellOnOff item="开" value="1"/>
+  </ElectrolyticCellOnOffSpecial>
+  <ElectrolyticCellOnOffSpecial>
+    <!--这里的ID为实验ID-->
+    <SupportInstrID item="0" />
+    <ElectrolyticCellOnOff item="关" value="0"/>
+    <ElectrolyticCellOnOff item="关(开路)" value="2"/>
+  </ElectrolyticCellOnOffSpecial>
+  
+  <ECPolarityType item="正极性" value="0"/>
+	<ECPolarityType item="负极性" value="1"/>
+
+	<ECReactive item="关" value="0"/>
+	<ECReactive item="开" value="1"/>
+
+	<ECWaveDirection item="单向递增" value="0"/>
+	<ECWaveDirection item="单向递减" value="1"/>
+	<ECWaveDirection item="双向" value="2"/>
+
+  <ECPlusDegree item="1" value="1"/>
+  <ECPlusDegree item="2" value="2"/>
+  <ECPlusDegree item="3" value="3"/>
+  <ECPlusDegree item="4" value="4"/>
+  <ECPlusDegree item="5" value="5"/>
+
+  <ECWaveDCType item="Step" value="0"/>
+  <ECWaveDCType item="Scan" value="1"/>
+
+  <ECWaveSignalSource item="Linear" value="13"/>
+  <ECWaveSignalSource item="Logarithmic" value="14"/>
+
+  <WaveFormSpecial default="1">
+		<WaveForm item="定频三角波" value="11"/>
+		<WaveForm item="正弦定频" value="0"/>
+		<WaveForm item="正弦扫频" value="3"/>
+		<WaveForm item="半正弦" value="7"/>
+		<WaveForm item="随机" value="1"/>
+		<WaveForm item="伪随机" value="2"/>
+		<WaveForm item="猝发随机" value="4"/>
+		<WaveForm item="方波" value="8"/>
+		<WaveForm item="脉冲" value="9"/>
+		<WaveForm item="直流输出" value="10"/>
+	</WaveFormSpecial>
+	<WaveFormSpecial>
+		<SupportInstrID item="12" />
+		<WaveForm item="正弦定频" value="0"/>
+		<WaveForm item="正弦扫频" value="3"/>
+		<WaveForm item="猝发随机" value="4"/>
+		<WaveForm item="随机" value="1"/>
+	</WaveFormSpecial>
+	<WaveFormSpecial >
+		<SupportInstrID item="13" />
+		<WaveForm item="定频三角波" value="11"/>
+		<WaveForm item="正弦定频" value="0"/>
+		<WaveForm item="正弦扫频" value="3"/>
+		<WaveForm item="半正弦" value="7"/>
+		<WaveForm item="随机" value="1"/>
+		<WaveForm item="伪随机" value="2"/>
+		<WaveForm item="猝发随机" value="4"/>
+		<WaveForm item="方波" value="8"/>
+		<WaveForm item="脉冲" value="9"/>
+		<WaveForm item="直流输出" value="10"/>
+		<!--WaveForm item="磁盘文件" value="6"/-->
+	</WaveFormSpecial>
+	<WaveFormSpecial>
+		<SupportInstrID item="92" />
+		<WaveForm item="直流输出" value="53"/>
+		<WaveForm item="定频三角波" value="54"/>
+    <WaveForm item="阶跃" value="55"/>
+    <WaveForm item="线性扫描" value="56"/>
+    <WaveForm item="阶梯线性" value="57"/>
+    <WaveForm item="方波伏安法" value="58"/>
+    <WaveForm item="差分脉冲伏安法" value="59"/>
+    <WaveForm item="标准脉冲法" value="60"/>
+    <WaveForm item="快速电压脉冲法" value="61"/>
+    <WaveForm item="交流阻抗" value="62"/>
+  </WaveFormSpecial>
+
+	<WaveFormName item="正弦定频" value="0"/>
+	<WaveFormName item="随机" value="1"/>
+	<WaveFormName item="伪随机" value="2"/>
+	<WaveFormName item="正弦扫频" value="3"/>
+	<WaveFormName item="猝发随机" value="4"/>
+	<WaveFormName item="磁盘文件" value="6"/>
+	<WaveFormName item="半正弦" value="7"/>
+	<WaveFormName item="方波" value="8"/>
+	<WaveFormName item="脉冲" value="9"/>
+	<WaveFormName item="直流输出" value="10"/>
+	<WaveFormName item="定频三角波" value="11"/>
+	<WaveFormName item="窄带随机" value="19"/>
+	<WaveFormName item="方波脉冲" value="21"/>
+	<WaveFormName item="自由衰减" value="50"/>
+	<WaveFormName item="谐波" value="51"/>
+	<WaveFormName item="直流输出" value="53"/>
+	<WaveFormName item="定频三角波" value="54"/>
+  <WaveFormName item="阶跃" value="55"/>
+  <WaveFormName item="线性扫描" value="56"/>
+  <WaveFormName item="阶梯线性" value="57"/>
+  <WaveFormName item="方波伏安法" value="58"/>
+  <WaveFormName item="差分脉冲伏安法" value="59"/>
+  <WaveFormName item="标准脉冲法" value="60"/>
+  <WaveFormName item="快速电压脉冲法" value="61"/>
+  <WaveFormName item="交流阻抗" value="62"/>
+
+  <TriggerParameter item="10%" value="0.1"/>
+	<TriggerParameter item="20%" value="0.2"/>
+	<TriggerParameter item="30%" value="0.3"/>
+	<TriggerParameter item="40%" value="0.4"/>
+	<TriggerParameter item="50%" value="0.5"/>
+	<TriggerParameter item="60%" value="0.6"/>
+	<TriggerParameter item="70%" value="0.7"/>
+	<TriggerParameter item="80%" value="0.8"/>
+	<TriggerParameter item="90%" value="0.9"/>
+	<TriggerParameter item="OFF" value="1.0"/>
+
+	<BridgeTypeSpecial default="1" >
+		<BridgeType item="方式1" value="0" default="1"/>
+		<BridgeType item="方式2" value="1"/>
+		<BridgeType item="方式3" value="2"/>
+		<BridgeType item="方式4" value="3"/>
+		<BridgeType item="方式5" value="4"/>
+		<BridgeType item="方式6" value="5"/>
+	</BridgeTypeSpecial>
+	<BridgeTypeSpecial>
+		<SupportInstrID item="33" />
+		<SupportInstrID item="36" />
+		<SupportInstrID item="55" />
+		<SupportInstrID item="56" />
+		<SupportInstrID item="81" />
+		<BridgeType item="方式1(^10)" value="6" default="1"/>
+		<BridgeType item="方式1(^11)" value="7"/>
+		<BridgeType item="方式2" value="1"/>
+		<BridgeType item="方式3" value="2"/>
+		<BridgeType item="方式4" value="3"/>
+		<BridgeType item="方式5" value="4"/>
+		<BridgeType item="方式6" value="5"/>
+	</BridgeTypeSpecial>
+
+	<BridgeTypeName item="方式1" value="0"/>
+	<BridgeTypeName item="方式2" value="1"/>
+	<BridgeTypeName item="方式3" value="2"/>
+	<BridgeTypeName item="方式4" value="3"/>
+	<BridgeTypeName item="方式5" value="4"/>
+	<BridgeTypeName item="方式6" value="5"/>
+	<BridgeTypeName item="方式1(^10)" value="6"/>
+	<BridgeTypeName item="方式1(^11)" value="7"/>
+	<BridgeTypeName item="公共补偿" value="8"/>
+	<BridgeTypeName item="自补偿" value="9"/>
+	<BridgeTypeName item="外补偿" value="10"/>
+	<BridgeTypeName item="GND" value="11"/>
+	<BridgeTypeName item="方式7" value="12"/>
+
+	<PtTypeSpecial default="1">
+		<PtType item="Pt10" value="0"/>
+		<PtType item="Pt100" value="1"/>
+		<PtType item="Pt1000" value="2"/>
+	</PtTypeSpecial>
+	<PtTypeSpecial>
+		<SupportInstrID item="38" />
+		<PtType item="Pt100" value="1"/>
+		<PtType item="Pt1000" value="2"/>
+	</PtTypeSpecial>
+	<PtTypeSpecial>
+		<SupportInstrID item="55" />
+		<PtType item="Pt10" value="0"/>
+		<PtType item="Pt100" value="1"/>
+		<PtType item="Pt500" value="3"/>
+		<PtType item="Pt1000" value="2"/>
+	</PtTypeSpecial>
+	<PtTypeSpecial>
+		<SupportInstrID item="13" />
+		<SupportInstrID item="30" />
+		<SupportInstrID item="31" />
+		<SupportInstrID item="32" />
+		<SupportInstrID item="33" />
+		<SupportInstrID item="34" />
+		<SupportInstrID item="35" />
+		<SupportInstrID item="36" />
+		<SupportInstrID item="37" />
+		<PtType item="Pt10" value="0"/>
+		<PtType item="Pt100" value="1"/>
+    <PtType item="Pt1000" value="2"/>
+	</PtTypeSpecial>
+
+	<FilterCoiefSpecial default="1">
+		<FilterCoief item="10_1Hz" value="80|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="10_2Hz" value="50|1,-0.748534628137083,1.13205369264633,-0.508860549360525,0.238133026839391,-0.0387282519029476|0.0474076346229787,0.177653643552215,0.311970366867389,0.311970366867389,0.177653643552215,0.0474076346229787"/>
+		<FilterCoief item="20_1Hz" value="70|1,-4.075484168424974,6.804965644779207,-5.797218471570437,2.514452361789255,-0.443504269442751|0.005156623864987,-0.009300997364991,0.005749922065154,0.005749922065154,-0.009300997364991,0.005156623864987"/>
+		<FilterCoief item="20_2Hz" value="50|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="20_5Hz" value="40|1,0.336049262962624,0.929882903547826,0.0557266522849983,0.156279818128689,-0.0106284818315609|0.0933153785929106,0.399161187193886,0.741178511759492,0.741178511759492,0.399161187193886,0.0933153785929106"/>
+		<FilterCoief item="50_1Hz" value="170|1,-4.654889773747470,8.696330808314517,-8.149141499109753,3.829768035056271,-0.722025937806586|0.002045963448454,-0.005686560760806,0.003661413665842,0.003661413665842,-0.005686560760806,0.002045963448454"/>
+		<FilterCoief item="50_2Hz" value="100|1,-4.275716539017754,7.420460012670105,-6.522592885803717,2.900593698636472,-0.521606947113815|0.004033289500594,-0.008828007626900,0.005363387811951,0.005363387811951,-0.008828007626900,0.004033289500594"/>
+		<FilterCoief item="50_5Hz" value="80|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="50_10Hz" value="50|1,-0.748534628137083,1.13205369264633,-0.508860549360525,0.238133026839391,-0.0387282519029476|0.0474076346229787,0.177653643552215,0.311970366867389,0.311970366867389,0.177653643552215,0.0474076346229787"/>
+		<FilterCoief item="100_1Hz" value="340|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="100_2Hz" value="200|1,-4.654889773747470,8.696330808314517,-8.149141499109753,3.829768035056271,-0.722025937806586|0.002045963448454,-0.005686560760806,0.003661413665842,0.003661413665842,-0.005686560760806,0.002045963448454"/>
+		<FilterCoief item="100_5Hz" value="150|1,-4.075484168424974,6.804965644779207,-5.797218471570437,2.514452361789255,-0.443504269442751|0.005156623864987,-0.009300997364991,0.005749922065154,0.005749922065154,-0.009300997364991,0.005156623864987"/>
+		<FilterCoief item="100_10Hz" value="130|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="100_20Hz" value="50|1,-0.748534628137083,1.13205369264633,-0.508860549360525,0.238133026839391,-0.0387282519029476|0.0474076346229787,0.177653643552215,0.311970366867389,0.311970366867389,0.177653643552215,0.0474076346229787"/>
+		<FilterCoief item="200_1Hz" value="600|1,-4.91729195774822,9.67381787506563,-9.51753940592025,4.68279672580076,-0.921783191322848|0.000550328593123787,-0.00164318146872118,0.00109287581313122,0.00109287581313122,-0.00164318146872118,0.000550328593123787"/>
+		<FilterCoief item="200_2Hz" value="400|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="200_5Hz" value="240|1,-4.56302173421315,8.37315836465848,-7.72076835713714,3.57636268794506,-0.665608872500890|0.00252706732682341,-0.00672437989840256,0.00425835694776349,0.00425835694776349,-0.00672437989840256,0.00252706732682341"/>
+		<FilterCoief item="200_10Hz" value="180|1,-4.075484168424974,6.804965644779207,-5.797218471570437,2.514452361789255,-0.443504269442751|0.005156623864987,-0.009300997364991,0.005749922065154,0.005749922065154,-0.009300997364991,0.005156623864987"/>
+		<FilterCoief item="200_20Hz" value="150|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="200_50Hz" value="60|1,0.336049262962624,0.929882903547826,0.0557266522849983,0.156279818128689,-0.0106284818315609|0.0933153785929106,0.399161187193886,0.741178511759492,0.741178511759492,0.399161187193886,0.0933153785929106"/>
+		<FilterCoief item="500_1Hz" value="1500|1,-4.96721780064243,9.86961005891112,-9.80551300592741,4.87106713316217,-0.967946385022116|0.000224949730859944,-0.000674337962985720,0.000449388472797226,0.000449388472797226,-0.000674337962985720,0.000224949730859944"/>
+		<FilterCoief item="500_2Hz" value="1000|1,-4.93403310391545,9.73910163625601,-9.61302318012715,4.74487538895455,-0.936920726013193|0.000443334653759580,-0.00132597750377205,0.000882650427398096,0.000882650427398096,-0.00132597750377205,0.000443334653759580"/>
+		<FilterCoief item="500_5Hz" value="750|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="500_10Hz" value="400|1,-4.654889773747470,8.696330808314517,-8.149141499109753,3.829768035056271,-0.722025937806586|0.002045963448454,-0.005686560760806,0.003661413665842,0.003661413665842,-0.005686560760806,0.002045963448454"/>
+		<FilterCoief item="500_20Hz" value="300|1,-4.27571653901775,7.42046001267011,-6.52259288580372,2.90059369863647,-0.521606947113815|0.00403328950059434,-0.00882800762689985,0.00536338781195104,0.00536338781195104,-0.00882800762689985,0.00403328950059434"/>
+		<FilterCoief item="500_50Hz" value="200|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="500_100Hz" value="150|1,-0.748534628137083,1.13205369264633,-0.508860549360525,0.238133026839391,-0.0387282519029476|0.0474076346229787,0.177653643552215,0.311970366867389,0.311970366867389,0.177653643552215,0.0474076346229787"/>
+		<FilterCoief item="1000_1Hz" value="2700|1,-4.98365963963706,9.93482283592416,-9.90250937546606,4.93518880768570,-0.983842628491570|0.000113349587213318,-0.000339984346152724,0.000226634766521811,0.000226634766521811,-0.000339984346152724,0.000113349587213318"/>
+		<FilterCoief item="1000_2Hz" value="1800|1,-4.96721780064243,9.86961005891112,-9.80551300592741,4.87106713316217,-0.967946385022116|0.000224949730859944,-0.000674337962985720,0.000449388472797226,0.000449388472797226,-0.000674337962985720,0.000224949730859944"/>
+		<FilterCoief item="1000_5Hz" value="1000|1,-4.91729195774822,9.67381787506563,-9.51753940592025,4.68279672580076,-0.921783191322848|0.000550328593123787,-0.00164318146872118,0.00109287581313122,0.00109287581313122,-0.00164318146872118,0.000550328593123787"/>
+		<FilterCoief item="1000_10Hz" value="600|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="1000_20Hz" value="400|1,-4.654889773747470,8.696330808314517,-8.149141499109753,3.829768035056271,-0.722025937806586|0.002045963448454,-0.005686560760806,0.003661413665842,0.003661413665842,-0.005686560760806,0.002045963448454"/>
+		<FilterCoief item="1000_50Hz" value="200|1,-4.075484168424974,6.804965644779207,-5.797218471570437,2.514452361789255,-0.443504269442751|0.005156623864987,-0.009300997364991,0.005749922065154,0.005749922065154,-0.009300997364991,0.005156623864987"/>
+		<FilterCoief item="1000_100Hz" value="100|1,-2.999735035455626,4.094077766645987,-3.013651053104054,1.188132998881062,-0.198185217933839|0.013833782046333,0.004208051372279,0.017277896098152,0.017277896098152,0.004208051372279,0.013833782046333"/>
+		<FilterCoief item="2000_1Hz" value="5000|1,-4.99184255796997,9.96741624628559,-9.95119322931491,4.96750795202686,-0.991888411027099|0.0000569004046111258,-0.000170693129379644,0.000113792725006435,0.000113792725006435,-0.000170693129379644,0.0000569004046111258"/>
+		<FilterCoief item="2000_2Hz" value="4000|1,-4.98365963963706,9.93482283592416,-9.90250937546606,4.93518880768570,-0.983842628491570|0.000113349587213318,-0.000339984346152724,0.000226634766521811,0.000226634766521811,-0.000339984346152724,0.000113349587213318"/>
+		<FilterCoief item="2000_5Hz" value="1600|1,-4.95895909347740,9.83699219290666,-9.75720175932050,4.83926354669855,-0.960094885344341|0.000280127936314109,-0.000839389246401361,0.000559262041579355,0.000559262041579355,-0.000839389246401361,0.000280127936314109"/>
+		<FilterCoief item="2000_10Hz" value="1000|1,-4.91729195774822,9.67381787506563,-9.51753940592025,4.68279672580076,-0.921783191322848|0.000550328593123787,-0.00164318146872118,0.00109287581313122,0.00109287581313122,-0.00164318146872118,0.000550328593123787"/>
+		<FilterCoief item="2000_20Hz" value="500|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="2000_50Hz" value="300|1,-4.56302173421315,8.37315836465848,-7.72076835713714,3.57636268794506,-0.665608872500890|0.00252706732682341,-0.00672437989840256,0.00425835694776349,0.00425835694776349,-0.00672437989840256,0.00252706732682341"/>
+		<FilterCoief item="2000_100Hz" value="200|1,-4.075484168424974,6.804965644779207,-5.797218471570437,2.514452361789255,-0.443504269442751|0.005156623864987,-0.009300997364991,0.005749922065154,0.005749922065154,-0.009300997364991,0.005156623864987"/>
+		<FilterCoief item="5000_1Hz" value="5000|1,-4.99673783026191,9.98695868271704,-9.98044905623147,4.98697338536903,-0.996745181592683|2.10870907599424e-05,-6.32607750316151e-05,4.21736842740983e-05,4.21736842740983e-05,-6.32607750316151e-05,2.10870907599424e-05"/>
+		<FilterCoief item="5000_2Hz" value="4000|1,-4.99347157919082,9.97391577750472,-9.96091777456571,4.97397453353357,-0.993500957281606|4.21059568423621e-05,-0.000126313899004443,8.42079422395730e-05,8.42079422395730e-05,-0.000126313899004443,4.21059568423621e-05"/>
+		<FilterCoief item="5000_5Hz" value="1600|1,-4.98365963963706,9.93482283592416,-9.90250937546606,4.93518880768570,-0.983842628491570|0.000113349587213318,-0.000339984346152724,0.000226634766521811,0.000226634766521811,-0.000339984346152724,0.000113349587213318"/>
+		<FilterCoief item="5000_10Hz" value="1000|1,-4.96721780064243,9.86961005891112,-9.80551300592741,4.87106713316217,-0.967946385022116|0.000224949730859944,-0.000674337962985720,0.000449388472797226,0.000449388472797226,-0.000674337962985720,0.000224949730859944"/>
+		<FilterCoief item="5000_20Hz" value="500|1,-4.93403310391545,9.73910163625601,-9.61302318012715,4.74487538895455,-0.936920726013193|0.000443334653759580,-0.00132597750377205,0.000882650427398096,0.000882650427398096,-0.00132597750377205,0.000443334653759580"/>
+		<FilterCoief item="5000_50Hz" value="300|1,-4.83213256872272,9.34733753430992,-9.04791168321747,4.38239976598119,-0.849691638535890|0.00106725100153308,-0.00314155843867166,0.00207501234465284,0.00207501234465284,-0.00314155843867166,0.00106725100153308"/>
+		<FilterCoief item="5000_100Hz" value="200|1,-4.654889773747470,8.696330808314517,-8.149141499109753,3.829768035056271,-0.722025937806586|0.002045963448454,-0.005686560760806,0.003661413665842,0.003661413665842,-0.005686560760806,0.002045963448454"/>
+		<SupportInstrID item="21" />
+	</FilterCoiefSpecial>
+
+	<UNIT name="V" active="1"/>
+	<UNIT name="mV" active="1"/>
+	<UNIT name="^3" active="1"/>
+	<UNIT name="g" active="1"/>
+	<UNIT name="m/s^2" active="1"/>
+	<UNIT name="cm/s^2" active="1"/>
+	<UNIT name="mm/s^2" active="1"/>
+	<UNIT name="m/s" active="1"/>
+	<UNIT name="cm/s" active="1"/>
+	<UNIT name="mm/s" active="1"/>
+	<UNIT name="m" active="1"/>
+	<UNIT name="cm" active="1"/>
+	<UNIT name="mm" active="1"/>
+	<UNIT name="^4" active="1"/>
+	<UNIT name="^5" active="1"/>
+	<UNIT name="^6" active="1"/>
+	<UNIT name="N" active="1"/>
+	<UNIT name="Pa" active="1"/>
+	<UNIT name="kPa" active="1"/>
+	<UNIT name="MPa" active="1"/>
+	<UNIT name="kg" active="1"/>
+	<UNIT name="Hz" active="1"/>
+	<UNIT name="J" active="1"/>
+	<UNIT name="W" active="1"/>
+	<UNIT name="RPM" active="1"/>
+	<UNIT name="rad/s" active="1"/>
+	<UNIT name="rad" active="1"/>
+	<UNIT name="deg" active="1"/>
+	<UNIT name="A" active="1"/>
+	<UNIT name="mA" active="1"/>
+	<UNIT name="^7" active="1"/>
+	<UNIT name="^8" active="1"/>
+	<UNIT name="PSID" active="1"/>
+	<UNIT name="^9" active="1"/>
+	<!--°-->
+	<UNIT name="^13" active="1"/>
+	<!--°/s^2-->
+</Measure>

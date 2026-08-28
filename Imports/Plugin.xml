@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ShowType 0-不显示，1-都显示，2-测量下显示，3-分析下显示-->
+<DHTEST>
+	<AnalysisManage>
+		<!-- 信号处理-->
+		<Analysis ShowType="1">
+			<name>Math</name>
+			<key>ADA510AF-AF13-4B86-A8AE-F58B40DE9012</key>
+			<path>AnalysisMath.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17079</tipTitle>
+			<tipContent>17080</tipContent>
+		</Analysis>
+		<!-- 频响分析-->
+		<Analysis ShowType="1">
+			<name>Spectrum</name>
+			<key>85D1EA8B-AEF5-4FF3-9EAF-F9436E94C21F</key>
+			<path>AnalysisSpectrum.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17081</tipTitle>
+			<tipContent>17082</tipContent>
+		</Analysis>
+		<!-- 索力计算-->
+		<Analysis ShowType="1">
+			<name>Cable</name>
+			<key>09A04832-3FEF-4B65-BA8B-88CBC4D63442</key>
+			<path>AnalysisCable.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17083</tipTitle>
+			<tipContent>17084</tipContent>
+		</Analysis>
+		<!--阶次分析-->
+		<!--<Analysis ShowType="1">
+			<name>AnalysisOrder</name>
+			<key>FC95877B-5D5A-4635-B503-2433DBACEA29</key>
+			<path>AnalysisOrder.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17085</tipTitle>
+			<tipContent>17086</tipContent>
+		</Analysis>-->
+		<Analysis ShowType="1">
+			<name>AnalysisMultiOrder</name>
+			<key>FC95877B-5D5A-4635-B503-2433DBACEA29</key>
+			<path>AnalysisMultiOrder.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17085</tipTitle>
+			<tipContent>17086</tipContent>
+		</Analysis>
+    
+    
+		<!--演示算法-->
+		<!--<Analysis ShowType="1">
+			<name>AnalysisExample</name>
+			<key>A5DD77EE-F0C3-4406-84FE-AEF80A2F68F5</key>
+			<path>AnalysisExample.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17329</tipTitle>
+			<tipContent>17330</tipContent>
+		</Analysis>-->
+    
+		<!--锤击分析-->
+		<!--<Analysis ShowType="1">
+			<name>HammerHitTest</name>
+			<key>12747426-4782-4D63-8921-4D6D9FC1759F</key>
+			<path>HammerHitTest.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17414</tipTitle>
+			<tipContent>17415</tipContent>
+		</Analysis>-->
+		<!--数据分析-->
+		<!--<Analysis ShowType="1">
+			<name>AnalysisData</name>
+			<key>4c903d3b-ad9f-410f-9888-f009179be291</key>
+			<path>AnalysisData.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17412</tipTitle>
+			<tipContent>17413</tipContent>
+		</Analysis>-->
+		<!--运行平稳性分析-->
+		<!--<Analysis ShowType="1">
+			<name>AnalysisStable</name>
+			<key>0F3EE9B0-9639-484C-9DEB-C100FAAE9FEF</key>
+			<path>AnalysisStable.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17339</tipTitle>
+			<tipContent>17340</tipContent>
+		</Analysis>-->
+		<!--疲劳分析-->
+		<Analysis ShowType="3">
+			<name>AnalysisFatigue</name>
+			<key>D2883A1B-E15E-4C0F-9F6B-D5CA6DA855E4</key>
+			<path>AnalysisFatigue.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30951</tipTitle>
+			<tipContent>30950</tipContent>
+		</Analysis>
+		<!--声学-->
+		<Analysis ShowType="1">
+			<name>AnalysisAcoustics</name>
+			<key>4735A532-3D51-4356-9EBA-BEB2F7A13611</key>
+			<path>AnalysisAcoustics.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17350</tipTitle>
+			<tipContent>17351</tipContent>
+		</Analysis>
+		<!-- 报警-->
+		<Analysis ShowType="1">
+			<name>AnalysisALARM</name>
+			<key>0ab8b473-b4ef-43cf-86b7-c86f18b14aee</key>
+			<path>AnalysisAlarm.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30501</tipTitle>
+			<tipContent>30502</tipContent>
+		</Analysis>
+		<!-- PCB分析-->
+		<Analysis ShowType="1">
+			<name>Pcb</name>
+			<key>D5644EA6-EAA1-41FB-B610-9790D06A7ABE</key>
+			<path>AnalysisPcb.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>31902</tipTitle>
+			<tipContent>31903</tipContent>
+		</Analysis>
+    <!-- 振动舒适性-->
+    <Analysis ShowType="1">
+      <name>Shake</name>
+      <key>B9838987-3C05-4283-B9F6-86BD7F4E8DE6</key>
+      <path>AnalysisShake.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38451</tipTitle>
+      <tipContent>38451</tipContent>
+    </Analysis>
+    <!-- 频域报警-->
+    <Analysis ShowType="1">
+      <name>AnalysisFFTAlarm</name>
+      <key>258F7A66-B376-48F6-8C98-E60931EA6FEC</key>
+      <path>AnalysisFFTAlarm.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>40690</tipTitle>
+      <tipContent>40690</tipContent>
+    </Analysis>
+    <!-- 电化学分析-->
+    <Analysis ShowType="1">
+      <name>AnalysisElecChemistry</name>
+      <key>0C8CB868-0E93-4119-9EEE-E98B7F5C4988</key>
+      <path>AnalysisElecChemistry.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>0</tipTitle>
+      <tipContent>0</tipContent>
+    </Analysis>
+    <!-- 纯模态-->
+    <Analysis ShowType="1">
+      <name>AnalysisElecChemistry</name>
+      <key>F9F4F116-3B81-418B-8AB4-A32689BE5DD0</key>
+      <path>AnalysisTune.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>0</tipTitle>
+      <tipContent>0</tipContent>
+    </Analysis>
+    <!--叶片疲劳-->
+    <Analysis ShowType="1">
+      <name>AnalysisStrain</name>
+      <key>5B59DE35-DFA8-4526-8500-CEAC09CCAD0A</key>
+      <path>AnalysisStrain.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>0</tipTitle>
+      <tipContent>0</tipContent>
+    </Analysis>
+  </AnalysisManage>
+	<ChatManage>
+		<!--记录仪插件-->
+		<Chat ShowType="1" GroupId="0">
+			<name>Recorder</name>
+			<key>68A2CEEA-53C9-41AF-A4D7-B661A92C8424</key>
+			<path>RecorderChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17121</tipTitle>
+			<tipContent>17122</tipContent>
+		</Chat>
+		<!--<Chat ShowType="1" GroupId="0">
+			<name>Oscilloscope</name>
+			<key>08654D60-5B5F-40FF-B5B5-065BE55D3FCF</key>
+			<path>OscilloscopeChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17402</tipTitle>
+			<tipContent>17403</tipContent>
+		</Chat>-->  
+		<!--XY记录仪插件-->
+		<Chat ShowType="1" GroupId="0">
+			<name>XYRecorder</name>
+			<key>8BFCC171-30F3-43FF-B466-AE2F7EE24F4E</key>
+			<path>XYRecorderChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17123</tipTitle>
+			<tipContent>17124</tipContent>
+		</Chat>
+		<!--XY包络插件-->
+		<Chat ShowType="1" GroupId="0">
+			<name>XYPackage</name>
+			<key>c07bc47f-ee4a-49a9-8aa5-921ee46c66c7</key>
+			<path>XYPackageChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30602</tipTitle>
+			<tipContent>30603</tipContent>
+		</Chat>
+		<!--SQL视图插件-->
+		<Chat ShowType="1" GroupId="0" Count="1">
+			<name>SQL</name>
+			<key>89676311-DE0E-43FC-8571-B880EEB973E2</key>
+			<path>SQLChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30401</tipTitle>
+			<tipContent>30402</tipContent>
+		</Chat>
+		<!--FFT插件-->
+		<Chat ShowType="1" GroupId="1">
+			<name>FFT</name>
+			<key>499716D9-63DD-4FBA-854A-0AEE1FED679E</key>
+			<path>FFTChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17125</tipTitle>
+			<tipContent>17126</tipContent>
+		</Chat>
+		<!--倍频程插件-->
+		<Chat ShowType="1" GroupId="1">
+			<name>Octave</name>
+			<key>34765AF1-77D7-4F0A-83B9-E3EEE4A90B66</key>
+			<path>OctaveChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17127</tipTitle>
+			<tipContent>17128</tipContent>
+		</Chat>
+		<!--极坐标插件-->
+		<Chat ShowType="1" GroupId="1">
+			<name>Polar</name>
+			<key>D177FA95-FD0E-430F-8C96-250FF303585C</key>
+			<path>PolarChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17153</tipTitle>
+			<tipContent>17154</tipContent>
+		</Chat>
+		<!--散点图-->
+		<!--<Chat ShowType="1" GroupId="1">
+			<name>Scatter</name>
+			<key>576EE4B6-C07E-4BB5-9EE7-77407A40AEDD</key>
+			<path>ScatterChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17337</tipTitle>
+			<tipContent>17338</tipContent>
+		</Chat>-->
+		<!--2D插件-->
+		<Chat ShowType="1" GroupId="2">
+			<name>TwoD</name>
+			<key>85C950BE-936A-436B-A267-351613C422ED</key>
+			<path>TwoDChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17129</tipTitle>
+			<tipContent>17130</tipContent>
+		</Chat>
+		<!--3D插件-->
+		<Chat ShowType="1" GroupId="2">
+			<name>ThreeD</name>
+			<key>86F8FFBD-A233-4712-8000-1F4391C05FBB</key>
+			<path>ThreeDChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17131</tipTitle>
+			<tipContent>17132</tipContent>
+		</Chat>
+		<!--音频-->
+		<Chat ShowType="1" GroupId="3">
+			<name>AudioChat</name>
+			<key>4b9257da-ec8a-44cb-98e2-e32df005ede2</key>
+			<path>AudioChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17326</tipTitle>
+			<tipContent>17328</tipContent>
+		</Chat>
+		<!-- 视频插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Media</name>
+			<key>39E31744-D1C3-4222-BA10-FBAE7235E9B5</key>
+			<path>MediaChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17143</tipTitle>
+			<tipContent>17144</tipContent>
+		</Chat>
+		<!-- 仪表盘插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Meter</name>
+			<key>D3C67B6D-3359-4215-9660-E4F6A760A121</key>
+			<path>MeterChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17145</tipTitle>
+			<tipContent>17146</tipContent>
+		</Chat>
+		<!--数字表插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Digital</name>
+			<key>02F83D6A-EA48-41CB-8276-3DC072F61581</key>
+			<path>DigitalChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17115</tipTitle>
+			<tipContent>17116</tipContent>
+		</Chat>
+		<!-- 棒图插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Bar</name>
+			<key>5218217E-36E8-4C34-A10F-D8F24FD7AC2D</key>
+			<path>BarChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17117</tipTitle>
+			<tipContent>17118</tipContent>
+		</Chat>
+    <!-- 多棒图插件-->
+    <Chat ShowType="1" GroupId="3">
+      <name>MultiBar</name>
+      <key>49773DD2-E854-489C-8314-19541557F2A6</key>
+      <path>MultiBarChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>36006</tipTitle>
+      <tipContent>36007</tipContent>
+    </Chat>
+		<!--表格插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Table</name>
+			<key>E2B9E3E3-3CC3-42F9-9EC8-36779A9CAD07</key>
+			<path>TableChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17119</tipTitle>
+			<tipContent>17120</tipContent>
+		</Chat>
+		<!--运行平稳性表-->
+		<!--<Chat ShowType="3" GroupId="3">
+			<name>Stable</name>
+			<key>9AD59777-F2EE-4C3A-A98C-4363CC26BEAB</key>
+			<path>StableChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17335</tipTitle>
+			<tipContent>17336</tipContent>
+		</Chat>-->
+		<!--幅值频次统计表-->
+		<!--<Chat ShowType="3" GroupId="3">
+			<name>StatTable</name>
+			<key>C6556D55-FE48-4A9E-9E8D-7F82E897169A</key>
+			<path>StatTableChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17408</tipTitle>
+			<tipContent>17409</tipContent>
+		</Chat>-->
+		<!--模型-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Model</name>
+			<key>D1F3273F-7E9D-4947-8912-B9B3D3CF0554</key>
+			<path>ModelChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17147</tipTitle>
+			<tipContent>17148</tipContent>
+		</Chat>
+    <!--加载-->
+    <Chat ShowType="1" GroupId="3">
+      <name>Loading</name>
+      <key>9B8C9C6B-F430-4E19-8F76-DF8BA530532E</key>
+      <path>LoadingChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>32101</tipTitle>
+      <tipContent>32101</tipContent>
+    </Chat>
+    <!--幅值拟合-->
+    <Chat ShowType="2" GroupId="3">
+      <name>Amp</name>
+      <key>E6F09C10-55DA-4E35-934D-1DAA42009814</key>
+      <path>AmpChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38251</tipTitle>
+      <tipContent>38251</tipContent>
+    </Chat>
+		<!--纯模态-->
+		<Chat ShowType="2" GroupId="3">
+			<name>NormalModes</name>
+			<key>08295F48-E307-46CC-93AC-25856D5566BD</key>
+			<path>NormalModesChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17400</tipTitle>
+			<tipContent>17401</tipContent>
+		</Chat>
+		<!-- 公里标插件-->
+		<!--<Chat ShowType="1" GroupId="3" Count="1">
+			<name>GongliBiao</name>
+			<key>DFDAC901-F4CE-459D-A28C-949A42002F69</key>
+			<path>GongliBiaoChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17331</tipTitle>
+			<tipContent>17332</tipContent>
+		</Chat>-->
+		<!--标定-->
+		<Chat ShowType="2" GroupId="3">
+			<name>DemarcateChat</name>
+			<key>5265e868-57b5-42c9-a0bb-86cde4756f46</key>
+			<path>DemarcateChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17749</tipTitle>
+			<tipContent>17750</tipContent>
+		</Chat>
+		<!--扭振分析-->
+		<Chat ShowType="1" GroupId="3">
+			<name>WrestShakeChat</name>
+			<key>A403CC07-C7AE-47E3-8026-40AB355FFFF7</key>
+			<path>WrestShakeChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>31428</tipTitle>
+			<tipContent>31429</tipContent>
+		</Chat>
+    <!--设备状态图-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>MachineStatusChat</name>
+      <key>BDEF1953-AD34-4100-8654-5878CAE0EA2F</key>
+      <path>MachineStatusChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>34502</tipTitle>
+      <tipContent>34503</tipContent>
+    </Chat>
+		<!--空调检测插件-->
+		<Chat ShowType="2" GroupId="3">
+			<name>DetectAircondition</name>
+			<key>78D368A3-DF49-45DB-AFFE-179472126243</key>
+			<path>DetectairconditionChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17149</tipTitle>
+			<tipContent>17150</tipContent>
+		</Chat>
+    <!--格力空调检测插件-->
+    <Chat ShowType="1" GroupId="3">
+      <name>DetectAirconditionEx</name>
+      <key>86F6CBBB-AB0A-41C0-9B08-BDE8BF08F59A</key>
+      <path>DetectairconditionExChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>17416</tipTitle>
+      <tipContent>17417</tipContent>
+    </Chat>
+    <!--现场动平衡插件-->
+		<Chat ShowType="2" GroupId="3" Count="1">
+			<name>Balancer</name>
+			<key>E037F1DA-2F32-4978-A0DB-BC95408EB691</key>
+			<path>BalancerChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17151</tipTitle>
+			<tipContent>17152</tipContent>
+		</Chat>
+		<!--小波分析插件-->
+		<Chat ShowType="3" GroupId="3">
+			<name>WaveletChat</name>
+			<key>FFBC7834-20D6-4BF7-8388-30B6A5013F1B</key>
+			<path>WaveletChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>18000</tipTitle>
+			<tipContent>18001</tipContent>
+		</Chat>
+		<!--液压阀插件-->
+		<Chat ShowType="3" GroupId="3">
+			<name>HydrovalveChat</name>
+			<key>33595EB2-E920-4E59-8AB4-4659C93AC96D</key>
+			<path>HydrovalveChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17161</tipTitle>
+			<tipContent>17162</tipContent>
+		</Chat>
+		<!--霍布金森杆插件-->
+		<Chat ShowType="3" GroupId="3">
+			<name>HopkinsonBar</name>
+			<key>089685BB-1851-4A5B-AD66-3E937F9CE3EE</key>
+			<path>HopkinsonBarChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17333</tipTitle>
+			<tipContent>17334</tipContent>
+		</Chat>
+		<!--材料特性插件-->
+		<Chat ShowType="3" GroupId="3">
+			<name>Material</name>
+			<key>EA512F3E-4F6E-4867-A267-77FD37D5C866</key>
+			<path>MaterialChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17087</tipTitle>
+			<tipContent>17088</tipContent>
+		</Chat>
+		<!--索力计算插件-->
+		<Chat IsProjectChat="true"  ShowType="1" GroupId="4">
+			<name>TwoD</name>
+			<key>85C950BE-936A-436B-A267-351613C422ED</key>
+			<path>TwoDChat.dll</path>
+			<projectKey>37318100-98F6-4A6B-B9D2-1DA68C9395E3</projectKey>
+			<projectPath>CableModel.dll</projectPath>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17083</tipTitle>
+			<tipContent>17084</tipContent>
+		</Chat>
+		<!--冲击系数插件-->
+		<Chat IsProjectChat="true" ShowType="1" GroupId="4">
+			<name>Recorder</name>
+			<key>68A2CEEA-53C9-41AF-A4D7-B661A92C8424</key>
+			<path>RecorderChat.dll</path>
+			<projectKey>282E698D-4395-4620-BEB4-E4BB898E95BE</projectKey>
+			<projectPath>ShockCoefModel.dll</projectPath>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17157</tipTitle>
+			<tipContent>17158</tipContent>
+		</Chat>
+		<!--桩基检测插件-->
+		<Chat IsProjectChat="true" ShowType="1" GroupId="4">
+			<name>Recorder</name>
+			<key>68A2CEEA-53C9-41AF-A4D7-B661A92C8424</key>
+			<path>RecorderChat.dll</path>
+			<projectKey>092451DF-A4FA-4609-9B52-CFB023E77E62</projectKey>
+			<projectPath>StakeModel.dll</projectPath>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17155</tipTitle>
+			<tipContent>17156</tipContent>
+		</Chat>
+		<!--时域阻尼比插件-->
+		<Chat ShowType="3" GroupId="4">
+			<name>TimeDump</name>
+			<key>68AECEEA-53CC-41AF-A4D7-B661A92C8424</key>
+			<path>TimeDumpChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17217</tipTitle>
+			<tipContent>17218</tipContent>
+		</Chat>
+    <!--损耗因子插件-->
+    <Chat IsProjectChat="true" ShowType="1" GroupId="4">
+      <name>FFT</name>
+      <key>499716D9-63DD-4FBA-854A-0AEE1FED679E</key>
+      <path>FFTChat.dll</path>
+      <projectKey>ECE2080D-A140-46B3-919F-76E61B7DB5AA</projectKey>
+      <projectPath>SpoilageGeneModel.dll</projectPath>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>33652</tipTitle>
+      <tipContent>33653</tipContent>
+    </Chat>
+    <!--阻尼比插件-->
+		<Chat IsProjectChat="true" ShowType="1" GroupId="4">
+			<name>FFT</name>
+			<key>499716D9-63DD-4FBA-854A-0AEE1FED679E</key>
+			<path>FFTChat.dll</path>
+			<projectKey>BABA9C87-9C43-4A7B-81F4-9B35B8AA8A1F</projectKey>
+			<projectPath>DumpModel.dll</projectPath>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17159</tipTitle>
+			<tipContent>17160</tipContent>
+		</Chat>
+		<!--冲击波形插件-->
+		<Chat ShowType="1" GroupId="4">
+			<name>StockWave</name>
+			<key>68A2CEEA-53C9-41AF-A4D7-B661A92C8411</key>
+			<path>StockWaveChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17161</tipTitle>
+			<tipContent>17162</tipContent>
+		</Chat>
+		<!--贵州电力插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>Order</name>
+			<key>6360083f-9e38-451e-ba2f-6e5dfb2e858d</key>
+			<path>OrderChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>21502</tipTitle>
+			<tipContent>21503</tipContent>
+		</Chat>
+		<!-- 3D轴心轨迹插件-->
+		<Chat ShowType="1" GroupId="3">
+			<name>PathTrack3D</name>
+			<key>4C51DCFF-BFF2-41D2-8998-99A8AB998C59</key>
+			<path>PathTrack3DChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>31001</tipTitle>
+			<tipContent>31001</tipContent>
+		</Chat>
+		<!--划斜率插件-->
+		<Chat ShowType="3" GroupId="3">
+			<name>Slope</name>
+			<key>d50ff5fa-36eb-438c-8e62-860cd60dab90</key>
+			<path>SlopeChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>26601</tipTitle>
+			<tipContent>26602</tipContent>
+		</Chat>
+		<!--演示显示插件-->
+		<!--<Chat ShowType="1" GroupId="3">
+			<name>Example</name>
+			<key>042ef801-dcb7-4046-b327-c2d83bc99077</key>
+			<path>ExampleChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30202</tipTitle>
+			<tipContent>30203</tipContent>
+		</Chat>-->   
+    <!--Light插件-->
+    <Chat ShowType="1" GroupId="3">
+      <name>Light</name>
+      <key>F704CF13-CEA6-4427-8840-321ACABCDD83</key>
+      <path>LightChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38400</tipTitle>
+      <tipContent>38400</tipContent>
+    </Chat>
+    
+		<!--静载显示插件-->
+		<Chat ShowType="1" GroupId="3" Count="1">
+			<name>Static</name>
+			<key>add65ae9-d56e-43dc-ac5b-e24a7a98d085</key>
+			<path>StaticChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>30302</tipTitle>
+			<tipContent>30303</tipContent>
+		</Chat>
+    <!--加载实验-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>LoadExpritment</name>
+      <key>6744A03C-3C5C-450E-B31D-EF551EC6C10A</key>
+      <path>LoadExpritmentChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>33152</tipTitle>
+      <tipContent>33153</tipContent>
+    </Chat>
+    <!--实验-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>Experiment</name>
+      <key>BF9A42E3-4312-4C6E-98E2-015EB6B17FB7</key>
+      <path>ExperimentChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>33152</tipTitle>
+      <tipContent>33153</tipContent>
+    </Chat>
+    <!--试验台-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>Trial</name>
+      <key>7A7DE594-324C-4FE4-BC0A-117B16F37A0C</key>
+      <path>TrialChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>41752</tipTitle>
+      <tipContent>41753</tipContent>
+    </Chat>
+
+    <!--封头外压实验-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>WaterGas</name>
+      <key>3F15C94B-4EC7-4936-8F3E-EEBA197679BC</key>
+      <path>WaterGasChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>50502</tipTitle>
+      <tipContent>50503</tipContent>
+    </Chat>
+
+    <!--水压加载实验-->
+    <Chat ShowType="1" GroupId="3" Count="1">
+      <name>WaterPress</name>
+      <key>F644DA0A-25F7-4EEA-93FC-172CD01E99FE</key>
+      <path>WaterPressChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>50602</tipTitle>
+      <tipContent>50603</tipContent>
+    </Chat>
+    
+    <!--带振型的模型-->
+		<Chat ShowType="2" GroupId="3">
+			<name>ModelParam</name>
+			<key>EC30985A-CF53-4E91-A3C4-56BF64C173A6</key>
+			<path>ModelParamChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17147</tipTitle>
+			<tipContent>17148</tipContent>
+		</Chat>
+		<!--积分模型-->
+		<!--<Chat ShowType="1" GroupId="3">
+			<name>Integral</name>
+			<key>A4F61162-D341-451E-8416-17CDB1C6674C</key>
+			<path>IntegralChat.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>31802</tipTitle>
+			<tipContent>31803</tipContent>
+		</Chat>-->
+    <!--云图-->
+    <Chat ShowType="1" GroupId="3">
+      <name>Cloud3D</name>
+      <key>DB603BAF-3610-4AB4-81D7-51B56619F0D0</key>
+      <path>Cloud3DChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>28302</tipTitle>
+      <tipContent>28303</tipContent>
+    </Chat>
+    <!--混响时间-->
+    <Chat ShowType="3" GroupId="3" Count="1">
+      <name>SoundStatChat</name>
+      <key>E1093A0B-17BD-4189-9A8B-C8778589619F</key>
+      <path>SoundStatChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>36102</tipTitle>
+      <tipContent>36103</tipContent>
+    </Chat>
+    <!--谐分量动平衡-->
+    <Chat ShowType="2" GroupId="3" Count="1">
+      <name>HarmonicBalanceChat</name>
+      <key>F1DDA371-9178-40C3-9153-7C9A2916175C</key>
+      <path>HarmonicBalanceChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>36302</tipTitle>
+      <tipContent>36303</tipContent>
+    </Chat>
+    <Chat ShowType="2" GroupId="3">
+      <name>CtlBtn</name>
+      <key>241CED13-8313-4F7D-8DA3-47483B1CEF0A</key>
+      <path>CtlBtnChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38651</tipTitle>
+      <tipContent>38651</tipContent>
+    </Chat>
+    <Chat ShowType="1" GroupId="3">
+      <name>GpsRoute</name>
+      <key>5CAF4ED8-7ED5-41FC-90D7-7DA8C6139680</key>
+      <path>GpsRouteChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>41001</tipTitle>
+      <tipContent>41001</tipContent>
+    </Chat>
+    <!--经纬度-->
+    <Chat ShowType="1" GroupId="3">
+      <name>LatAndLongitutde</name>
+      <key>AAB38DDA-3E99-4322-9F70-23BCEC95E5F4</key>
+      <path>LatAndLongitutdeChat.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>41901</tipTitle>
+      <tipContent>41901</tipContent>
+    </Chat>
+  </ChatManage>
+	<ChannelManage>
+		<!--模拟通道-->
+		<Channel ShowType="1">
+			<name>AnalogSetup</name>
+			<key>575F7D0E-2283-49AA-AA17-E898F9BC5B32</key>
+			<path>AnalogSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17069</tipTitle>
+			<tipContent>17070</tipContent>
+		</Channel>
+		<!--转速通道-->
+		<Channel ShowType="1">
+			<name>TachoSetup</name>
+			<key>BE4C2A86-8708-431C-BE21-582EF50090A9</key>
+			<path>TachoSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17077</tipTitle>
+			<tipContent>17078</tipContent>
+		</Channel>
+		<!--信号源通道-->
+		<Channel ShowType="1">
+			<name>SignalSourceSetup</name>
+			<key>408328BB-2584-47DC-A3AB-B496B0EF3C61</key>
+			<path>SignalSourceSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17075</tipTitle>
+			<tipContent>17076</tipContent>
+		</Channel>
+		<!--GPS通道-->
+		<Channel ShowType="1">
+			<name>GPSSetup</name>
+			<key>E28D62D3-1353-4A6F-AD77-1B6F71A74058</key>
+			<path>GPSSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17073</tipTitle>
+			<tipContent>17074</tipContent>
+		</Channel>
+		<!-- CAN通道-->
+		<Channel ShowType="1">
+			<name>CANSetup</name>
+			<key>523CBEB6-920F-412C-BE24-23A3A60EB44B</key>
+			<path>CANSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17071</tipTitle>
+			<tipContent>17072</tipContent>
+		</Channel>
+		<!--风洞通道-->
+		<Channel ShowType="1">
+			<name>WindTunnel</name>
+			<key>876f4c3a-64a9-40c6-b049-febe7014f1e3</key>
+			<path>WindTunnel.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17215</tipTitle>
+			<tipContent>17216</tipContent>
+		</Channel>
+		<!--视频设置-->
+		<Channel ShowType="1">
+			<name>VideoSetup</name>
+			<key>E9279C3D-6BA5-4268-ABDD-17B59A15A9A4</key>
+			<path>VideoSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17139</tipTitle>
+			<tipContent>17140</tipContent>
+		</Channel>
+		<!--计数器-->
+		<Channel ShowType="1">
+			<name>CounterSetUp</name>
+			<key>7383822d-b949-4e6e-913d-df51c56dc250</key>
+			<path>CounterSetUp.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17141</tipTitle>
+			<tipContent>17142</tipContent>
+		</Channel>
+    <!--DIO-->
+    <Channel ShowType="1">
+      <name>DIOSetUp</name>
+      <key>1F293E27-40A1-46F1-9935-9FB168E5D1F2</key>
+      <path>DIOSetUp.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38551</tipTitle>
+      <tipContent>38551</tipContent>
+    </Channel>
+    <!--轴系设置-->
+    <Channel ShowType="1">
+      <name>AxisCoefficientSetup</name>
+      <key>00DE8CF1-A71F-4A23-9372-C8A3E3D782D2</key>
+      <path>AxisCoefficientSetup.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>38900</tipTitle>
+      <tipContent>38900</tipContent>
+    </Channel>
+    
+		<!--音频-->
+		<Channel ShowType="1">
+			<name>AudioSetup</name>
+			<key>9dbab9a2-256e-45ee-a767-7ed48c1c4011</key>
+			<path>AudioSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17326</tipTitle>
+			<tipContent>17327</tipContent>
+		</Channel>
+		<!--外部数据源-->
+		<Channel ShowType="1">
+			<name>OutDataSetup</name>
+			<key>984ea03b-2e49-4cdf-9aed-348a931bf0c5</key>
+			<path>OutDataSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17069</tipTitle>
+			<tipContent>17070</tipContent>
+		</Channel>
+		<!--数字量-->
+		<Channel ShowType="1">
+			<name>DigitalSetup</name>
+			<key>31f9037f-cf51-4168-8842-4852d9930acd</key>
+			<path>DigitalSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17358</tipTitle>
+			<tipContent>17359</tipContent>
+		</Channel>
+		<!--合力设置-->
+		<Channel ShowType="1">
+			<name>ComForceSetup</name>
+			<key>74fab3a4-66f0-4486-b43c-a09a4238a8aa</key>
+			<path>ComForceSetup.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>26012</tipTitle>
+			<tipContent>26013</tipContent>
+		</Channel>
+		<!--标定-->
+		<Channel ShowType="1">
+			<name>Decmarcate</name>
+			<key>DE42E3EE-C3DD-4E68-BDE9-636BD87B8BF4</key>
+			<path>DemarcatePlugin.dll</path>
+			<version>1.0.0.0</version>
+			<tipType>3</tipType>
+			<tipTitle>17354</tipTitle>
+			<tipContent>17355</tipContent>
+		</Channel>
+
+    <!--Mic-->
+    <Channel ShowType="1">
+      <name>Mic</name>
+      <key>4BECA797-09DE-4FA0-9E07-C6301B706C9A</key>
+      <path>MicSetup.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>34001</tipTitle>
+      <tipContent>34002</tipContent>
+    </Channel>
+
+    <!--PCI1553-->
+    <Channel ShowType="1">
+      <name>PCI1553</name>
+      <key>955193FA-073D-4905-B515-FAE630104B72</key>
+      <path>PCI1553Setup.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>34101</tipTitle>
+      <tipContent>34102</tipContent>
+    </Channel>
+
+    <!--Moog-->
+    <Channel ShowType="1">
+      <name>Moog</name>
+      <key>006479E7-6BB9-4405-98B8-C35F437E1088</key>
+      <path>MoogSetup.dll</path>
+      <version>1.0.0.0</version>
+      <tipType>3</tipType>
+      <tipTitle>36502</tipTitle>
+      <tipContent>36503</tipContent>
+    </Channel>
+	</ChannelManage>
+	<DataExportManage>
+		<DataExport ShowType="1">
+			<name>Excel</name>
+			<key>33CC2B2-A92D-4FE7-ACBF-27305DE29270</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Word</name>
+			<key>29A03B3C-7628-4114-81B3-EDF5FC00CC9D</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Access</name>
+			<key>BB6C403D-2554-4722-B19C-01094F4017D3</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Matlab</name>
+			<key>ECEA6178-B93C-4E86-B97E-CFAB8BFAC06E</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Txt</name>
+			<key>323687D2-201A-48EE-B15D-AE3E48B14F8D</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Uff</name>
+			<key>1B6813A7-458F-4F57-9418-6B56A79ED4EA</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>Bmp</name>
+			<key>5CC3AEC8-637B-46C7-A796-815B66AD46E3</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+		<DataExport ShowType="1">
+			<name>DHSoft</name>
+			<key>3ACB790A-3326-4F83-9F13-15F58C889ED1</key>
+			<path />
+			<version>1.0.0.0</version>
+		</DataExport>
+	</DataExportManage>
+</DHTEST>

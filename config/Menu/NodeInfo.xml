@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--图片类型 0 - 在DH.Theming中 1 - ..\config\Images\目录下 2 - 动态库中 -->
+<NodeInfo>
+  <!--插件对应的提示信息-->
+  <!--算法-->
+  <Module id="MathSetupModule">
+    <Node id="MathSetupModuleAnalysis" namekey="26">
+      <Image type ="1" imagesource="MathSetupModule.png" unimagesource=""/>
+      <Tip type ="3" tipTitle="17079" tipContent="17080" tipHelpUri =""/>
+    </Node>
+    <!--信号处理的自定义算法-->
+    <Node id="MathSelfDefineModuleAnalysis" namekey="27952">
+      <Image type ="1" imagesource="MathSetupModule.png" unimagesource=""/>
+      <Tip type ="3" tipTitle="17079" tipContent="17080" tipHelpUri =""/>
+    </Node>
+    <Node id="SpectrumMathModuleAnalysis" namekey="309">
+      <Tip type ="3" tipTitle="17081" tipContent="17082" tipHelpUri =""/>
+    </Node>
+    <Node id="CableMathModuleAnalysis" namekey="5001">
+      <Image type ="1" imagesource="CableModule.png" unimagesource=""/>
+      <Tip type ="3" tipTitle="17083" tipContent="17084" tipHelpUri =""/>
+    </Node>
+    <Node id="ShakeMathModuleAnalysis" namekey="38451">
+      <Image type ="1" imagesource="ShakeModule.png" unimagesource=""/>
+      <Tip type ="3" tipTitle="38451" tipContent="38451" tipHelpUri =""/>
+    </Node>
+    <!--阶次分析-->
+    <Node id="OrderMathModuleAnalysis" namekey="6001">
+      <Tip type ="3" tipTitle="17085" tipContent="17086" tipHelpUri =""/>
+    </Node>
+    <!--海装阶次分析-->
+    <Node id="SeaOrderMathModuleAnalysis" namekey="6001">
+      <Tip type ="3" tipTitle="17085" tipContent="17086" tipHelpUri =""/>
+    </Node>
+    <Node id="StableMathModuleAnalysis" namekey="6201">
+      <Tip type ="3" tipTitle="17339" tipContent="17340" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsMathModuleAnalysis" namekey="8001">
+      <Tip type ="3" tipTitle="17350" tipContent="17351" tipHelpUri =""/>
+    </Node>
+    <!--PCB分析-->
+    <Node id="PcbMathModuleAnalysis" namekey="31901">
+      <Tip type ="3" tipTitle="31902" tipContent="31903" tipHelpUri =""/>
+    </Node>
+    <!--疲劳分析-->
+    <Node id="FatigueMathModuleAnalysis" namekey="30951">
+      <Tip type ="3" tipTitle="30951" tipContent="30950" tipHelpUri =""/>
+    </Node>
+    <!--信号处理自定义算法中的子模块-->
+    <Node id="MathSelfDefinePartModuleAnalysis" namekey="27952">
+      <Image type ="1" imagesource="MathSetupModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <!--信号处理中的子模块-->
+    <Node id="MathGeneralModuleAnalysis" namekey="27952">
+      <Image type ="1" imagesource="MathSetupModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralOctaveMathModuleAnalysis" namekey="27953">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathOctaveAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralRemainStressMathModuleAnalysis" namekey="27979">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/remainstress.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralStockMathModuleAnalysis" namekey="27954">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/srs.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralCepMathModuleAnalysis" namekey="27955">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathFallAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralDensityMathModuleAnalysis" namekey="27956">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathAmpl.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralFIRFilterMathModuleAnalysis" namekey="27957">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathFIRFilter.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralIIRFilterMathModuleAnalysis" namekey="27958">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathIIRFilter.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralTorqueMathModuleAnalysis" namekey="27959">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/torque.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralFFTMathModuleAnalysis" namekey="27960">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathFFTAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralLargeFFTMathModuleAnalysis" namekey="27961">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathFFTAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralImpersonateMathModuleAnalysis" namekey="27962">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/quXian.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralHeatFlowMathModuleAnalysis" namekey="27963">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/heatFlow.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralSweptFreqMathModuleAnalysis" namekey="27964">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/swept.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralDistortionMathModuleAnalysis" namekey="27965">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/distortion.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralTunnelMathModuleAnalysis" namekey="27966">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathWindTunnel.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralStatMathModuleAnalysis" namekey="27967">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathStat.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralOneIntegralMathModuleAnalysis" namekey="27968">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathOneIntegrate.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralTwoIntegralMathModuleAnalysis" namekey="27969">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathTwoIntegrate.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralOneDiffMathModuleAnalysis" namekey="27970">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathOneDifferential.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralTwoDiffMathModuleAnalysis" namekey="27971">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathTwoDifferential.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralCorrelationMathModuleAnalysis" namekey="27972">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathCorrelation.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralVirChnMathModuleAnalysis" namekey="27973">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathVirtualChannel.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralYBHMathModuleAnalysis" namekey="27974">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathYBHSetup.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralStressComMathModuleAnalysis" namekey="27975">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/应力合成设置.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralRainFlowMathModuleAnalysis" namekey="27976">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathRainAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralResampleMathModuleAnalysis" namekey="27977">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/ReSample.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralShaftPowerMathModuleAnalysis" namekey="27978">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/shaftPower.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralFourierMathModuleAnalysis" namekey="27980">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathfourierAnalysis.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="GeneralHPMathModuleAnalysis" namekey="27984">
+      <Image type ="2" imagesource="/AnalysisMath;component/source/Images/mathHP.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <!--声学模块的子模块-->
+    <Node id="AcousticsPressMathModuleAnalysis" namekey="28201">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsStrengMathModuleAnalysis" namekey="28202">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsEvaluateMathModuleAnalysis" namekey="28203">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsMaxtrixMathModuleAnalysis" namekey="28204">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsPowerMathModuleAnalysis" namekey="28205">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcousticsStrengMapMathModuleAnalysis" namekey="28206">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="MathSetupUpFunc" namekey="28198">
+      <Image type ="0" imagesource="向上a.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MathSetupDownFunc" namekey="28199">
+      <Image type ="0" imagesource="向下a.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MathSetupDelFunc" namekey="28200">
+      <Image type ="0" imagesource="删除a.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="StrainMathModuleAnalysis" namekey="50201">
+      <Tip type ="3" tipTitle="50201" tipContent="50201" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--参数设置-->
+  <Module id="ChnSetupModule">
+    <Node id="AnalogParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17069" tipContent="17070" tipHelpUri =""/>
+    </Node>
+    <Node id="TachoParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17077" tipContent="17078" tipHelpUri =""/>
+    </Node>
+    <Node id="SignalParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17075" tipContent="17076" tipHelpUri =""/>
+    </Node>
+    <Node id="GPSParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17073" tipContent="17074" tipHelpUri =""/>
+    </Node>
+    <Node id="CANParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17071" tipContent="17072" tipHelpUri =""/>
+    </Node>
+    <Node id="VideoParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17139" tipContent="17140" tipHelpUri =""/>
+    </Node>
+    <Node id="CounterParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17141" tipContent="17142" tipHelpUri =""/>
+    </Node>
+    <Node id="AudioParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17326" tipContent="17327" tipHelpUri =""/>
+    </Node>
+    <Node id="OutDataParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17069" tipContent="17070" tipHelpUri =""/>
+    </Node>
+    <Node id="DigitalParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17358" tipContent="17359" tipHelpUri =""/>
+    </Node>
+    <Node id="ForceParamModuleAnalysis">
+      <Tip type ="3" tipTitle="26012" tipContent="26013" tipHelpUri =""/>
+    </Node>
+    <Node id="CalibrateParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17354" tipContent="17355" tipHelpUri =""/>
+    </Node>
+    <Node id="MicParamModuleAnalysis">
+      <Tip type ="3" tipTitle="34001" tipContent="34002" tipHelpUri =""/>
+    </Node>
+    <Node id="PCI1553ParamModuleAnalysis">
+      <Tip type ="3" tipTitle="34101" tipContent="34102" tipHelpUri =""/>
+    </Node>
+    <Node id="MoogParamModuleAnalysis">
+      <Tip type ="3" tipTitle="36502" tipContent="36503" tipHelpUri =""/>
+    </Node>
+    
+    <Node id="AxisParamModuleAnalysis">
+      <Tip type ="3" tipTitle="38900" tipContent="38900" tipHelpUri =""/>
+    </Node>
+    
+    <Node id="DIOParamModuleAnalysis">
+      <Tip type ="3" tipTitle="38551" tipContent="38551" tipHelpUri =""/>
+    </Node>
+    <!--通道设置-->
+    <Node id="ChnSetupModuleAnalysis" namekey="27141">
+      <Image type ="1" imagesource="ChnSetupModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--事件信息-->
+  <Module id="EventModule">
+    <Node id="EventModuleAnalysis" namekey="27061">
+      <Image type ="0" imagesource="AnalysisEvent.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DelEventFunc" namekey="27062">
+      <Image type ="0" imagesource="删除a.png" unimagesource="删除b.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="EditEventFunc" namekey="27063">
+      <Image type ="0" imagesource="editEvent.png" unimagesource="unableEditEvent.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AddEventFunc" namekey="27064">
+      <Image type ="0" imagesource="AnalysisEvent.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--存储规则-->
+  <Module id="StoreModule">
+    <Node id="StoreModuleAnalysis" namekey="27081">
+      <Image type ="0" imagesource="AnalysisEvent.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--通道信息-->
+  <Module id="ChannelModule">
+    <Node id="ChannelModuleAnalysis" namekey="27091">
+      <Image type ="0" imagesource="setupAnalog.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="EditChannelFunc" namekey="27092">
+      <Image type ="0" imagesource="setupAnalog.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--工程管理-->
+  <Module id="ProjectModule">
+    <Node id="ProjectModuleAnalysis" namekey="27031">
+      <Image type ="1" imagesource="ProjectModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="NewPrjFunc" namekey="27032">
+      <Image type ="0" imagesource="NewProject.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="OpenPrjFunc" namekey="27033">
+      <Image type ="0" imagesource="OpenProject.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="RenamePrjFunc" namekey="27034">
+      <Image type ="0" imagesource="fileRename.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DelPrjFunc" namekey="27035">
+      <Image type ="0" imagesource="fileDelete.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--参数管理-->
+  <Module id="ParamModule">
+    <Node id="ParamModuleAnalysis" namekey="27000">
+      <Image type ="1" imagesource="ParamModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="NewParamFunc" namekey="27001">
+      <Image type ="0" imagesource="fileNewSetup.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="LoadParamFunc" namekey="27002">
+      <Image type ="0" imagesource="fileLoad.png" unimagesource="disfileLoad.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveParamFunc" namekey="27003">
+      <Image type ="0" imagesource="setupSave.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveToParamFunc" namekey="27004">
+      <Image type ="0" imagesource="setupSaveAs.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="RenameParamFunc" namekey="27005">
+      <Image type ="0" imagesource="fileRename.png" unimagesource="disfileRename.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DelParamFunc" namekey="27006">
+      <Image type ="0" imagesource="fileDelete.png" unimagesource="disfileDelete.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="CopyParamFunc" namekey="27007">
+      <Image type ="0" imagesource="fileCopy.png" unimagesource="disfileCopy.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="CutParamFunc" namekey="27008">
+      <Image type ="0" imagesource="fileCut.png" unimagesource="disfileCut.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PasteParamFunc" namekey="27009">
+      <Image type ="0" imagesource="filePaste.png" unimagesource="disfilePaste.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--打印-->
+  <Module id="PrintModule">
+    <Node id="PrintModuleAnalysis" namekey="27101">
+      <Image type ="1" imagesource="PrintModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PrintSetupFunc" namekey="27102">
+      <Image type ="0" imagesource="print.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PrintTitleFunc" namekey="27103">
+      <Image type ="0" imagesource="print.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PrintMarginFunc" namekey="27104">
+      <Image type ="0" imagesource="print.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PrintOutFunc" namekey="27105">
+      <Image type ="0" imagesource="print.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--输出-->
+  <Module id="OutputModule">
+    <Node id="OutputModuleAnalysis" namekey="27111">
+      <Image type ="1" imagesource="OutputModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AcessOutputModuleAnalysis" namekey="27116">
+      <Image type ="0" imagesource="outputAccess.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ExcelOutputModuleAnalysis" namekey="27112">
+      <Image type ="0" imagesource="outputExcel.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MatLabOutputModuleAnalysis" namekey="27113">
+      <Image type ="0" imagesource="outputMatlab.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="UFFOutputModuleAnalysis" namekey="27115">
+      <Image type ="0" imagesource="outputUff.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="TxtOutputModuleAnalysis" namekey="27114">
+      <Image type ="0" imagesource="outputTxt.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="PicOutputModuleAnalysis" namekey="27118">
+      <Image type ="0" imagesource="outputBmp.png" unimagesource=""/>
+      <Tip type ="3" tipTitle="27122" tipContent="27123" tipHelpUri =""/>
+    </Node>
+    <Node id="WordOutputModuleAnalysis" namekey="27117">
+      <Image type ="0" imagesource="outputWord.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DHSoftOutputModuleAnalysis" namekey="40704">
+      <Image type ="1" imagesource="logo.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ReportOutputModuleAnalysis" namekey="27120">
+      <Image type ="0" imagesource="report.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="OutOutputFunc" namekey="27121">
+      <Image type ="0" imagesource="output.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--测量-->
+  <Module id="MeasureModule">
+    <Node id="MeasureModuleAnalysis" namekey="27201">
+      <Image type ="1" imagesource="MeasureModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureChatDesignModuleAnalysis" namekey="27214">
+      <Image type ="0" imagesource="measureStore.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureStoreFunc" namekey="27202">
+      <Image type ="0" imagesource="measureStore.png" unimagesource="dismeasureStore.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasurePauseFunc" namekey="27203">
+      <Image type ="0" imagesource="measurePause.png" unimagesource="dismeasurePause.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureRebackDataFunc" namekey="27220">
+      <Image type ="0" imagesource="measurerebackdata.png" unimagesource=""/>
+      <Tip type ="2" tipTitle="27221" tipContent="27222" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureContinueFunc" namekey="27216">
+      <Image type ="0" imagesource="measurePause.png" unimagesource="dismeasurePause.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureStopFunc" namekey="27204">
+      <Image type ="0" imagesource="measureStop.png" unimagesource="dismeasureStop.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureShiBoFunc" namekey="27215">
+      <Image type ="0" imagesource="measureStart.png" unimagesource="dismeasureStart.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureTrigFunc" namekey="27206">
+      <Image type ="0" imagesource="measureTrigger.png" unimagesource="dismeasureTrigger.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureFreezeFunc" namekey="27207">
+      <Image type ="0" imagesource="measureFreeze.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureBalanceZero" namekey="27217">
+      <Image type ="0" imagesource="balanceZero.png" unimagesource="unableBalanceZero.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureAutoRand" namekey="27218">
+      <Image type ="0" imagesource="autoRand.png" unimagesource="unableAutoRand.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureLoadBalanceResult" namekey="27239">
+      <Image type ="0" imagesource="loadBalanceResult.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureSaveBalanceResult" namekey="27240">
+      <Image type ="0" imagesource="saveBalanceResult.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureTagFunc" namekey="27208">
+      <Image type ="0" imagesource="measureTag.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureSignalSourceFunc" namekey="27241">
+      <Image type ="0" imagesource="measureTag.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MultiScreenFunc" namekey="27219">
+      <Image type ="0" imagesource="multiscreen.png" unimagesource="dismultiscreen.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MultiScreenLayOutMgrFunc" namekey="27232">
+      <Image type ="0" imagesource="MultiScreenConfig.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="RunInfoFunc" namekey="27209">
+      <Image type ="0" imagesource="measureStore.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DelAllChatFunc" namekey="27210">
+      <Image type ="0" imagesource="designDeleteAll.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DelChatFunc" namekey="27211">
+      <Image type ="0" imagesource="designDeleteOne.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatHorizFunc" namekey="27212">
+      <Image type ="0" imagesource="designHorizontal.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatVertFunc" namekey="27213">
+      <Image type ="0" imagesource="designVertical.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureSnapFunc" namekey="27224">
+      <Image type ="0" imagesource="MoogSnap.png" unimagesource="MoogSnapUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureMoogContinueFunc" namekey="27225">
+      <Image type ="0" imagesource="MoogContinue.png" unimagesource="MoogSnapContinueUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureHighStoreFunc" namekey="27226">
+      <Image type ="0" imagesource="HighStore.png" unimagesource="MoogHighStoreUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureSurveyFunc" namekey="27227">
+      <Image type ="0" imagesource="MoogSurvey.png" unimagesource="SurvyUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureMoogZeroFunc" namekey="27228">
+      <Image type ="0" imagesource="balanceZero.png" unimagesource="balanceZeroUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureMoogStoreFunc" namekey="27229">
+      <Image type ="0" imagesource="MoogStore.png" unimagesource="storeUnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MeasureAudioFunc" namekey="27243">
+      <Image type ="0" imagesource="MeasureAudio.png" unimagesource="MeasureAudio.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <!--Chat-->
+    <Node id="ChatRecordModuleAnalysis">
+      <Tip type ="3" tipTitle="17121" tipContent="17122" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatOscilloscopeModuleAnalysis">
+      <Tip type ="3" tipTitle="17402" tipContent="17403" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatXYRecordModuleAnalysis">
+      <Tip type ="3" tipTitle="17123" tipContent="17124" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatFFTModuleAnalysis">
+      <Tip type ="3" tipTitle="17125" tipContent="17126" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatOctaveModuleAnalysis">
+      <Tip type ="3" tipTitle="17127" tipContent="17128" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatPolarModuleAnalysis">
+      <Tip type ="3" tipTitle="17153" tipContent="17154" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatScatterModuleAnalysis">
+      <Tip type ="3" tipTitle="17337" tipContent="17338" tipHelpUri =""/>
+    </Node>
+    <Node id="Chat2DModuleAnalysis">
+      <Tip type ="3" tipTitle="17129" tipContent="17130" tipHelpUri =""/>
+    </Node>
+    <Node id="Chat3DModuleAnalysis">
+      <Tip type ="3" tipTitle="17131" tipContent="17132" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatAudioModuleAnalysis">
+      <Tip type ="3" tipTitle="17326" tipContent="17328" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatVideoModuleAnalysis">
+      <Tip type ="3" tipTitle="17143" tipContent="17144" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatMeterModuleAnalysis">
+      <Tip type ="3" tipTitle="17145" tipContent="17146" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatDigitalModuleAnalysis">
+      <Tip type ="3" tipTitle="17115" tipContent="17116" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatBarModuleAnalysis">
+      <Tip type ="3" tipTitle="17117" tipContent="17118" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatTableModuleAnalysis">
+      <Tip type ="3" tipTitle="17119" tipContent="17120" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatStableModuleAnalysis">
+      <Tip type ="3" tipTitle="17335" tipContent="17336" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatStattableModuleAnalysis">
+      <Tip type ="3" tipTitle="17408" tipContent="17409" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatModalModuleAnalysis">
+      <Tip type ="3" tipTitle="17147" tipContent="17148" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatNormalModeModuleAnalysis">
+      <Tip type ="3" tipTitle="17400" tipContent="17401" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatGongliBiaoModuleAnalysis">
+      <Tip type ="3" tipTitle="17331" tipContent="17332" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatDemarcateModuleAnalysis">
+      <Tip type ="3" tipTitle="17749" tipContent="17750" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatAirConditionModuleAnalysis">
+      <Tip type ="3" tipTitle="17149" tipContent="17150" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatBalanceModuleAnalysis">
+      <Tip type ="3" tipTitle="17151" tipContent="17152" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatWaveletModuleAnalysis">
+      <Tip type ="3" tipTitle="18000" tipContent="18001" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatHydrovalveModuleAnalysis">
+      <Tip type ="3" tipTitle="17161" tipContent="17162" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatHopkinsonBarModuleAnalysis">
+      <Tip type ="3" tipTitle="17333" tipContent="17334" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatMaterialModuleAnalysis">
+      <Tip type ="3" tipTitle="17087" tipContent="17088" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatTimeDumpModuleAnalysis">
+      <Tip type ="3" tipTitle="17217" tipContent="17218" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatStockWaveModuleAnalysis">
+      <Tip type ="3" tipTitle="17161" tipContent="17162" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatOrderModuleAnalysis">
+      <Tip type ="3" tipTitle="21502" tipContent="21503" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatSlopeModuleAnalysis">
+      <Tip type ="3" tipTitle="26601" tipContent="26602" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatCableModelModuleAnalysis">
+      <Tip type ="3" tipTitle="17083" tipContent="17084" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatShockCoefModuleAnalysis">
+      <Tip type ="3" tipTitle="17157" tipContent="17158" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatStakeModelModuleAnalysis">
+      <Tip type ="3" tipTitle="17155" tipContent="17156" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatSpoilageGeneModuleAnalysis">
+      <Tip type ="3" tipTitle="33652" tipContent="33653" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatLoadExprtimenetModuleAnalysis">
+      <Tip type ="3" tipTitle="33152" tipContent="33153" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatMachineStatusModuleAnalysis">
+      <Tip type ="3" tipTitle="34502" tipContent="34503" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatDumpModuleAnalysis">
+      <Tip type ="3" tipTitle="17159" tipContent="17160" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatStaticModuleAnalysis">
+      <Tip type ="3" tipTitle="30302" tipContent="30303" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatCloud3DModuleAnalysis">
+      <Tip type ="3" tipTitle="28302" tipContent="28303" tipHelpUri =""/>
+    </Node>
+    <Node id="ChatAirConditionExModuleAnalysis">
+      <Tip type ="3" tipTitle="17416" tipContent="17417" tipHelpUri =""/>
+    </Node>
+    <!--3D轴心轨迹-->
+    <Node id="ChatPathTrack3DModuleAnalysis">
+      <Tip type ="3" tipTitle="31001" tipContent="31001" tipHelpUri =""/>
+    </Node>
+    <!--扭振分析-->
+    <Node id="ChatWrestShakeModuleAnalysis">
+      <Tip type ="3" tipTitle="31428" tipContent="31429" tipHelpUri =""/>
+    </Node>
+    <!--模型参数-->
+    <Node id="ChatModelParamModuleAnalysis">
+      <Tip type ="3" tipTitle="17147" tipContent="17148" tipHelpUri =""/>
+    </Node>
+    <!--多棒图-->
+    <Node id="MultiBarControlModuleAnalysis">
+      <Tip type ="3" tipTitle="36006" tipContent="36007" tipHelpUri =""/>
+    </Node>
+    <!--混响时间-->
+    <Node id="SoundStatModuleAnalysis">
+      <Tip type ="3" tipTitle="36102" tipContent="36103" tipHelpUri =""/>
+    </Node>
+    <!--谐分量动平衡-->
+    <Node id="HarmonicBalanceModuleAnalysis">
+      <Tip type ="3" tipTitle="36302" tipContent="36303" tipHelpUri =""/>
+    </Node>
+    <!--幅值拟合-->
+    <Node id="ChatAmpModuleAnalysis">
+      <Tip type ="3" tipTitle="38251" tipContent="38251" tipHelpUri =""/>
+    </Node>
+    <!--DIO手动控制-->
+    <Node id="ChatCtlBtnModuleAnalysis">
+      <Tip type ="3" tipTitle="38651" tipContent="38651" tipHelpUri =""/>
+    </Node>
+    <!--Light-->
+    <Node id="LightModuleAnalysis">
+      <Tip type ="3" tipTitle="38400" tipContent="38400" tipHelpUri =""/>
+    </Node>
+    <!--新的静载视图-->
+    <Node id="ChatExperimentModuleAnalysis">
+      <Tip type ="3" tipTitle="38752" tipContent="38753" tipHelpUri =""/>
+    </Node>
+    <!--试验台视图-->
+    <Node id="TrialChatModuleAnalysis">
+      <Tip type ="3" tipTitle="41752" tipContent="41753" tipHelpUri =""/>
+    </Node>
+    <!--Gps-->
+    <Node id="ChatGpsRouteModuleAnalysis">
+      <Tip type ="3" tipTitle="41001" tipContent="41001" tipHelpUri =""/>
+    </Node>
+    <!--经纬度-->
+    <Node id="ChatLatAndLongitutdeModuleAnalysis">
+      <Tip type ="3" tipTitle="41901" tipContent="41901" tipHelpUri =""/>
+    </Node>
+    <!--封头外压实验-->
+    <Node id="WaterGasChatModuleAnalysis">
+      <Tip type ="3" tipTitle="50502" tipContent="50503" tipHelpUri =""/>
+    </Node>
+    <!--水压加载实验-->
+    <Node id="WaterPressChatModuleAnalysis">
+      <Tip type ="3" tipTitle="50602" tipContent="50603" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--分析-->
+  <Module id="AnalysisModule">
+    <Node id="AnalysisModuleAnalysis" namekey="27301">
+      <Image type ="1" imagesource="AnalysisModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisChatDesignModuleAnalysis" namekey="27302">
+      <Image type ="0" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisStartPlaybackFunc" namekey="27303">
+      <Image type ="0" imagesource="measureStart.png" unimagesource="dismeasureStart.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisStopPlaybackFunc" namekey="27304">
+      <Image type ="0" imagesource="measureStop.png" unimagesource="dismeasureStop.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisSlowPlaybackFunc" namekey="27305">
+      <Image type ="0" imagesource="AnalysisTurnLeft.png" unimagesource="disAnalysisTurnLeft.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisStepPlaybackFunc" namekey="27306">
+      <Image type ="0" imagesource="AnalysisTurnRight.png" unimagesource="disAnalysisTurnRight.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisRatePlaybackFunc" namekey="27307">
+      <Image type ="1" imagesource="logo.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisReduceAve" namekey="27242">
+      <Image type ="0" imagesource="ReduceAve.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisHandCalFunc" namekey="27308">
+      <Image type ="0" imagesource="AnalysisHandcalc.png" unimagesource="disAnalysisHandcalc.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="AnalysisAutoCalFunc" namekey="27309">
+      <Image type ="0" imagesource="AnalysisAutocalc.png" unimagesource="disAnalysisAutocalc.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--模型-->
+  <Module id="ModelModule">
+    <Node id="ModelModuleAnalysis" namekey="27511">
+      <Image type ="1" imagesource="ModelModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ImportModelFunc" namekey="27512">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveModelFunc" namekey="27513">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveToModelFunc" namekey="27514">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="EditModelFunc" namekey="27515">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ShowModelFunc" namekey="27516">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ProcessionalModelFunc" namekey="27517">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--模态数据-->
+  <Module id="ModalDataModule">
+    <Node id="ModalDataModuleAnalysis" namekey="27611">
+      <Image type ="1" imagesource="ModalDataModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalFileManageFunc" namekey="27612">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalMeasureForceModuleAnalysis" namekey="27613">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalMeasureNoForceModuleAnalysis" namekey="27614">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalSingleInMultiOutFunc" namekey="27615">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalMultiInSingleOutFunc" namekey="27616">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalMultiInMultiOutFunc" namekey="27617">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--截取-->
+  <Module id="DataDelModule">
+    <Node id="DataDelModuleAnalysis" namekey="27601">
+      <Image type ="1" imagesource="DataDelModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalDataDelFunc" namekey="27602">
+      <Image type ="0" imagesource="删除a.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalAnalysis" namekey="27603">
+      <Image type ="1" imagesource="modal.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--模态参数识别-->
+  <Module id="ModalIdentifyModule">
+    <Node id="ModalIndentifyXModuleAnalysis" namekey="19509">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIdentifyModuleAnalysis" namekey="27701">
+      <Image type ="1" imagesource="ModalIdentifyModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyNyquistModuleAnalysis" namekey="27702">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyPolyModuleAnalysis" namekey="27703">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyPolyLSCFModuleAnalysis" namekey="27704">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyPronyModuleAnalysis" namekey="27705">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyPeakModuleAnalysis" namekey="27706">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyAutoCrossSpectModuleAnalysis" namekey="27707">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyEFDDModuleAnalysis" namekey="27708">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyOPPolyLSCFModuleAnalysis" namekey="27709">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyTransRateModuleAnalysis" namekey="27710">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <!--模态验证中的子模块-->
+    <Node id="ModalIndentifyDataFunc" namekey="27711">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyFFTAnalysis" namekey="27712">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/谱分析.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifySelFreqWidthAnalysis" namekey="27713">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/选择频段.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyStablyPicAnalysis" namekey="27714">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/稳定图计算.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyPloyAnalysis" namekey="27715">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/频响函数综合.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyModalIdenAnalysis" namekey="27716">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/模态识别.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyCorrelationAnalysis" namekey="27717">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/自相关曲线.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifyDumpAnalysis" namekey="27718">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/阻尼校验.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalIndentifySelFreqAnalysis" namekey="27719">
+      <Image type ="2" imagesource="/ModalIdentifyModule;component/source/Images/选择频段.PNG" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--振型动画-->
+  <Module id="ModalVibModelModule">
+    <Node id="ModalVibModelModuleAnalysis" namekey="27801">
+      <Image type ="1" imagesource="ModalVibModelModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibShapeCollateFunc" namekey="27802">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibFunc" namekey="27803">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibControlFunc" namekey="27804">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--模态效验-->
+  <Module id="ModalModelValidateModule">
+    <Node id="ModalModelValidateModuleAnalysis" namekey="27901">
+      <Image type ="1" imagesource="ModalModelValidateModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalValidateMACModuleAnalysis" namekey="27902">
+      <Image type ="2" imagesource="/ModalModelValidateModule;component/Source/Images/MAC.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalValidateMSFModuleAnalysis" namekey="27903">
+      <Image type ="2" imagesource="/ModalModelValidateModule;component/Source/Images/MSF.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalValidateMOVModuleAnalysis" namekey="27904">
+      <Image type ="2" imagesource="/ModalModelValidateModule;component/Source/Images/MOV.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--导管数据处理-->
+  <Module id="VesselDataModule">
+    <Node id="VesselDataModuleAnalysis" namekey="26808">
+      <Tip type ="3" tipTitle="33451" tipContent="33452" tipHelpUri =""/>
+    </Node>
+
+    <Node id="LoadVesselFunc" namekey="33453">
+      <Image type ="0" imagesource="fileLoad.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="SaveReportFunc" namekey="33454">
+      <Image type ="0" imagesource="report.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+  <!--设备状态图-->
+  <Module id="MachineStatusModule">
+    <Node id="MachineStatusModuleAnalysis" namekey="34302">
+      <Tip type ="3" tipTitle="34303" tipContent="34304" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+  <!--冲击实验-->
+  <Module id="ShockModule">
+    <Node id="ShockValue" namekey="34702">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ShockParamSetup" namekey="34703">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ShockDisplayResult" namekey="34704">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="LoadExportUIFunc" namekey="34705">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/outputExcel.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveSourceDataFunc" namekey="34706">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/output.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="SensorParamFunc" namekey="34707">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/SensorParam.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DealParamFunc" namekey="34708">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/DealParam.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="CalFunc" namekey="34709">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/Cal.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="ShowTableFunc" namekey="34710">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/ShowTable.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="TimeDataFunc" namekey="34711">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/TimeData.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="EightKDataFunc" namekey="34712">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/EightKData.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="FourKDataFunc" namekey="34713">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/FourKData.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveReportFunc" namekey="34714">
+      <Image type ="2" imagesource="/ShockModule;component/source/Images/SaveReport.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+  <!--应力合成-->
+  <Module id="StressComModule">
+    <Node id="StressComModuleAnalysis" namekey="26810">
+      <Tip type ="3" tipTitle="36202" tipContent="36203" tipHelpUri =""/>
+    </Node>
+
+    <Node id="LoadVesselFunc" namekey="36204">
+      <Image type ="0" imagesource="fileLoad.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="SaveReportFunc" namekey="36205">
+      <Image type ="0" imagesource="report.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+  <!--Moog-->
+  <Module id="MoogModule">
+    <Node id="MoogModuleAnalysis" namekey="36601">
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="MoogData" namekey="36602">
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="MoogOutPut" namekey="36606">
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="CalMoogDataFunc" namekey="36603">
+      <Image type ="2" imagesource="/MoogModule;component/source/Images/CalMoogData.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="OutPutSet" namekey="36607">
+      <Image type ="2" imagesource="/MoogModule;component/source/Images/ParamSetup.png" unimagesource="/MoogModule;component/source/Images/ParamSetupUnEnable.png"/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+  <!--校准系统-->
+  <!--传感器选择-->
+  <Module id="SensorSelectModule">
+  </Module>
+
+  <!--灵敏度校准-->
+  <Module id="SensitiveModule">
+  </Module>
+
+  <!--频率响应校准-->
+  <Module id="FreqRespondModule">
+  </Module>
+
+  <!--线性度校准-->
+  <Module id="LinearModule">
+  </Module>
+
+  <!--谐振频率-->
+  <Module id="ResonanceFreqModule">
+  </Module>
+  
+  <!--纯模态-->
+  <!--激励方案-->
+  <Module id="SpiritModule">
+  </Module>
+
+  <!--参数识别-->
+  <Module id="IdentifyModule">
+  </Module>
+
+  <!--TPA传递路径分析-->
+  <Module id="TPAModule">
+    <Node id="AddTarget" namekey="50010">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="CalLoad" namekey="50011">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="TpaAnalysis" namekey="50012">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="DisplayResult" namekey="50013">
+      <Tip type ="3" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="OpenFunc" namekey="50014">
+      <Image type ="0" imagesource="fileLoad.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveFunc" namekey="50015">
+      <Image type ="0" imagesource="setupSave.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="SaveAsFunc" namekey="50016">
+      <Image type ="0" imagesource="setupSaveAs.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="CalTypeSelectFunc" namekey="50017">
+      <Image type ="2" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+
+    <Node id="AddFreqRespondFunc" namekey="50022">
+      <Image type ="2" imagesource="/TPAModule;component/source/Images/AnalysisSpectrum.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    
+    <Node id="ColorChartFunc" namekey="50023">
+      <Image type ="2" imagesource="/TPAModule;component/source/Images/ColorChart.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="FFTChartFunc" namekey="50024">
+      <Image type ="2" imagesource="/TPAModule;component/source/Images/FFTChart.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="VectorChartFunc" namekey="50025">
+      <Image type ="2" imagesource="/TPAModule;component/source/Images/VectorChart.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+
+<!--纯模态振型动画-->
+  <Module id="TuneAnalysisModule">
+    <Node id="TuneAnalysisModuleAnalysis" namekey="27801">
+      <Image type ="1" imagesource="ModalVibModelModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibFunc" namekey="27803">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibControlFunc" namekey="27804">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+  <!--纯模态振型动画-->
+  <Module id="PurityVibModelMoule">
+    <Node id="PurityVibModelMouleAnalysis" namekey="27801">
+      <Image type ="1" imagesource="ModalVibModelModule.png" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibShapeCollateFunc" namekey="27802">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibFunc" namekey="27803">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+    <Node id="ModalVibControlFunc" namekey="27804">
+      <Image type ="" imagesource="" unimagesource=""/>
+      <Tip type ="" tipTitle="" tipContent="" tipHelpUri =""/>
+    </Node>
+  </Module>
+</NodeInfo>

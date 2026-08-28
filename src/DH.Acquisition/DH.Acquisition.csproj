@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>DH.Acquisition</RootNamespace>
+    <AssemblyName>DH.Acquisition</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>DH-RTDAS</Company>
+    <Product>DH-RTDAS Acquisition</Product>
+    <Description>采集与存储引擎</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
+    <ProjectReference Include="..\DH.Hardware.Abstractions\DH.Hardware.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

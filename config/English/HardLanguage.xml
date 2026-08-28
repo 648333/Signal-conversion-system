@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HardLanguage>
+	<item id="0" str="Apply for cache failed." />
+	<item id="1" str="Open the instrument interface failed." />
+	<item id="2" str="Wait for %.1fs beforehand sample complete." />
+	<item id="3" str="Wait for %dms beforehand sample complete." />
+	<item id="4" str="Waiting for No.%d trigger" />
+	<item id="5" str="Triggering..." />
+	<item id="6" str="Waiting to complete the data collection" />
+	<item id="7" str="Recovering the collected data" />
+	<item id="8" str="Sample complete!" />
+	<item id="9" str="Retrieve data of No.%d CH.%d..." />
+	<item id="10" str="Sample failed!Open the instrument interface failed." />
+	<item id="11" str="Retrieve data of No.%d CH.%d triggered%d  %d%%" />
+	<item id="12" str="Wait for trigger" />
+	<item id="13" str="Sample failed!Open the instrument interface failed." />
+	<item id="14" str="Triggering..." />
+	<item id="15" str="None" />
+	<item id="16" str="Integration" />
+	<item id="17" str="Double integration" />
+	<item id="18" str="%s is not connected！" />
+	<item id="19" str="Retrieve data of %s %s" />
+	<item id="20" str="%.1f seconds left" />
+	<item id="21" str="%.1f minutes left" />
+	<item id="22" str="%.1f hours left" />
+	<item id="23" str="Instrument is not connected!" />
+	<item id="24" str="Search file failed,please check up!!!" />
+	<item id="25" str="Search file%s,initialization connecting failed." />
+	<item id="26" str="Search file FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="27" str="Search file failed,please check up!!!" />
+	<item id="28" str="Update %s,initialization connecting failed." />
+	<item id="29" str="Update FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="30" str="Set the path failed,software update failed!" />
+	<item id="31" str="Software update" />
+	<item id="32" str="Backup software" />
+	<item id="33" str="Backup file%s" />
+	<item id="34" str="Backup file%s failed!" />
+	<item id="35" str="Delete software" />
+	<item id="36" str="Delete file%s" />
+	<item id="37" str="Delete file%s failed!" />
+	<item id="38" str="Download software" />
+	<item id="39" str="Download file%s" />
+	<item id="40" str="Download %s file failed!" />
+	<item id="41" str="Change the file attribute" />
+	<item id="42" str="Creat FTPsocket failed, software update failed!" />
+	<item id="43" str="Set the path failed,software update failed!" />
+	<item id="44" str="Connect to database failed,software update failed!" />
+	<item id="45" str="Change the attribute of DH5925 failed!" />
+	<item id="46" str="Set the path failed,software update failed!" />
+	<item id="47" str="Get backup %s,initialization connecting failed." />
+	<item id="48" str="Get backup FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="49" str="Set the path failed,software update failed!" />
+	<item id="50" str="Download software %s,initialization connecting failed." />
+	<item id="51" str="Download software FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="52" str="Set the path failed,upload failed!" />
+	<item id="53" str="Set the path failed,upload failed!" />
+	<item id="54" str="The directory is empty,upload failed!" />
+	<item id="55" str="Upload software" />
+	<item id="56" str="Upload file %s" />
+	<item id="57" str="Upload %sfile failed!" />
+	<item id="58" str="Recovery software % s initialization connecting failed." />
+	<item id="59" str="Recovery software FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="60" str="Can not find the software backup,recovery failed!" />
+	<item id="61" str="Set the path failed,software update failed!" />
+	<item id="62" str="Recovery software" />
+	<item id="63" str="Recovery software" />
+	<item id="64" str="Set the path failed,software update failed!" />
+	<item id="65" str="Search file failed,recovery failed!" />
+	<item id="66" str="The path is empty,recovery failed!" />
+	<item id="67" str="Recovery file %s" />
+	<item id="68" str="Recovery file %s failed!" />
+	<item id="69" str="Delete file %s,initialization connecting failed." />
+	<item id="70" str="Delete file FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="71" str="Delete %s error,please check!" />
+	<item id="72" str="Delete %s error,please check!" />
+	<item id="73" str="Delete file FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network." />
+	<item id="74" str="Delete %s failed，return!" />
+	<item id="75" str="File transfer: initialization connecting failed.error ID %d." />
+	<item id="76" str="File transfer FtpName: %s error ID %d." />
+	<item id="77" str="ReceiveFileThread,set the path failed." />
+	<item id="78" str="Set the path failed" />
+	<item id="79" str="File transfer failed" />
+	<item id="80" str="Parameter" />
+	<item id="81" str="Data" />
+	<item id="82" str="Speed data" />
+	<item id="83" str="Count data" />
+	<item id="84" str="GPS data" />
+	<item id="85" str="Recovery data %d/%d" />
+	<item id="86" str="Fail to retrieve audio files,continue to retrieve data? \r\n Continue without retrieving audio data." />
+	<item id="87" str="Fail to retrieve video files,continue to retrieve data? \r\n Continue without retrieving video data." />
+	<item id="88" str="CH.%d-%d Read measuring range error,please check" />
+	<item id="89" str="CH.%d-%d Read filter info. error,please check" />
+	<item id="90" str="Triggering..." />
+	<item id="91" str="Retrieve %.2f%% data of No.%d trigger." />
+	<item id="92" str="Recovery complete!" />
+	<item id="93" str="Wait for %.1fs beforehand sample complete." />
+	<item id="94" str="Wait for %dms beforehand sample complete." />
+	<item id="95" str="Beforehand sample complete" />
+	<item id="96" str="Sampling...." />
+	<item id="97" str="Schedule" />
+	<item id="98" str="Stop" />
+	<item id="99" str="Stop retrieving data？" />
+	<item id="100" str="Get wire resistance data." />
+	<item id="101" str="Get wire resistance data of No.%d." />
+	<item id="102" str="Set GND and max range." />
+	<item id="103" str="Get wire resistance zero" />
+	<item id="104" str="Restore default" />
+	<item id="105" str="Get wire resistance" />
+	<item id="106" str="Restore default" />
+	<item id="107" str="Check channel status" />
+	<item id="108" str= "Calculation wire resistance" />
+	<item id="109" str="Wait settings failed." />
+	<item id="110" str="Get data zero" />
+	<item id="111" str="Restore default" />
+	<item id="112" str="测热状态下采集值" />
+	<item id="113" str="Calculation voltage" />
+	<item id="114" str="Get resistance" />
+	<item id="115" str="Calculation resistance" />
+	<item id="116" str="Resistance is out of range，please resample。" />
+	<item id="117" str="Ch%d\tfltA0:%.3f\tfltA1:%.3f\tfltDlt:%.3f\t self value:%.3f\n" />
+	<item id="118" str="The power of No.%d is not enough,please stop sample." />
+	<item id="119" str="The status of No.%d is exception,network congestion." />
+	<item id="120" str="The disk of No.%d is full，can not sample." />
+	<item id="121" str="No.%d not collected data." />
+	<item id="122" str="ReceiveResponseData:%d,no data\n" />
+	<item id="123" str="The number of visible satellites: %d The number of tracking satellites: %d longitude: %f latitude: %f %f %f\n" />
+	<item id="124" str="used:%d COM %d，Baud rate %d\n" />
+	<item id="125" str="%s connected time %d \n" />
+	<item id="126" str="%s the time of get param %d \n" />
+	<item id="127" str="The condition of net query" />
+	<item id="128" str="The condition of query" />
+	<item id="129" str="No. The condition of query" />
+	<item id="130" str="No. The number of query" />
+	<item id="131" str="Time start time" />
+	<item id="132" str="Time end time" />
+	<item id="133" str="The condition of net query" />
+	<item id="134" str="The results of query" />
+	<item id="135" str="Disk space" />
+	<item id="136" str="Start time" />
+	<item id="137" str="End time" />
+	<item id="138" str="The number of projects" />
+	<item id="139" str="bytes" />
+	<item id="140" str="The number of instruments" />
+	<item id="141" str="No.%d" />
+	<item id="142" str="Set to GND..." />
+	<item id="143" str="Set to default..." />
+	<item id="144" str="Wait for get zero failed." />
+	<item id="145" str="Wait for get status failed." />
+	<item id="146" str="Wait for get name failed." />
+	<item id="147" str="Wait for balance failed." />
+	<item id="148" str="Wait for balance failed." />
+	<item id="149" str="Wait for balance failed." />
+	<item id="150" str="Wait for beforehand sample failed." />
+	<item id="151" str="Wait for beforehand sample failed." />
+	<item id="152" str="The instrument is not work." />
+	<item id="153" str="No.%d" />
+	<item id="154" str="Please check sync cable." />
+	<item id="155" str="Get the disk space of No.%d failed。" />
+	<item id="156" str="The last disk sapce of No.%d is %dM，please clear the disk。" />
+	<item id="157" str="Checking %s instrument info......." />
+	<item id="158" str="No.[%s]is not connected，please check!" />
+	<item id="159" str="No.[%s]and No.[%s] have the same ID，please check!" />
+	<item id="160" str="The frequence of No.%d is not exist，can not sample." />
+	<item id="161" str="The frequence of No.%d is not exist，can not sample." />
+	<item id="162" str="Fail to find default sampling frequencies." />
+	<item id="163" str="Have the same ID！" />
+	<item id="164" str="Get resistance voltage" />
+	<item id="165" str="No strain-stress CH. found" />
+	<item id="166" str="\n wire resistance" />
+	<item id="167" str="Open circuit" />
+	<item id="168" str="Short circuit" />
+	<item id="169" str="No strain CH. found!" />
+	<item id="170" str="Channel self-checking" />
+	<item id="171" str="Send parameters to the next instrument" />
+	<item id="172" str="Getting average" />
+	<item id="173" str="Getting average" />
+	<item id="174" str="\n average A1" />
+	<item id="175" str="Set to default" />
+	<item id="176" str="Calculating self-checking values" />
+	<item id="177" str="Prompt" />
+	<item id="178" str="Open instrument failed\n" />
+	<item id="179" str="Open instrument failed\n" />
+	<item id="180" str="    Instrument Address\r\n Flag Bit 0x%X\r\n BUS Address 0x%X\r\n Node Address 0x%X\r\n" />
+	<item id="181" str="Fail to find instrument address\n" />
+	<item id="182" str="  Host Address   \r\n Flag Bit 0x%X\r\n BUS Address 0x%X\r\n Node Address 0x%X\r\n" />
+	<item id="183" str="Fail to find host address\n" />
+	<item id="184" str="Fail to allocate address range" />
+	<item id="185" str="Fail to allocate address range" />
+	<item id="186" str="Inconsistent sampling freq., please reset." />
+	<item id="187" str="Sample complete" />
+	<item id="188" str="Sampling..." />
+	<item id="189" str="Wait for sample complete..." />
+	<item id="190" str="Recovery data..." />
+	<item id="191" str="Insufficient No. of tracking satellites" />
+	<item id="192" str="No. of tracking satellites - Normal" />
+	<item id="193" str="Fail to create temporary data files!" />
+	<item id="194" str="Fail to create image files!" />
+	<item id="195" str="No. %d instrument save data" />
+	<item id="196" str="No. %d instrument acquiring data abnormal" />
+	<item id="197" str="No. %d fail to start sampling" />
+	<item id="198" str="CreateMapAddress ErrorIndex %d ErrorCode: %d ErrorInfo：%s" />
+	<item id="199" str="Creat %s failed! ErrorCode: %d ErrorInfo：%s" />
+	<item id="200" str="Creat file failed！ErrorCode: %d ErrorInfo：%s" />
+	<item id="201" str="CreateMapAddress Error %s ErrorCode: %d ErrorInfo：%s" />
+	<item id="202" str="UnLoad DHAgilentControl.dll AdjustVoltage" />
+	<item id="203" str="UnLoad DHAgilentControl.dll SetSignal" />
+	<item id="204" str="Open instruments failed" />
+	<item id="205" str="UnLoad PtAndThermoCalc.dll PtVoltageToTemperature" />
+	<item id="206" str="UnLoad PtAndThermoCalc.dll ThermoVoltageToTemperature" />
+	<item id="207" str="UnLoad PtAndThermoCalc.dll ThermoTemperatureToVoltage" />
+	<item id="208" str="Read %s info. abnormal." />
+	<item id="209" str="Fail to create control info." />
+	<item id="210" str="Bind port %d failed!" />
+	<item id="211" str="Transfer data overdue of instrument: \n%s\n Reconnect instrument to retrieve lost data. \n Ignore?" />
+	<item id="212" str="Fail to create triggering files!" />
+	<item id="213" str="No sync clock!" />
+	<item id="214" str="Fail to read controller param! Please check network setting." />
+	<item id="215" str="Fail to read network param! Please choose controller IP address." />
+	<item id="216" str="Can't set network param! Please choose controller IP address." />
+	<item id="217" str="Fail to set controller network param!" />
+	<item id="218" str="Fail to set network param!" />
+	<item id="219" str="network param set successful! Please restart the controller." />
+	<item id="220" str="Wake-up time must be at least 60s later than current time! Please reset." />
+	<item id="221" str="Wake-up time can't be set one month ahead! Please reset." />
+	<item id="222" str="Fail to set %s network param!" />
+	<item id="223" str="Network" />
+	<item id="224" str="Set net param of No.%s complete，please restart the instrument." />
+	<item id="225" str="SSID can not be empty" />
+	<item id="226" str="SSID is to long,please rename" />
+	<item id="227" str="Set the SSID of No.%s failed!" />
+	<item id="228" str="Acquiring GPS clock info. error." />
+	<item id="229" str="Transfer file %s error，please check." />
+	<item id="230" str="Transfer file %s error，please check。" />
+	<item id="231" str="1588 clock NOT ready!" />
+	<item id="232" str="Wait for sample stopping failed." />
+	<item id="234" str="Low-pass: stopband cutoff freq. should be greater than lower passband cutoff freq.!" />
+	<item id="235" str="High-pass: stopband cutoff freq. should be less than lower passband cutoff freq.!" />
+	<item id="236" str="Band-pass: lower stopband cutoff freq. less than lower passband cutoff freq. AND upper stopband cutoff freq. greater than upper passband cutoff freq.!" />
+	<item id="237" str="Band-stop: lower stopband cutoff freq. greater than lower passband cutoff freq. AND upper stopband cutoff freq. less than upper passband cutoff freq.!" />
+	<item id="238" str="No.%d[%s]: %.2fK data retrieved, %.2fK not retrieved.\n" />
+	<item id="239" str="Found abnormal instrument! Please reconnect to retrieve data." />
+	<item id="240" str="%d%% Data Saved" />
+	<item id="241" str="Set to GND" />
+	<item id="242" str="Get zero" />
+	<item id="243" str="Set Voltage as Input" />
+	<item id="244" str="Get initial voltage" />
+	<item id="245" str="Set to default" />
+	<item id="246" str="Set resistance measuring param" />
+	<item id="247" str="Set to GND" />
+	<item id="248" str="Set Resistance Measuring as Input" />
+	<item id="249" str="CH. not balanced:" />
+	<item id="250" str="Set param before self-checking" />
+	<item id="251" str="Balance" />
+	<item id="252" str="Get zero" />
+	<item id="253" str="Get standard value" />
+	<item id="254" str="No.%d instrument - GPS not ready!" />
+	<item id="255" str="Total of %d instrument(s)，%d instrument(s) retrieved.File:%d/%d" />
+	<item id="256" str="Resume broken transfer NOT supported." />
+	<item id="257" str="Support resume broken transfer." />
+	<item id="258" str="Disconnected %s\n" />
+	<item id="259" str="%s Sample Failed." />
+	<item id="260" str="Wait for GPS syn...%dS" />
+	<item id="261" str="Wait for 1588 clock sync...%dS" />
+	<item id="262" str="No.%d instrument - 1588 clock not ready!\n" />
+	<item id="263" str="%d Reading..." />
+	<item id="264" str="%s: Read CH. info.%dms, creat CH. and set CH. param %dms" />
+	<item id="265" str="%d Setting..." />
+	<item id="266" str="File Transfer%d%%" />
+	<item id="267" str="Instrument data cleared, please restart." />
+	<item id="268" str="%s Unable to download sampling param." />
+	<item id="269" str="Instrument Serial No. must be 8 digits" />
+	<item id="270" str="File Transfer" />
+	<item id="271" str="OK" />
+	<item id="272" str="Cancel" />
+	<item id="273" str="Recovery data" />
+	<item id="274" str="Transducer CH." />
+	<item id="275" str="Set..." />
+	<item id="276" str="Load Status" />
+	<item id="277" str="Dll" />
+	<item id="278" str="Transducer Descriptions" />
+	<item id="279" str="Company" />
+	<item id="280" str="CH. ID" />
+	<item id="281" str="CH. status" />
+	<item id="282" str="CH. name" />
+	<item id="283" str="unit" />
+	<item id="284" str="Prompting message" />
+	<item id="285" str="Instrument Time" />
+	<item id="286" str="(*)Message: This version of instrument doesn't support sync clock!" />
+	<item id="287" str="Wake-up time:" />
+	<item id="288" str="(*)Instrument not synced\n Sleep not allowed!" />
+	<item id="289" str="Check instrument time" />
+	<item id="290" str="Sync Time" />
+	<item id="291" str="Start Sleep" />
+	<item id="292" str="Choose" />
+	<item id="293" str="ID" />
+	<item id="294" str="Instrument Time" />
+	<item id="295" str="syn" />
+	<item id="296" str="Sleep" />
+	<item id="297" str="Network Parameters" />
+	<item id="298" str="Instrument" />
+	<item id="299" str="Network" />
+	<item id="300" str="Instrument" />
+	<item id="301" str="ID：" />
+	<item id="302" str="CH：" />
+	<item id="303" str="Version：" />
+	<item id="304" str="S/N：" />
+	<item id="305" str="Set up unified CH, Ver., and S/N" />
+	<item id="306" str="Modular" />
+	<item id="307" str="ID" />
+	<item id="308" str="Set" />
+	<item id="309" str="Filter" />
+	<item id="310" str="ms" />
+	<item id="311" str="*" />
+	<item id="312" str="%s -- %d" />
+	<item id="313" str="%s_%d -- %d" />
+	<item id="314" str="Instrument ID changed, please restart instrument" />
+	<item id="315" str="Flash Management" />
+	<item id="316" str="Clear Data" />
+	<item id="317" str="Set IP address" />
+	<item id="318" str="Ins.IP" />
+	<item id="319" str="PC IP" />
+	<item id="320" str="Subnet" />
+	<item id="321" str="Gateway" />
+	<item id="322" str="Set up unified network param" />
+	<item id="323" str="Gateway" />
+	<item id="324" str="Subnet mask" />
+	<item id="325" str="MAC" />
+	<item id="326" str="IP" />
+	<item id="327" str="Mode" />
+	<item id="328" str="COM" />
+	<item id="329" str="PC IP" />
+	<item id="330" str="PC COM" />
+	<item id="331" str="LAN" />
+	<item id="332" str="Wifi" />
+	<item id="333" str="AP" />
+	<item id="334" str="UDP Param" />
+	<item id="335" str="Controller Gateway:" />
+	<item id="336" str="Local data port:" />
+	<item id="337" str="Gateway uplink port:" />
+	<item id="338" str="Local command port:" />
+	<item id="339" str="Gateway downstream port:" />
+	<item id="340" str="Modular" />
+	<item id="341" str="Space(KB)" />
+	<item id="342" str="Left space(KB)" />
+	<item id="343" str="%s Are you sure to clear Flash data of instrument?" />
+	<item id="344" str="Please restart" />
+	<item id="345" str="No.%d instrument will clear Flash data, are you sure?" />
+	<item id="346" str="Param Set" />
+	<item id="347" str="Network param changed, please restart instrument." />
+	<item id="348" str="UDP network param changed, please restart software" />
+	<item id="349" str="Slave computer software update" />
+	<item id="350" str="Search" />
+	<item id="351" str="Instrument type" />
+	<item id="352" str="Bulk Download" />
+	<item id="353" str="Upload" />
+	<item id="354" str="Instrument" />
+	<item id="355" str="Software" />
+	<item id="356" str="Check all" />
+	<item id="357" str="Find %d instrument(s)" />
+	<item id="358" str="Please choose instrument" />
+	<item id="359" str="Please choose download directory" />
+	<item id="360" str="Unable to download. Please specify instrument type in slave computer config files or incomplete config file." />
+	<item id="361" str="Fail to download. Please config slave computer softwae version." />
+	<item id="362" str="Downloading software requires to restart instrument, are you sure?" />
+	<item id="363" str="Fail to download" />
+	<item id="364" str="Download Successful! Please restart instrument" />
+	<item id="365" str="Instrument not found." />
+	<item id="366" str="No slave computer avaliable for selected instrument." />
+	<item id="367" str="Upload directory not selected!" />
+	<item id="368" str="Abnormal upload directory!" />
+	<item id="369" str="Please choose upload directory" />
+	<item id="370" str="Upload failed." />
+	<item id="371" str="Upload complete." />
+	<item id="372" str="File list of slave computer" />
+	<item id="373" str="Initializing failed." />
+	<item id="374" str="Download param file: connect FtpName: %s nPort: %d FtpUse: %s FtpPassword: %s failed.\n Please check network connection and reconnect instrument." />
+	<item id="375" str="Instrument IP" />
+	<item id="376" str="PC IP" />
+	<item id="377" str="ID" />
+	<item id="378" str="CH" />
+	<item id="379" str="VER" />
+	<item id="380" str="Serial" />
+	<item id="381" str="Waiting...%dS" />
+	<item id="382" str="No.%d recovery failed！" />
+	<item id="383" str="Read" />
+	<item id="384" str="Get balance results." />
+	<item id="385" str="Measure..." />
+	<item id="387" str="Measure Wire Resistance" />
+	<item id="388" str="Complete！" />
+	<item id="390" str="Checking..." />
+	<item id="391" str="Complete！" />
+	<item id="392" str="Channel" />
+	<item id="393" str="Set to default" />
+	<item id="394" str="Get" />
+	<item id="395" str="Wire Resistance" />
+	<item id="396" str="Reset" />
+	<item id="397" str="Instrument type" />
+	<item id="398" str="Group set CH., Serial No., and instrument type" />
+	<item id="399" str="Instrument type：" />
+	<item id="400" str="No. %d instrument clock not ready" />
+	<item id="401" str="%d channels only support up to %s sampling rate, please use different sampling rate or number of channels." />
+	<item id="402" str="Clear Projects" />
+	<item id="403" str="Clear backup software" />
+	<item id="404" str="Fail to delete slave computer projects" />
+	<item id="405" str="Fail to delete backup slave computer" />
+	<item id="406" str="%s Project Total %d" />
+	<item id="407" str="5910Net Param Setting" />
+	<item id="408" str="Wireless module param" />
+	<item id="409" str="Offline sampling param" />
+	<item id="410" str="Download Param" />
+	<item id="411" str="Wireless module param setting" />
+	<item id="412" str="SSID of 5910Net can only be numbers (up to 7)" />
+	<item id="413" str="Download offline param failed" />
+	<item id="414" str="Download offline param Complete" />
+	<item id="415" str="Download offline param Complete" />
+	<item id="416" str="%.2f%% data retrieved" />
+	<item id="417" str="Clear data complete!" />
+	<item id="418" str="Clear data failed!" />
+	<item id="419" str="Clock sync complete" />
+	<item id="420" str="Clock sync failed" />
+	<item id="421" str="Wait for sampling" />
+	<item id="422" str="Client in process of sampling, unable to initiate sampling" />
+	<item id="423" str="Wait for Client initializing sampling" />
+	<item id="424" str="NTP server IP" />
+	<item id="425" str="NTP IP" />
+	<item id="426" str="Sync Clock" />
+	<item id="427" str="Max No. of connections reached! Can't connect to client." />
+	<item id="428" str="Clear" />
+	<item id="429" str="%s Sample Failed, Please check sync cable." />
+	<item id="430" str="Client is used by other controller，can not be connected again!" />
+	<item id="431" str="Start sampling in controller" />
+	<item id="432" str="Stop sampling in controller" />
+	<item id="433" str="Modify of sampling parameter in controller" />
+	<item id="434" str="Modify of group in controller" />
+	<item id="435" str="Modify sampling parameter of the group in controller" />
+	<item id="436" str="Refresh of instrument searching in controller" />
+	<item id="437" str="Parameter reset in controller" />
+	<item id="438" str="Hardware Settings in controller" />
+	<item id="439" str="Modify of group using in controller" />
+	<item id="440" str="Import of CH parameters in controller" />
+	<item id="441" str="Modify of CH use status in controller" />
+	<item id="442" str="CH refresh in controller" />
+	<item id="443" str="Balance in controller" />
+	<item id="444" str="Balance of single channel in controller" />
+	<item id="445" str="GND balance of single channel in controller" />
+	<item id="446" str="Transfer balance results in controller" />
+	<item id="447" str="BalanceAll channels in controller" />
+	<item id="448" str="Balance single channel in controller" />
+	<item id="449" str="Modify sampling status of large data in controller" />
+	<item id="450" str="Sync modular display" />
+	<item id="451" str="Sync modular No.:" />
+	<item id="452" str="Reading EID info. waiting..." />
+	<item id="453" str="Temperature compensation" />
+	<item id="454" str="Recycled%.2f%%,%.2frest" />
+	<item id="455" str=",recovery rate%.2f" />
+	<item id="456" str="second" />
+	<item id="457" str="minute" />
+	<item id="458" str="hour" />
+	<item id="459" str="waiting for GPS sync" />
+	<item id="460" str="Sync is not ready, can not start sampling." />
+	<item id="461" str="Wait PTP Sync." />
+	<item id="462" str="Clock Settings" />
+	<item id="463" str="Clock inside" />
+	<item id="464" str="Clock outside" />
+	<item id="465" str="GPS Sync" />
+	<item id="466" str="No.%ddata abnormal,please check the network bandwith and disk write bandwidth!" />
+	<item id="467" str="Shut Down" />
+	<item id="468" str="Whole cycle sampling" />
+	<item id="469" str="No.%dparameter transfered %d%%" />
+	<item id="470" str="Project name can not be longer than8." />
+	<item id="471" str="Recycle data of No.%d" />
+	<item id="472" str="Recycle missing data" />
+	<item id="473" str="Read parameter of%d failed！" />
+	<item id="474" str="Fs should be lower than%.fHz" />
+	<item id="475" str="Sampling stopped,No.%d cancel transfer parameter" />
+	<item id="476" str="Data of No.%d storage card is removed，please restart instrument" />
+	<item id="477" str="CAN Data" />
+	<item id="478" str="MIC Data" />
+	<item id="479" str="1553 Data" />
+	<item id="480" str="Send sampling start failed！" />
+	<item id="481" str="Send sampling stop failed！" />
+	<item id="482" str="No.%d recycled list abnormal,please recycle again!" />
+	<item id="483" str="Total FreeSpaces(MB)" />
+	<item id="484" str="Space free(MB)" />
+	<item id="485" str="none" />
+	<item id="486" str="less than 8。" />
+	<item id="487" str="DHDAS" />
+	<item id="488" str="Allocate" />
+	<item id="489" str="Measuring wire resistance" />
+	<item id="490" str="Self-checking" />
+  <item id="491" str="Detect IEPE sensor" />
+  <item id="492" str="Set CH. param" />
+  <item id="493" str="Calculation detection result" />
+  <item id="494" str="Normal" />
+	<item id="495" str="Net" />
+	<item id="496" str="Server" />
+	<item id="497" str="Client" />
+	<item id="498" str="AP" />
+	<item id="499" str="Debug" />
+	<item id="500" str="Instrument" />
+	<item id="501" str="No." />
+	<item id="502" str="All instruments" />
+	<item id="503" str="Plate Setting" />
+	<item id="504" str="Original Card No" />
+	<item id="505" str="New Card No" />
+	<item id="506" str="Write" />
+	<item id="507" str="Forced Write" />
+	<item id="508" str="(0x00~0x1F)" />
+	<item id="509" str="(0x00~0x03)" />
+	<item id="510" str="Plate number exceeds the setting range，please reset" />
+	<item id="511" str="Success" />
+	<item id="512" str="Failed" />
+	<item id="513" str="Success" />
+	<item id="514" str="Failed" />
+  <item id="515" str="无线参数控制" />
+  <item id="516" str="网络模式已改变，请重新启动仪器" />
+	<item id="517" str="No.%d NTP Exceptional." />
+  <item id="518" str="未查找到触发位置" />
+  <item id="519" str="仪器未连接" />
+  <item id="520" str="仪器不支持获取触发位置功能" />
+  <item id="521" str="获取触发位置，等待超时" />
+	<item id="522" str="Wireless" />
+	<item id="523" str="Mode" />
+	<item id="524" str="IBSS" />
+	<item id="525" str="AP" />
+	<item id="526" str="电池供电时间(1~240分钟)" />	
+  <item id="527" str="可能同步时钟盒不在线，请检查" />
+  <item id="528" str="同步时钟盒启动采样失败" />
+  <item id="529" str="同步时钟盒停止采样失败" />
+  <item id="530" str="GPS时钟异常" />
+  <item id="531" str="休眠" />
+  <item id="532" str="唤醒" />
+  <item id="533" str="休眠成功" />
+  <item id="534" str="休眠失败" />
+  <item id="535" str="唤醒成功" />
+  <item id="536" str="唤醒失败" />
+  <item id="537" str="压力扫描阀采样参数设置失败" />
+  <item id="538" str="压力扫描阀未采集到数据" />
+  <item id="539" str="下传离线参数成功" />
+  <item id="540" str="解析回收参数失败" />
+  <item id="541" str="当前使用的为USB2.0端口，为确保仪器正常工作请切换到USB3.0接口。" />
+  <item id="542" str="获取数据错误码%d通讯异常"/>
+  <item id="543" str="数据回收异常，请确认仪器通讯正常后，重新回收仪器的数据。" />
+  <item id="544" str="回收数据大小异常(%.2fMB/%.2fMB)，请重新回收"/>
+  <item id="545" str="发送数据回收命令失败，请确认仪器通讯正常" />
+  <item id="546" str="仪器数据已成功回收，可以断开仪器连接。" />
+  <item id="547" str="正在处理数据，请稍候......" />
+  <item id="548" str="回收数据大小异常，是否处理已回收的数据？" />
+  <item id="549" str="处理%s%d数据异常" />
+  <item id="550" str="总共%d台采集模块，已唤醒%d台" />
+  <item id="551" str="总共%d台采集模块，已休眠%d台" />
+  <item id="552" str="正在读取同步时钟，请稍候......" />
+  <item id="553" str="模块未建立连接，请检查" />
+  <item id="554" str="上电自检" />
+	<item id="555" str="No.%d instrument sampling error, please check sync cable." />
+  <item id="556" str="Fail to begin filling the scan line FIFO" />
+  <item id="557" str="Fail to return number of new scan lines available" />
+  <item id="558" str="NTP Time Error!" />
+	<item id="559" str="采样频率超过WIA同步时的最大采样频率，切换为常规采集" />
+	<item id="560" str="未准备好同步，同步采集切换为常规采集" />
+	<item id="561" str="未准备好同步，无法继续进行同步采集" />
+  <item id="562" str="检测到清空前后仪器中采样参数不一致，长度分别为%d，%d；请重新下传参数！" />
+	<item id="563" str="VER：" />
+  <item id="564" str="当前频率%s不支持实时采样，请调整采样频率。" />
+  <item id="565" str="仪器Flash数据已清空。" />
+  <item id="566" str="多台仪器间的GPS模式不一致。" />
+  <item id="567" str="GPS" />
+  <item id="568" str="同步时钟盒" />
+  <item id="569" str="Instrument param changed, please restart instrument." />
+  <item id="570" str="Instrument param changed, please restart instrument and software." />
+<item id="571" str="No.%d PCI error." />
+	<item id="572" str="转速模块异常，请检查通讯接口。" />
+  <item id="573" str="磁盘空间不足，数据无法保存" />
+  <item id="574" str="文件：%s 创建失败" />
+  <item id="575" str="参数设置错误，MAC地址最后位应为偶数" />
+  <item id="576" str="获取下位机GPS定位系统配置失败或多台不一致." />
+	<item id="577" str="检测到新连接，如果为关机再连接，需手动执行刷新连接，否则将导致仪器状态与软件不一致。" />
+	<item id="578" str="正在执行查找通道，请稍后..." />
+</HardLanguage>

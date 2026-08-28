@@ -1,0 +1,638 @@
+﻿<DH>
+	<AnalysisTime name="TimeAnalysis">
+		<Signal id="1" name="AI" />
+		<Signal id="18" name="SPEED" />
+		<Signal id="36" name="AO" />
+		<Signal id="50" name="keyphase" />
+		<Signal id="52" name="pulseDirec" />
+		<Signal id="53" name="pulsecounter" />
+		<Signal id="54" name="pulsepos" />
+		<Signal id="55" name="IO" />
+		<Signal id="56" name="Video" />
+		<Signal id="57" name="Audio" />
+		<Signal id="65" name="Dig" />
+		<Signal id="74" name="OutData" />
+		<Signal id="81" name="WiFi" />
+    <Signal id="157" name="OutData" />
+		<Group id="0" name="Analog" />
+		<Group id="1" name="Speed" />
+		<Group id="2" name="CAN" />
+		<Group id="3" name="GPS" />
+		<Group id="4" name="Signal source" />
+		<Group id="5" name="pulsepos" />
+		<Group id="6" name="Digital I/O" />
+		<Group id="7" name="Video" />
+		<Group id="8" name="Audio" />
+		<Group id="9" name="OutData" />
+		<Group id="10" name="Dig" />
+		<Group id="11" name="WiFi强度" />
+		<Group id="12" name="Moog LCS" />
+		<Group id="16" name="Moog I/O" />
+    <Group id="17" name="ExtStatData" />
+	</AnalysisTime>
+	<AnalysisExample name="演示算法">
+		<Group id="0" name="频谱分析">
+			<ShowGroupName0>频谱分析</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+		</Group>
+		<Group id="1" name="统计分析">
+			<ShowGroupName0>统计分析组</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="2" name="扭矩测量">
+			<ShowGroupName0>扭矩测量组</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisExample>
+
+	<HammerHitTest name="锤击测试">
+		<Group id="0" name="锤击测试分析">
+			<ShowGroupName0>锤击测试分析</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</HammerHitTest>
+	<AnalysisData name="数据分析">
+		<Group id="0" name="数据分析">
+			<ShowGroupName0>数据分析</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisData>
+	<AnalysisFatigue name="Fatigue Analysis">
+		<Group id="0" name="Fatigue Analysis">
+			<ShowGroupName0>Fatigue Analysis</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="9" />
+		</Group>
+	</AnalysisFatigue>
+
+	<AnalysisMath name="Math">
+		<Signal id="2" name="VirChn" />
+		<Signal id="3" name="Strain rosette" />
+		<Signal id="5" name="Resample" />
+		<Signal id="6" name="Integral" />
+		<Signal id="7" name="Diff" />
+		<Signal id="8" name="Impersonate" />
+		<Signal id="9" name="Filter" />
+		<Signal id="11" name="Real" />
+		<Signal id="12" name="Average" />
+		<Signal id="13" name="FFT" />
+		<Signal id="14" name="Octave" />
+		<Signal id="51" name="RainFlow" />
+		<Signal id="58" name="HeatFlow" />
+		<Signal id="96" name="RemainStress" />
+    <Signal id="158" name="Average times" />
+    <Signal id="171" name="拉力分析"/>
+		<Group id="0" name="Formula" SerialNumber="849a6689-ab0c-4591-9d91-fb4a2d8de139">
+			<ShowGroupName0>Formula</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="17" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="1" name ="Integration" SerialNumber="38b2e9c7-2b46-4ada-858d-5e0f0a1378c9">
+			<ShowGroupNameCount>2</ShowGroupNameCount>
+			<ShowGroupName0>Integration</ShowGroupName0>
+			<ShowGroupName1>Double Integration</ShowGroupName1>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="2" name ="Derivative" SerialNumber="d7b8c8d3-f742-4a43-adc9-8be826f4bb39">
+			<ShowGroupNameCount>2</ShowGroupNameCount>
+			<ShowGroupName0>Derivative</ShowGroupName0>
+			<ShowGroupName1>Double Derivative</ShowGroupName1>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="3" name="Strain Rosette" SerialNumber="5ac96e7e-f5df-4c16-b46c-52eb229bc7b9">
+			<ShowGroupName0>Strain Rosette</ShowGroupName0>
+			<input id ="1" />
+			<input id ="9" />
+		</Group>
+		<Group id="4" name="FFT" SerialNumber="722274ec-9710-4d5a-a888-ca660cbe3669">
+			<ShowGroupName0>FFT</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="5" name="Octave" SerialNumber="5b7da958-4493-438e-95c5-05fa1c227159">
+			<ShowGroupName0>Octave</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="6" name="Classification" SerialNumber="942a9bbe-f7c0-42a9-8d77-5816520dacc9">
+			<ShowGroupName0>Classification</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="7" name="RainFlow" SerialNumber="26417d6a-d5a6-4370-9450-0315b8998609">
+			<ShowGroupName0>RainFlow</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="8" name="Filter" SerialNumber="3ce1b318-f70d-4ebd-a6c1-eb86828a5a79">
+			<ShowGroupNameCount>3</ShowGroupNameCount>
+			<ShowGroupName0>FIR Filters</ShowGroupName0>
+			<ShowGroupName1>IIR Filters</ShowGroupName1>
+			<ShowGroupName2>Average Filters</ShowGroupName2>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="9" name="Statistics" SerialNumber="978afc74-92c2-4cca-a305-5408aeae3479">
+			<ShowGroupName0>Statistics</ShowGroupName0>
+			<InputCount>2</InputCount>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+			<input id ="10" />
+			<input1 id ="11" />
+			<input1 id ="12" />
+			<input1 id ="14" />
+			<input1 id ="15" />
+			<input1 id ="16" />
+			<input id ="52" />
+			<input id ="53" />
+			<input id ="54" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="10" name="Correlation" SerialNumber="aaa0656e-7747-4239-b851-2f1bd6b95ae9">
+			<ShowGroupName0>Correlation</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="11" name="Cepstrum" SerialNumber="39033cd2-74ff-4ebd-a3fb-934e979ceb39">
+			<ShowGroupName0>Cepstrum</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="12" name="Four Cursor" SerialNumber="720fb6fa-d941-4faa-ac32-db12f026fa29">
+			<ShowGroupName0>Four Cursor</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="13" name="Sweep" SerialNumber="0ea92cae-fd54-4019-8afd-1e27f9e1d1b9">
+			<ShowGroupName0>Sweep</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="14" name="SRS" SerialNumber="f3da880b-e423-4b00-92b1-df38abf5e279">
+			<ShowGroupName0>SRS</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="18" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="15" name="Curve fitting" SerialNumber="ACEE4D87-BE12-40E8-A999-4FCFDF2AB469">
+			<ShowGroupName0>Curve Fitting</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="16" name="Heat flow" SerialNumber="3B810AA7-D7CD-4CAE-A58C-8D155FF8C0DA">
+			<ShowGroupName0>Heat Flow</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+		<Group id="17" name="Distortion" SerialNumber="4b0ced28-42bb-4824-9489-3d83972bfbe8">
+			<ShowGroupName0>Distortion</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="11" />
+			<input id ="12" />
+			<input id ="74" />
+			<input id ="132" />
+		</Group>
+
+		<Group id="18" name="Torque" SerialNumber="24175ee7-f1fc-4dbb-803d-618c50a64165">
+			<ShowGroupName0>Torque</ShowGroupName0>
+			<input id ="1" />
+			<input id ="9" />
+		</Group>
+
+		<Group id="19" name="Shaft Power" SerialNumber="b043e718-d213-491c-a4d2-608feecf8ad1">
+			<ShowGroupName0>ShaftPower</ShowGroupName0>
+			<input id ="63" />
+		</Group>
+		<Group id="20" name="Resample" SerialNumber="f57e3280-1754-4a01-8086-24800202c7ea">
+			<ShowGroupName0>Resample</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+			<input id ="132" />
+		</Group>
+		<Group id="21" name="Residual Stress" SerialNumber="1fe89102-016a-43c7-977a-e8c4d2a0fa1f">
+			<ShowGroupName0>Residual Stress</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="22" name="应力合成组" SerialNumber="03DB4828-F0A2-45AC-945F-68BAAA006835">
+			<ShowGroupName0>应力合成</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="23" name="逆傅立叶变换" SerialNumber="b3179a18-fec8-4a4b-b4dd-d9ab6e03741b">
+			<ShowGroupName0>IFFT</ShowGroupName0>
+			<input id ="11" />
+			<input id ="12" />
+		</Group>
+		<Group id="24" name="三向合成组" SerialNumber="f99714b4-bcc3-4a03-aec0-d27aacca7730">
+			<ShowGroupName0>Three Synthesis</ShowGroupName0>
+			<input id ="1" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+		</Group>
+		<Group id="25" name="周期计数" SerialNumber="ea0751f6-783c-4c4d-ac87-f62e5c23124a">
+			<ShowGroupName0>Cycle Count</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="26" name="状态线" SerialNumber="141F120C-C589-4925-8CCF-673026685AB8">
+			<ShowGroupName0>StatusLine</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="27" name="整周期采样" SerialNumber="11B39D8A-9BD3-4E0B-A14E-528D968F9174">
+			<ShowGroupName0>Full Period Sampling</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="28" name="动态值超限提示" SerialNumber="7AC7062E-3838-4309-AEEC-2896ED33CD49">
+			<ShowGroupName0>Dynamic Value Overrun</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="29" name="PeakValue" SerialNumber="2CB1A0E4-4E57-47D9-8EFA-98FB67AD9315">
+			<ShowGroupName0>PeakValue</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+		<Group id="30" name="Alarm" SerialNumber="2CB1A0E4-4E57-47D9-8EFA-98FB67AD9315">
+			<ShowGroupName0>Alarm</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+		</Group>
+    <Group id="31" name="SweepFreq" SerialNumber="95843B40-1386-4BD0-AFDA-CD9E7998E2CF">
+      <ShowGroupName0>SweepFreq</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+    <Group id="32" name="互谱" SerialNumber="03F82952-EA80-4D4D-9183-82753960432D">
+      <ShowGroupName0>HP</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+    <Group id="33" name="模拟转速" SerialNumber="EFB2BFBF-7C85-444A-866E-D3ED45351758">
+      <ShowGroupName0>SimulateSpeed</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+    <Group id="34" name="包络分析" SerialNumber="3C28075D-3B54-446F-8374-6BA67050FDA4">
+      <ShowGroupName0>Envelope</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+    <Group id="35" name="应变数据处理" SerialNumber="EFCE44C9-334E-4AEA-A39A-3CFF69F27A39">
+      <ShowGroupName0>YBData</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+
+    <Group id="36" name="滑动平均滤波" SerialNumber="8C7F2D0F-254D-4E5B-BEEA-6F3145ACC2BE">
+      <ShowGroupName0>MoveAveFilter</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+
+    <Group id="37" name ="频域积分" SerialNumber="2C88B472-8983-4935-A96B-A81B64C0697D">
+      <ShowGroupNameCount>2</ShowGroupNameCount>
+      <ShowGroupName0>频域一次积分</ShowGroupName0>
+      <ShowGroupName1>频域二次积分</ShowGroupName1>
+      <input id ="1" />     
+    </Group>
+    <Group id="38" name="AE存储设置" SerialNumber="B6A8AEFA-A99D-40AC-9D9A-9CA4AAB09B8C">
+      <ShowGroupName0>AESaveSet</ShowGroupName0>
+      <input id ="1" />
+      <input id ="9" />
+    </Group>
+  </AnalysisMath>
+	<AnalysisFRF name="FRF">
+		<Signal id="25" name="Source signal" />
+		<Signal id="26" name="Frequency response" />
+		<Signal id="27" name="Coherent" />
+		<Signal id="28" name="Impulse response" />
+		<Signal id="29" name="Average times" />
+		<Signal id="62" name="Impedance" />
+		<Group id="1" name="FRF group">
+			<ShowGroupName0>"FRF"</ShowGroupName0>
+			<input id ="1" />
+			<input id ="6" />
+		</Group>
+	</AnalysisFRF>
+	<AnalysisALARM name="报警设置">
+		<Group id="1" name="报警组">
+			<ShowGroupName0>"报警分析"</ShowGroupName0>
+			<input id ="7" />
+		</Group>
+	</AnalysisALARM>
+	<AnalysisCable name="Cable Tension">
+		<Signal id="31" name="Cable" />
+		<Group id="0" name="Cable Tension Group">
+			<ShowGroupName0>"Cable Group"</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisCable>
+  <AnalysisFFTAlarm name="频域报警">
+    <Signal id="170" name="FFTAlarm" />
+    <Group id="0" name="频域报警组">
+      <ShowGroupName0>"频域报警"</ShowGroupName0>
+      <input id ="11" />
+    </Group>
+  </AnalysisFFTAlarm>
+	<AnalysisOrder name="Order">
+		<Signal id="38" name="Order" />
+		<Group id="14" name="Order">
+			<ShowGroupName0>"Order"</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisOrder>
+	<AnalysisMaterial name="Material">
+		<Signal id="37" name="Material" />
+		<Group id="0" name="Material properties">
+			<ShowGroupName0>"Material"</ShowGroupName0>
+			<InputCount>2</InputCount>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="9" />
+			<input1 id ="1" />
+			<input1 id ="6" />
+			<input1 id ="7" />
+			<input1 id ="9" />
+		</Group>
+	</AnalysisMaterial>
+
+	<AnalysisWindTunnel name="风洞计算">
+		<Signal id="30" name="WindTunnel" />
+		<Group id="0" name="风洞计算">
+			<ShowGroupName0>"风洞组"</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisWindTunnel>
+
+	<AnalysisStable name="运行平稳性分析">
+		<Signal id="70" name="平稳性分析" />
+		<Group id="0" name="平稳性分析组">
+			<ShowGroupName0>"平稳性分析组"</ShowGroupName0>
+			<input id="1"/>
+		</Group>
+	</AnalysisStable>
+
+	<AnalysisAcoustics name="Acoustic analysis">
+		<Group id="3" name="Sound Pressure group">
+			<ShowGroupName0>Sound Pressure</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+		</Group>
+		<Group id="4" name="Sound Intensity group">
+			<ShowGroupName0>Sound Intensity</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+		</Group>
+		<Group id="5" name="Acoustic Evaluation group">
+			<ShowGroupName0>Acoustic Evaluation</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="4" />
+			<input id ="5" />
+			<input id ="6" />
+			<input id ="7" />
+			<input id ="8" />
+			<input id ="9" />
+			<input id ="10" />
+			<input id ="74" />
+		</Group>
+		<Group id="7" name="LanguageDefinition">
+			<ShowGroupName0>LanguageDefinition</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+
+		<Group id="6" name=" Acoustic array group">
+			<ShowGroupName0>Acoustic Array</ShowGroupName0>
+			<input id ="1" />
+			<input id ="6" />
+		</Group>
+		<Group id="2" name="Sound Intensity Map Group">
+			<ShowGroupName0>Sound Intensity</ShowGroupName0>
+			<input id ="1" />
+			<input id ="5" />
+		</Group>
+		<Group id="8" name="吸声系数">
+      <ShowGroupName0>吸声系数</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+	</AnalysisAcoustics>
+	<AnalysisMultiRun name="MultiRun">
+		<Group id="1" name="Sound Power">
+			<ShowGroupName0>Sound Power</ShowGroupName0>
+			<input id ="1" />
+			<input id ="5" />
+		</Group>
+
+		<Group id="2" name="Sound Intensity Map">
+			<ShowGroupName0>Sound Intensity Map</ShowGroupName0>
+			<input id ="1" />
+			<input id ="5" />
+		</Group>
+
+		<Group id="3" name="Fatigue Analysis">
+			<ShowGroupName0>Fatigue Analysis</ShowGroupName0>
+			<input id ="1" />
+			<input id ="2" />
+			<input id ="3" />
+			<input id ="9" />
+		</Group>
+	</AnalysisMultiRun>
+
+	<AnalysisPcb name="PCB板设置">
+		<Signal id="136" name="应变花" />
+		<Signal id="137" name="Diff" />
+		<Group id="0" name="PCB板设置">
+			<ShowGroupName0>PCB板设置</ShowGroupName0>
+			<input id ="1" />
+		</Group>
+	</AnalysisPcb>
+
+  <AnalysisElecChemistry name="电化学分析">
+    <Group id="0" name="阶梯线性扫描">
+      <ShowGroupName0>阶梯线性扫描</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+    <Group id="1" name="阶跃采样">
+      <ShowGroupName0>阶跃采样</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+  </AnalysisElecChemistry>
+  
+  <AnalysisStrain name="叶片疲劳">
+    <Group id="0" name="叶片疲劳组">
+      <ShowGroupName0>"叶片疲劳组"</ShowGroupName0>
+      <input id ="1" />
+    </Group>
+  </AnalysisStrain>
+</DH>

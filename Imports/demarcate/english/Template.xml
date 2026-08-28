@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Decmarcate>
+	<Templates>
+		<Template Instrument="8" Item="AntiConfusionFilter" Name="Anti-aliasing Filter Performance Index" ShowStat="false">
+			<Bound Scope="1" Measure="{RangeType:0;InputValue:100;Coffie:0;LowerPrecision:-0.1;UpperPresion:0.1}" />
+			<Bound Scope="2" Measure="{RangeType:0;InputValue:1000;Coffie:0.0043;LowerPrecision:-0.1;UpperPresion:0.1}" />
+			<Bound Scope="3" Measure="{RangeType:0;InputValue:2000;Coffie:0.0042;LowerPrecision:-0.1;UpperPresion:0.1}" />
+			<Bound Scope="4" Measure="{RangeType:1;InputValue:0;Coffie:0.0043;LowerPrecision:-0.1;UpperPresion:0.1}" />
+			<Bound Scope="5" Measure="{RangeType:1;InputValue:0.33333;Coffie:0.0042;UpperPresion:-45}" />
+			<Bound Scope="6" Measure="{RangeType:1;InputValue:0.5;Coffie:0.0042;UpperPresion:-72}" />
+			<Bound Scope="7" Measure="{RangeType:1;InputValue:0.66667;Coffie:0.0042;UpperPresion:-72}" />
+		</Template>
+		<Template Instrument="8" Item="UpperFreqPrecision" Name="Upper Limit Freq Index" ShowStat="True">
+			<Extend Type="DHDAS.Demarcate.UpperFreq.UpperFreqTemplateExtendParameter,DemarcateLib" InputVoltage="500">
+				<Smooth Lower="-0.1" Upper="0.1" />
+				<Close Lower="-4" Upper="-2" />
+				<Block Upper="-24" />
+			</Extend>
+			<Bound Scope="PASS" Measure="100,50000,100000" />
+			<Bound Scope="10kHz" Measure="3000,5000,6000,10000,20000" />
+			<Bound Scope="3kHz" Measure="1000,1500,2000,3000,6000" />
+			<Bound Scope="1kHz" Measure="300,500,600,1000,2000" />
+			<Bound Scope="300Hz" Measure="100,150,200,300,600" />
+			<Bound Scope="100Hz" Measure="30,50,60,100,200" />
+			<Bound Scope="30Hz" Measure="10,15,20,30,60" />
+			<Bound Scope="10Hz" Measure="10,20" />
+		</Template>
+		<Template Instrument="8" Item="VoltageValue" Name="Voltage Indication Error" ShowStat="True">
+			<Parameter SampleFrequence="1000" SampleMode="2" MeasureType="0" InputType="DIF_DC" UpperFreq="PASS" AntiFilter="ON" Coffie="1" />
+			<Bound Scope="100" Measure="0,20,50,100" />
+			<Bound Scope="1000" Measure="0,200,500,1000" />
+			<Bound Scope="10000" Measure="0,2000,5000,10000" />
+		</Template>
+		<Template Instrument="8" Item="FrequenceResponse" Name="Freq Response Calibration" ShowStat="False">
+			<Bound Scope="PASS" Measure="300,400" />
+			<Bound Scope="10kHz" Measure="1000,2000" />
+			<Bound Scope="3kHz" Measure="100,500" />
+			<Extend Type="DHDAS.Demarcate.FreqResponse.FreqResponseExtendParameter,DemarcateLib" InputVoltage="6500" />
+			<Parameter SampleFrequence="1000" SampleMode="0" MeasureType="0" InputMode="AC" ScopeRange="20000" AntiFilter="ON" />
+		</Template>
+		<Template Instrument="33" Item="StrainValue">
+			<Parameter SampleFrequence="5000" SampleMode="2" MeasureType="2" BridgeType="" BridgeVoltage="" UpperFrequence="" AntiFilter="" StrainGuage="" Coffie="" Lead="" Possion="" />
+		</Template>
+		<Template Instrument="33" Item="UpperFreqPrecision" Name="Upper Limit Freq Index" ShowStat="False">
+			<Extend Type="DHDAS.Demarcate.UpperFreq.UpperFreqTemplateExtendParameter,DemarcateLib" InputVoltage="500">
+				<Smooth Lower="-0.1" Upper="0.1" />
+				<Close Lower="-0.1" Upper="0.1" />
+				<Block Lower="-0.1" Upper="0.1" />
+			</Extend>
+			<Parameter SampleFrequence="2000" SampleMode="2" MeasureType="0" InputMode="DIF_DC" Scope="1000" IsSelectedAC="False" />
+			<Bound Scope="PASS" Measure="100,200,500" />
+			<Bound Scope="300Hz" Measure="100,150,200,300,600" />
+		</Template>
+		<Template Instrument="33" Item="FrequenceResponse" Name="Freq Response Calibration" ShowStat="False">
+			<Extend Type="DHDAS.Demarcate.FreqResponse.FreqResponseExtendParameter,DemarcateLib" InputVoltage="500" />
+			<Parameter SampleFrequence="1000" SampleMode="0" MeasureType="0" InputMode="DIF_DC" ScopeRange="1000" AntiFilter="ON" />
+			<Bound Scope="PASS" Measure="20,50,100" />
+			<Bound Scope="3kHz" Measure="100,200" />
+		</Template>
+		<Template Instrument="33" Item="AntiConfusionFilter" Name="Anti-aliasing Filter Performance Index" ShowStat="False">
+			<Extend Type="DHDAS.Demarcate.AntiFilter.AntiFilterTemplateExtendParameter,DemarcateLib" InputVoltage="500" />
+			<Parameter SampleFrequence="2000" SampleMode="2" MeasureType="0" InputMode="DIF_DC" AntiFilter="ON" Coffie="1" Scope="10000" UpperFrequence="PASS" />
+			<Bound Scope="1" Measure="{RangeType:0;InputValue:100;Coffie:0.0042;UpperPresion:0.1;LowerPrecision:-0.1}" />
+			<Bound Scope="2" Measure="{RangeType:0;InputValue:200;Coffie:0.0043;UpperPresion:0.1;LowerPrecision:-0.1}" />
+			<Bound Scope="1" Measure="{RangeType:1;InputValue:0.33333;Coffie:0.0043;UpperPresion:0;LowerPrecision:-0.43}" />
+			<Bound Scope="2" Measure="{RangeType:1;InputValue:0.66667;Coffie:0.0042;UpperPresion:0;LowerPrecision:-0.42}" />
+		</Template>
+		<Template Instrument="33" Item="LowerFreqPrecision" Name="Lower Cutoff Freq Index" ShowStat="False">
+			<Bound Scope="1" Measure="50" />
+			<Bound Scope="2" Measure="100" />
+			<Bound Scope="3" Measure="200" />
+			<Bound Scope="4" Measure="500" />
+			<Extend Type="DHDAS.Demarcate.LowerFreqPrecision.LowerFreqTemplateExtendParameter,DemarcateLib" InputVoltage="6500" LowerTarget="-4" UpperTarget="-2" />
+			<Parameter SampleFrequence="20000" SampleMode="0" MeasureType="0" InputMode="DIF_DC" FullScope="1000" UpperFrequence="300Hz" AntiFilter="ON" />
+		</Template>
+	</Templates>
+</Decmarcate>
