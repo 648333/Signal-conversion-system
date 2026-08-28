@@ -42,7 +42,7 @@
                     <ribbon:RibbonButton Label="开始采集" LargeImageSource="{StaticResource IconStart}" Click="StartAcquisition_Click"/>
                     <ribbon:RibbonButton Label="暂停" SmallImageSource="{StaticResource IconPause}" Click="PauseAcquisition_Click"/>
                     <ribbon:RibbonButton Label="停止" SmallImageSource="{StaticResource IconStop}" Click="StopAcquisition_Click"/>
-                    <ribbon:RibbonButton Label="冻结" SmallImageSource="{StaticResource IconFreeze}"/>
+                    <ribbon:RibbonButton Label="冻结" SmallImageSource="{StaticResource IconFreeze}" Click="FreezeAcquisition_Click"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="事件存储">
                     <ribbon:RibbonButton Label="新建事件" SmallImageSource="{StaticResource IconEvent}"/>
@@ -138,7 +138,7 @@
             <!-- 报告导出 -->
             <ribbon:RibbonTab Header="报告" x:Name="TabReport">
                 <ribbon:RibbonGroup Header="导出">
-                    <ribbon:RibbonButton Label="Excel" LargeImageSource="{StaticResource IconExcel}"/>
+                    <ribbon:RibbonButton Label="Excel" LargeImageSource="{StaticResource IconExcel}" Click="ExportCsv_Click"/>
                     <ribbon:RibbonButton Label="Word报告" LargeImageSource="{StaticResource IconWord}"/>
                     <ribbon:RibbonButton Label="TXT" SmallImageSource="{StaticResource IconTxt}"/>
                     <ribbon:RibbonButton Label="MATLAB" SmallImageSource="{StaticResource IconMatlab}"/>

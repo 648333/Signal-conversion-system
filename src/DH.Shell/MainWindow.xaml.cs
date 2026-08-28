@@ -36,8 +36,10 @@ public partial class MainWindow : Window
     private readonly SpectrumAnalyzer _spectrumAnalyzer = new();
     private SimulatedDevice? _connectedDevice;
     private readonly DispatcherTimer _fftTimer;
+    private readonly DispatcherTimer _statsTimer;
     private readonly float[] _fftBuffer = new float[2048];
     private int _fftBufferPos;
+    private bool _frozen;
 
     public MainWindow(AppServices services)
     {
@@ -67,6 +69,9 @@ public partial class MainWindow : Window
 
         _fftTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
         _fftTimer.Tick += OnFftTimerTick;
+
+        _statsTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+        _statsTimer.Tick += OnStatsTimerTick;
     }
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -78,6 +83,7 @@ public partial class MainWindow : Window
 
         InitDefaultChannels();
         SetupRecorderChart();
+        PopulateProjectTree();
     }
 
     private void InitDefaultChannels()
@@ -136,6 +142,7 @@ public partial class MainWindow : Window
     {
         _clockTimer.Stop();
         _fftTimer.Stop();
+        _statsTimer.Stop();
         _dataStorage.Dispose();
         _playbackService?.Dispose();
         _log.Info("主窗口关闭");
@@ -199,15 +206,7 @@ public partial class MainWindow : Window
         StatusText.Text = "正在扫描设备...";
         _hardwareManager.ScanDevices();
 
-        TreeDevices.Items.Clear();
-        foreach (var dev in _hardwareManager.AvailableDevices)
-        {
-            TreeDevices.Items.Add(new TreeViewItem
-            {
-                Header = $"{dev.ModelName} [{dev.SerialNumber}]",
-                Tag = dev
-            });
-        }
+        PopulateProjectTree();
 
         var count = _hardwareManager.AvailableDevices.Count;
         StatusText.Text = count > 0 ? $"扫描完成: 发现 {count} 台设备" : "扫描完成: 未发现设备";
@@ -306,9 +305,12 @@ public partial class MainWindow : Window
         _connectedDevice.StartAcquisition();
         _acqEngine.Start();
         _fftBufferPos = 0;
+        _frozen = false;
         if (_spectrumChart != null)
             _fftTimer.Start();
+        _statsTimer.Start();
         _eventBus.Publish(new AcquisitionStartedEvent { EventName = eventName });
+        PopulateProjectTree();
     }
 
     private void PauseAcquisition_Click(object sender, RoutedEventArgs e)
@@ -325,12 +327,16 @@ public partial class MainWindow : Window
             _connectedDevice.StopAcquisition();
         _acqEngine.Stop();
         _fftTimer.Stop();
+        _statsTimer.Stop();
         _dataStorage.StopRecording();
         _eventBus.Publish(new AcquisitionStoppedEvent());
+        PopulateProjectTree();
     }
 
     private void OnDeviceDataAvailable(object? sender, DataAvailableEventArgs e)
     {
+        if (_frozen) return;
+
         Dispatcher.Invoke(() =>
         {
             if (_recorderChart != null && e.SamplesRead > 0)
@@ -591,24 +597,164 @@ public partial class MainWindow : Window
         var channelCount = _channelManager.Channels.Count;
         if (channelCount <= 0) return;
 
-        var channelData = new float[_fftBufferPos];
-        for (int i = 0; i < channelData.Length; i++)
-            channelData[i] = _fftBuffer[i];
+        var samplesPerChannel = _fftBufferPos / channelCount;
+        if (samplesPerChannel == 0) return;
 
-        var stats = StatisticsCalculator.Compute(channelData);
+        var report = new StringBuilder();
+        report.AppendLine("=== 多通道统计分析 ===\n");
 
-        var report = $"通道 1 统计信息:\n" +
-                     $"  均值:     {stats.Mean:F6}\n" +
-                     $"  有效值:   {stats.Rms:F6}\n" +
-                     $"  峰值:     {stats.Peak:F6}\n" +
-                     $"  峰峰值:   {stats.PeakToPeak:F6}\n" +
-                     $"  标准差:   {stats.StdDev:F6}\n" +
-                     $"  方差:     {stats.Variance:F6}\n" +
-                     $"  波峰因数: {stats.CrestFactor:F4}\n" +
-                     $"  偏度:     {stats.Skewness:F4}\n" +
-                     $"  峭度:     {stats.Kurtosis:F4}";
+        for (int ch = 0; ch < channelCount; ch++)
+        {
+            var channelData = new float[samplesPerChannel];
+            for (int i = 0; i < samplesPerChannel; i++)
+                channelData[i] = _fftBuffer[i * channelCount + ch];
 
-        MessageBox.Show(report, "统计分析", MessageBoxButton.OK, MessageBoxImage.Information);
-        _log.Info($"统计计算完成: RMS={stats.Rms:F4}, Peak={stats.Peak:F4}");
+            var stats = StatisticsCalculator.Compute(channelData);
+            var chName = _channelManager.Channels[ch].Name;
+
+            report.AppendLine($"[{chName}] 均值:{stats.Mean:F4}  RMS:{stats.Rms:F4}  峰值:{stats.Peak:F4}  峰峰值:{stats.PeakToPeak:F4}  波峰因数:{stats.CrestFactor:F2}  偏度:{stats.Skewness:F3}  峭度:{stats.Kurtosis:F3}");
+        }
+
+        var tab = new TabItem { Header = "统计分析" };
+        var scrollViewer = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
+        var textBlock = new TextBlock
+        {
+            Text = report.ToString(),
+            FontFamily = new System.Windows.Media.FontFamily("Consolas"),
+            FontSize = 13,
+            Foreground = System.Windows.Media.Brushes.LightGray,
+            Margin = new Thickness(10)
+        };
+        scrollViewer.Content = textBlock;
+        tab.Content = scrollViewer;
+        ChartTabControl.Items.Add(tab);
+        ChartTabControl.SelectedItem = tab;
+
+        _log.Info($"多通道统计计算完成: {channelCount} 通道, 每通道 {samplesPerChannel} 点");
+    }
+
+    private void FreezeAcquisition_Click(object sender, RoutedEventArgs e)
+    {
+        _frozen = !_frozen;
+        StatusText.Text = _frozen ? "数据已冻结" : "数据已解冻";
+        _log.Info(_frozen ? "采集冻结" : "采集解冻");
+
+        if (_recorderChart != null)
+            _recorderChart.SetFrozen(_frozen);
+    }
+
+    private void ExportCsv_Click(object sender, RoutedEventArgs e)
+    {
+        if (!_dataStorage.IsRecording && _playbackService == null && !_projectService.IsProjectOpen)
+        {
+            MessageBox.Show("没有可导出的数据。请先采集数据或打开数据文件。", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var dlg = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "CSV 文件|*.csv|所有文件|*.*",
+            Title = "导出 CSV 数据",
+            FileName = $"数据_{DateTime.Now:yyyyMMdd_HHmmss}.csv"
+        };
+
+        if (dlg.ShowDialog() != true) return;
+
+        try
+        {
+            string dataFile;
+
+            if (_playbackService != null && _playbackService.IsOpen)
+            {
+                dataFile = _playbackService.Info!.FilePath;
+            }
+            else if (_projectService.IsProjectOpen && _projectService.CurrentProject!.Events.Count > 0)
+            {
+                dataFile = _projectService.CurrentProject.Events[^1].DataFile;
+            }
+            else
+            {
+                MessageBox.Show("找不到数据文件。", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            var success = CsvExportService.ExportToCsv(dataFile, dlg.FileName);
+            if (success)
+            {
+                StatusText.Text = $"已导出: {dlg.FileName}";
+                _log.Info($"CSV 导出成功: {dlg.FileName}");
+                MessageBox.Show($"数据已成功导出到:\n{dlg.FileName}", "导出成功", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("导出失败，请检查数据文件。", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.Error($"CSV 导出异常: {ex.Message}");
+            MessageBox.Show($"导出异常: {ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+    private void OnStatsTimerTick(object? sender, EventArgs e)
+    {
+        if (_fftBufferPos == 0 || _frozen) return;
+
+        var channelCount = _channelManager.Channels.Count;
+        if (channelCount <= 0) return;
+
+        var samplesPerChannel = _fftBufferPos / channelCount;
+        if (samplesPerChannel == 0) return;
+
+        var ch0Data = new float[samplesPerChannel];
+        for (int i = 0; i < samplesPerChannel; i++)
+            ch0Data[i] = _fftBuffer[i * channelCount];
+
+        var stats = StatisticsCalculator.Compute(ch0Data);
+        var chName = _channelManager.Channels[0].Name;
+
+        StatusText.Text = $"[{chName}] RMS:{stats.Rms:F4}  峰值:{stats.Peak:F4}  峭度:{stats.Kurtosis:F3}  采样:{samplesPerChannel}点";
+    }
+
+    private void PopulateProjectTree()
+    {
+        TreeDevices.Items.Clear();
+        foreach (var dev in _hardwareManager.AvailableDevices)
+        {
+            var devItem = new TreeViewItem
+            {
+                Header = $"{dev.ModelName} [{dev.SerialNumber}]",
+                Tag = dev
+            };
+            TreeDevices.Items.Add(devItem);
+        }
+
+        TreeChannels.Items.Clear();
+        foreach (var ch in _channelManager.Channels)
+        {
+            TreeChannels.Items.Add(new TreeViewItem
+            {
+                Header = ch.Enabled ? $"通道{ch.Index}: {ch.Name} ({ch.Unit})" : $"通道{ch.Index}: {ch.Name} [禁用]",
+                Tag = ch
+            });
+        }
+
+        TreeEvents.Items.Clear();
+        if (_projectService.IsProjectOpen && _projectService.CurrentProject!.Events.Count > 0)
+        {
+            foreach (var evt in _projectService.CurrentProject.Events)
+            {
+                TreeEvents.Items.Add(new TreeViewItem
+                {
+                    Header = $"{evt.Name} ({evt.StartTime})",
+                    Tag = evt
+                });
+            }
+        }
+        else
+        {
+            TreeEvents.Items.Add(new TreeViewItem { Header = "无事件数据" });
+        }
     }
 }
