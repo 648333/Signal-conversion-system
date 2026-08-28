@@ -4,13 +4,18 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
     <RootNamespace>DH.Hardware</RootNamespace>
     <AssemblyName>DH.Hardware.Abstractions</AssemblyName>
     <Version>1.0.0</Version>
     <Company>DH-RTDAS</Company>
     <Product>DH-RTDAS Hardware Abstractions</Product>
-    <Description>硬件驱动抽象层：设备、驱动、通道接口定义</Description>
+    <Description>硬件驱动抽象层：设备、驱动、通道接口定义、硬件管理器、模拟设备</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DH.Core\DH.Core.csproj" />
