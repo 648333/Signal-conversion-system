@@ -11,10 +11,12 @@
             <Setter Property="BorderBrush" Value="#4A4A5A"/>
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
             <Setter Property="RowBackground" Value="#1A1A2A"/>
+            <Setter Property="AlternatingRowBackground" Value="#222233"/>
         </Style>
     </Window.Resources>
 
     <DockPanel Margin="8">
+        <!-- 顶部采样率配置 -->
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,8">
             <TextBlock Text="采样率:" Foreground="#E0E0E8" VerticalAlignment="Center" Margin="0,0,8,0"/>
             <ComboBox x:Name="SampleRateCombo" Width="120" SelectedIndex="6"
@@ -36,15 +38,19 @@
                 <ComboBoxItem Content="500 kHz" Tag="500000"/>
                 <ComboBoxItem Content="1 MHz" Tag="1000000"/>
             </ComboBox>
+
             <TextBlock Text="通道数:" Foreground="#E0E0E8" VerticalAlignment="Center" Margin="24,0,8,0"/>
             <TextBox x:Name="ChannelCountText" Width="40" Text="8" VerticalAlignment="Center"
                      PreviewTextInput="NumberOnly_Preview"/>
+
             <Button Content="应用通道数" Width="80" Margin="8,0,0,0" Click="ApplyChannelCount_Click"
                     Background="#2B5C8A" Foreground="White"/>
+
             <TextBlock Text="已启用:" Foreground="#E0E0E8" VerticalAlignment="Center" Margin="24,0,8,0"/>
             <TextBlock x:Name="ActiveCountText" Text="0" Foreground="#4CAF50" VerticalAlignment="Center" FontWeight="Bold"/>
         </StackPanel>
 
+        <!-- 底部按钮 -->
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,8,0,0">
             <Button Content="全选" Width="60" Margin="0,0,8,0" Click="SelectAll_Click" Background="#3A3A52" Foreground="White"/>
             <Button Content="全不选" Width="60" Margin="0,0,8,0" Click="SelectNone_Click" Background="#3A3A52" Foreground="White"/>
@@ -52,6 +58,7 @@
             <Button Content="取消" Width="70" Click="Cancel_Click" Background="#3A3A52" Foreground="White"/>
         </StackPanel>
 
+        <!-- 通道列表 -->
         <DataGrid x:Name="ChannelGrid" AutoGenerateColumns="False" CanUserAddRows="False"
                   CanUserDeleteRows="False" HeadersVisibility="Column"
                   MouseDoubleClick="ChannelGrid_MouseDoubleClick">
