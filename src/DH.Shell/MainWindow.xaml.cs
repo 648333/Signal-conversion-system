@@ -11,6 +11,7 @@ using DH.Core.Events;
 using DH.Hardware;
 using DH.Shell.ViewModels;
 using DH.Shell.Views;
+using DH.SignalProcessing;
 using DH.Visualization;
 
 namespace DH.Shell;
@@ -30,7 +31,13 @@ public partial class MainWindow : Window
     private readonly ProjectService _projectService;
 
     private RecorderChart? _recorderChart;
+    private SpectrumChart? _spectrumChart;
+    private DataPlaybackService? _playbackService;
+    private readonly SpectrumAnalyzer _spectrumAnalyzer = new();
     private SimulatedDevice? _connectedDevice;
+    private readonly DispatcherTimer _fftTimer;
+    private readonly float[] _fftBuffer = new float[2048];
+    private int _fftBufferPos;
 
     public MainWindow(AppServices services)
     {
@@ -57,6 +64,9 @@ public partial class MainWindow : Window
         _eventBus.Subscribe<AcquisitionStoppedEvent>(OnAcquisitionStopped);
 
         _acqEngine.PropertyChanged += OnAcqEngineStateChanged;
+
+        _fftTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(100) };
+        _fftTimer.Tick += OnFftTimerTick;
     }
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -125,7 +135,9 @@ public partial class MainWindow : Window
     private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
     {
         _clockTimer.Stop();
+        _fftTimer.Stop();
         _dataStorage.Dispose();
+        _playbackService?.Dispose();
         _log.Info("主窗口关闭");
     }
 
@@ -293,6 +305,9 @@ public partial class MainWindow : Window
 
         _connectedDevice.StartAcquisition();
         _acqEngine.Start();
+        _fftBufferPos = 0;
+        if (_spectrumChart != null)
+            _fftTimer.Start();
         _eventBus.Publish(new AcquisitionStartedEvent { EventName = eventName });
     }
 
@@ -309,6 +324,7 @@ public partial class MainWindow : Window
         if (_connectedDevice != null)
             _connectedDevice.StopAcquisition();
         _acqEngine.Stop();
+        _fftTimer.Stop();
         _dataStorage.StopRecording();
         _eventBus.Publish(new AcquisitionStoppedEvent());
     }
@@ -328,6 +344,13 @@ public partial class MainWindow : Window
             }
 
             _acqEngine.PushData(e.Data, e.SamplesRead);
+
+            var samplesToCopy = Math.Min(e.SamplesRead, _fftBuffer.Length - _fftBufferPos);
+            if (samplesToCopy > 0)
+            {
+                Array.Copy(e.Data, 0, _fftBuffer, _fftBufferPos, samplesToCopy);
+                _fftBufferPos += samplesToCopy;
+            }
         });
     }
 
@@ -443,5 +466,149 @@ public partial class MainWindow : Window
             AcquisitionState.Frozen => "冻结",
             _ => state.ToString()
         }}";
+    }
+
+    private void AddSpectrumChart_Click(object sender, RoutedEventArgs e)
+    {
+        var tab = new TabItem { Header = "FFT 频谱" };
+        _spectrumChart = new SpectrumChart
+        {
+            Title = "FFT 频谱分析",
+            LogScaleY = true,
+            ShowPeaks = true,
+            YMin = -120,
+            YMax = 10
+        };
+
+        var grid = new Grid();
+        grid.Children.Add(_spectrumChart);
+        tab.Content = grid;
+        ChartTabControl.Items.Add(tab);
+        ChartTabControl.SelectedItem = tab;
+
+        if (_acqEngine.State == AcquisitionState.Acquiring)
+            _fftTimer.Start();
+
+        _log.Info("FFT 频谱图已添加");
+    }
+
+    private void OnFftTimerTick(object? sender, EventArgs e)
+    {
+        if (_spectrumChart == null || _fftBufferPos < _fftBuffer.Length)
+            return;
+
+        var channelCount = _channelManager.Channels.Count;
+        if (channelCount <= 0) return;
+
+        var channelData = new float[_fftBuffer.Length / channelCount];
+        for (int i = 0; i < channelData.Length; i++)
+        {
+            channelData[i] = _fftBuffer[i * channelCount];
+        }
+
+        var spectrum = _spectrumAnalyzer.ComputeMagnitudeSpectrum(channelData, _channelManager.SampleRate);
+        _spectrumChart.SetSpectrum(spectrum, 0);
+
+        _fftBufferPos = 0;
+    }
+
+    private void OpenDataFile_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new Microsoft.Win32.OpenFileDialog
+        {
+            Filter = "DH数据文件|*.dat|所有文件|*.*",
+            Title = "打开数据文件"
+        };
+
+        if (dlg.ShowDialog() != true) return;
+
+        _playbackService?.Dispose();
+        _playbackService = new DataPlaybackService();
+
+        if (!_playbackService.Open(dlg.FileName))
+        {
+            MessageBox.Show("无法打开数据文件", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        var info = _playbackService.Info!;
+        StatusText.Text = $"数据已加载: {info.ChannelCount} 通道, {info.SampleRate:F0} Hz, {info.DurationSeconds:F1}s";
+        _log.Info($"打开数据文件: {dlg.FileName} ({info.ChannelCount}ch, {info.SampleRate}Hz, {info.DurationSeconds:F1}s)");
+
+        var tab = new TabItem { Header = "数据回放" };
+        var panel = new StackPanel { Margin = new Thickness(10) };
+
+        var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 10) };
+        var btnPlay = new Button { Content = "播放", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
+        var btnPause = new Button { Content = "暂停", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
+        var btnStop = new Button { Content = "停止", Width = 60, Margin = new Thickness(0, 0, 5, 0) };
+        btnPlay.Click += (_, _) => _playbackService.Play();
+        btnPause.Click += (_, _) => _playbackService.Pause();
+        btnStop.Click += (_, _) => _playbackService.Stop();
+        btnPanel.Children.Add(btnPlay);
+        btnPanel.Children.Add(btnPause);
+        btnPanel.Children.Add(btnStop);
+
+        var infoText = new TextBlock
+        {
+            Text = $"采样率: {info.SampleRate:F0} Hz | 通道数: {info.ChannelCount} | 时长: {info.DurationSeconds:F2}s",
+            Margin = new Thickness(0, 0, 0, 10)
+        };
+
+        var recorder = new RecorderChart { Title = "回放波形", Height = 400 };
+        var colors = new[]
+        {
+            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+        };
+        for (int i = 0; i < info.ChannelCount && i < 4; i++)
+            recorder.AddChannel(i, $"通道{i + 1}", colors[i % colors.Length]);
+
+        _playbackService.DataBlockRead += (data, chCount) =>
+        {
+            Dispatcher.Invoke(() => recorder.UpdateData(data, chCount));
+        };
+
+        panel.Children.Add(infoText);
+        panel.Children.Add(btnPanel);
+        panel.Children.Add(recorder);
+
+        tab.Content = panel;
+        ChartTabControl.Items.Add(tab);
+        ChartTabControl.SelectedItem = tab;
+    }
+
+    private void ShowStatistics_Click(object sender, RoutedEventArgs e)
+    {
+        if (_fftBufferPos == 0)
+        {
+            MessageBox.Show("当前无数据可用于统计", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var channelCount = _channelManager.Channels.Count;
+        if (channelCount <= 0) return;
+
+        var channelData = new float[_fftBufferPos];
+        for (int i = 0; i < channelData.Length; i++)
+            channelData[i] = _fftBuffer[i];
+
+        var stats = StatisticsCalculator.Compute(channelData);
+
+        var report = $"通道 1 统计信息:\n" +
+                     $"  均值:     {stats.Mean:F6}\n" +
+                     $"  有效值:   {stats.Rms:F6}\n" +
+                     $"  峰值:     {stats.Peak:F6}\n" +
+                     $"  峰峰值:   {stats.PeakToPeak:F6}\n" +
+                     $"  标准差:   {stats.StdDev:F6}\n" +
+                     $"  方差:     {stats.Variance:F6}\n" +
+                     $"  波峰因数: {stats.CrestFactor:F4}\n" +
+                     $"  偏度:     {stats.Skewness:F4}\n" +
+                     $"  峭度:     {stats.Kurtosis:F4}";
+
+        MessageBox.Show(report, "统计分析", MessageBoxButton.OK, MessageBoxImage.Information);
+        _log.Info($"统计计算完成: RMS={stats.Rms:F4}, Peak={stats.Peak:F4}");
     }
 }

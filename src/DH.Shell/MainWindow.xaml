@@ -54,7 +54,7 @@
             <ribbon:RibbonTab Header="视图" x:Name="TabView">
                 <ribbon:RibbonGroup Header="图表类型">
                     <ribbon:RibbonButton Label="记录仪" LargeImageSource="{StaticResource IconRecorder}" Click="AddRecorder_Click"/>
-                    <ribbon:RibbonButton Label="FFT频谱" LargeImageSource="{StaticResource IconFFT}"/>
+                    <ribbon:RibbonButton Label="FFT频谱" LargeImageSource="{StaticResource IconFFT}" Click="AddSpectrumChart_Click"/>
                     <ribbon:RibbonButton Label="二维曲线" LargeImageSource="{StaticResource Icon2D}"/>
                     <ribbon:RibbonButton Label="数字量" SmallImageSource="{StaticResource IconDigital}"/>
                     <ribbon:RibbonButton Label="仪表盘" SmallImageSource="{StaticResource IconMeter}"/>
@@ -100,7 +100,7 @@
                 <ribbon:RibbonGroup Header="时域">
                     <ribbon:RibbonButton Label="积分/微分" SmallImageSource="{StaticResource IconIntegral}"/>
                     <ribbon:RibbonButton Label="滤波" SmallImageSource="{StaticResource IconFilter}"/>
-                    <ribbon:RibbonButton Label="统计" SmallImageSource="{StaticResource IconStat}"/>
+                    <ribbon:RibbonButton Label="统计" SmallImageSource="{StaticResource IconStat}" Click="ShowStatistics_Click"/>
                     <ribbon:RibbonButton Label="相关" SmallImageSource="{StaticResource IconCorrelate}"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
@@ -129,7 +129,7 @@
                     <ribbon:RibbonButton Label="TPA" SmallImageSource="{StaticResource IconTPA}"/>
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="数据回放">
-                    <ribbon:RibbonButton Label="打开数据" LargeImageSource="{StaticResource IconOpenData}"/>
+                    <ribbon:RibbonButton Label="打开数据" LargeImageSource="{StaticResource IconOpenData}" Click="OpenDataFile_Click"/>
                     <ribbon:RibbonButton Label="范围截取" SmallImageSource="{StaticResource IconRange}"/>
                     <ribbon:RibbonButton Label="重新计算" SmallImageSource="{StaticResource IconRecompute}"/>
                 </ribbon:RibbonGroup>
