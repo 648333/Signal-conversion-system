@@ -43,6 +43,8 @@ public partial class MainWindow : Window
     private DigitalFilter?[]? _channelFilters;
     private TriggerService? _triggerService;
     private bool _triggerEnabled;
+    private string _currentEventName = string.Empty;
+    private DateTime _acquisitionStartTime;
 
     public MainWindow(AppServices services)
     {
@@ -167,8 +169,13 @@ public partial class MainWindow : Window
             _projectService.NewProject(name, dir);
             _services.GetService<AppState>().CurrentProject = _projectService.CurrentProject;
             TreeRoot.Header = name;
+
+            // 保存初始工程（包含当前通道配置）
+            SaveCurrentProject();
+
             _log.Info($"新建工程: {name}");
             StatusText.Text = $"工程: {name}";
+            PopulateProjectTree();
         }
     }
 
@@ -181,13 +188,83 @@ public partial class MainWindow : Window
         };
         if (dlg.ShowDialog() == true)
         {
-            _projectService.LoadProject(dlg.FileName);
-            if (_projectService.CurrentProject != null)
+            var project = _projectService.LoadProject(dlg.FileName);
+            if (project != null)
             {
-                _services.GetService<AppState>().CurrentProject = _projectService.CurrentProject;
-                TreeRoot.Header = _projectService.CurrentProject.Name;
-                StatusText.Text = $"已加载: {_projectService.CurrentProject.Name}";
+                _services.GetService<AppState>().CurrentProject = project;
+                TreeRoot.Header = project.Name;
+                StatusText.Text = $"已加载: {project.Name}";
                 _log.Info($"打开工程: {dlg.FileName}");
+
+                // 恢复通道配置
+                if (project.Channels.Count > 0)
+                {
+                    _channelManager.ClearAll();
+                    _channelManager.SampleRate = project.SampleRate;
+                    foreach (var ch in project.Channels)
+                    {
+                        _channelManager.AddChannel(new ChannelConfig
+                        {
+                            Index = ch.Index,
+                            Name = ch.Name,
+                            SerialNumber = ch.SerialNumber,
+                            ChannelType = ch.ChannelType,
+                            MeasureType = ch.MeasureType,
+                            SensorModel = ch.SensorModel,
+                            SensorSerial = ch.SensorSerial,
+                            Sensitivity = ch.Sensitivity,
+                            Unit = ch.Unit,
+                            Coupling = ch.Coupling,
+                            Range = ch.Range,
+                            FilterCutoff = ch.FilterCutoff,
+                            Integration = ch.Integration,
+                            IntegralUnit = ch.IntegralUnit,
+                            Enabled = ch.Enabled,
+                            Offset = ch.Offset,
+                            Gain = ch.Gain,
+                            CalibrationDate = ch.CalibrationDate,
+                            Formula = ch.Formula,
+                            BridgeType = ch.BridgeType,
+                            BridgeVoltage = ch.BridgeVoltage,
+                            SampleRate = ch.SampleRate
+                        });
+                    }
+
+                    _viewModel.Channels.Clear();
+                    foreach (var ch in _channelManager.Channels)
+                        _viewModel.Channels.Add(ch);
+
+                    // 更新记录仪图表
+                    if (_recorderChart != null)
+                    {
+                        _recorderChart.Clear();
+                        var colors = new[]
+                        {
+                            System.Windows.Media.Color.FromRgb(0x4C, 0xAF, 0x50),
+                            System.Windows.Media.Color.FromRgb(0x21, 0x96, 0xF3),
+                            System.Windows.Media.Color.FromRgb(0xFF, 0x98, 0x00),
+                            System.Windows.Media.Color.FromRgb(0xE9, 0x1E, 0x63),
+                            System.Windows.Media.Color.FromRgb(0x9C, 0x27, 0xB0),
+                            System.Windows.Media.Color.FromRgb(0x00, 0xBC, 0xD4),
+                            System.Windows.Media.Color.FromRgb(0xFF, 0xEB, 0x3B),
+                            System.Windows.Media.Color.FromRgb(0x7C, 0xC4, 0xFF),
+                        };
+                        for (int i = 0; i < _channelManager.Channels.Count; i++)
+                        {
+                            _recorderChart.AddChannel(i, _channelManager.Channels[i].Name, colors[i % colors.Length]);
+                        }
+                    }
+
+                    _log.Info($"已加载 {project.Channels.Count} 个通道配置");
+                }
+
+                // 恢复软件包和语言设置
+                if (!string.IsNullOrEmpty(project.SoftwarePackage))
+                    _services.GetService<AppState>().CurrentSoftwarePackage = project.SoftwarePackage;
+                if (!string.IsNullOrEmpty(project.Language))
+                    _services.GetService<AppState>().CurrentLanguage = project.Language;
+
+                PopulateProjectTree();
             }
         }
     }
@@ -199,9 +276,78 @@ public partial class MainWindow : Window
             NewProject_Click(sender, e);
             return;
         }
-        _projectService.SaveProject();
+        SaveCurrentProject();
         _log.Info("保存工程");
         StatusText.Text = "工程已保存";
+    }
+
+    private void SaveProjectAs_Click(object sender, RoutedEventArgs e)
+    {
+        var dlg = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter = "DH工程文件|*.dhproj",
+            Title = "工程另存为",
+            FileName = _projectService.CurrentProject?.Name ?? $"工程_{DateTime.Now:yyyyMMdd}"
+        };
+        if (dlg.ShowDialog() == true)
+        {
+            if (_projectService.CurrentProject == null)
+            {
+                var name = Path.GetFileNameWithoutExtension(dlg.FileName);
+                var dir = Path.GetDirectoryName(dlg.FileName) ?? "";
+                _projectService.NewProject(name, dir);
+                _services.GetService<AppState>().CurrentProject = _projectService.CurrentProject;
+            }
+
+            SaveCurrentProject();
+            _projectService.SaveProjectAs(dlg.FileName);
+            TreeRoot.Header = Path.GetFileNameWithoutExtension(dlg.FileName);
+            _log.Info($"工程另存为: {dlg.FileName}");
+            StatusText.Text = $"工程已另存为: {Path.GetFileName(dlg.FileName)}";
+        }
+    }
+
+    private void SaveCurrentProject()
+    {
+        if (_projectService.CurrentProject == null) return;
+
+        // 保存通道配置
+        _projectService.CurrentProject.Channels.Clear();
+        foreach (var ch in _channelManager.Channels)
+        {
+            _projectService.CurrentProject.Channels.Add(new ChannelConfig
+            {
+                Index = ch.Index,
+                Name = ch.Name,
+                SerialNumber = ch.SerialNumber,
+                ChannelType = ch.ChannelType,
+                MeasureType = ch.MeasureType,
+                SensorModel = ch.SensorModel,
+                SensorSerial = ch.SensorSerial,
+                Sensitivity = ch.Sensitivity,
+                Unit = ch.Unit,
+                Coupling = ch.Coupling,
+                Range = ch.Range,
+                FilterCutoff = ch.FilterCutoff,
+                Integration = ch.Integration,
+                IntegralUnit = ch.IntegralUnit,
+                Enabled = ch.Enabled,
+                Offset = ch.Offset,
+                Gain = ch.Gain,
+                CalibrationDate = ch.CalibrationDate,
+                Formula = ch.Formula,
+                BridgeType = ch.BridgeType,
+                BridgeVoltage = ch.BridgeVoltage,
+                SampleRate = ch.SampleRate
+            });
+        }
+
+        _projectService.CurrentProject.ChannelCount = _channelManager.Channels.Count;
+        _projectService.CurrentProject.SampleRate = _channelManager.SampleRate;
+        _projectService.CurrentProject.SoftwarePackage = _services.GetService<AppState>().CurrentSoftwarePackage;
+        _projectService.CurrentProject.Language = _services.GetService<AppState>().CurrentLanguage;
+
+        _projectService.SaveProject();
     }
 
     private void ScanDevices_Click(object sender, RoutedEventArgs e)
@@ -299,6 +445,8 @@ public partial class MainWindow : Window
         _connectedDevice.SetSampleRate(_channelManager.SampleRate);
 
         var eventName = $"事件_{DateTime.Now:HHmmss}";
+        _currentEventName = eventName;
+        _acquisitionStartTime = DateTime.Now;
         if (_projectService.IsProjectOpen)
         {
             var dataFile = Path.Combine(_projectService.GetDataDirectory(), eventName + ".dat");
@@ -338,6 +486,26 @@ public partial class MainWindow : Window
         _statsTimer.Stop();
         _dataStorage.StopRecording();
         _triggerService?.Stop();
+
+        // 记录事件到工程
+        if (_projectService.IsProjectOpen && _dataStorage.LastDataFile != null)
+        {
+            var evt = new ExperimentEvent
+            {
+                Name = _currentEventName,
+                StartTime = _acquisitionStartTime.ToString("yyyy-MM-dd HH:mm:ss"),
+                EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                ChannelCount = _channelManager.ActiveChannelCount,
+                SampleRate = _channelManager.SampleRate,
+                DataPoints = _dataStorage.TotalSamplesWritten,
+                DataFile = _dataStorage.LastDataFile,
+                Comment = "自动采集事件"
+            };
+            _projectService.CurrentProject!.Events.Add(evt);
+            SaveCurrentProject();
+            _log.Info($"事件已记录到工程: {evt.Name}");
+        }
+
         _eventBus.Publish(new AcquisitionStoppedEvent());
         PopulateProjectTree();
     }

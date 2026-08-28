@@ -47,7 +47,7 @@ public enum CouplingType
     ICP = 3
 }
 
-enum IntegralType
+public enum IntegralType
 {
     None = 0,
     SingleIntegral = 1,
