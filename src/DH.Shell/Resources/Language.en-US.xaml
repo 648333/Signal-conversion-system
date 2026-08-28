@@ -1,0 +1,80 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:String x:Key="AppName">DH-RTDAS Real-Time Data Measurement &amp; Analysis System</sys:String>
+    <sys:String x:Key="TabProject">Project</sys:String>
+    <sys:String x:Key="TabMeasure">Measure</sys:String>
+    <sys:String x:Key="TabView">View</sys:String>
+    <sys:String x:Key="TabSignal">Signal Processing</sys:String>
+    <sys:String x:Key="TabAnalysis">Analysis</sys:String>
+    <sys:String x:Key="TabReport">Report</sys:String>
+    <sys:String x:Key="TabTools">Tools</sys:String>
+
+    <sys:String x:Key="BtnNewProject">New Project</sys:String>
+    <sys:String x:Key="BtnOpenProject">Open Project</sys:String>
+    <sys:String x:Key="BtnSaveProject">Save Project</sys:String>
+    <sys:String x:Key="BtnNewParam">New Parameters</sys:String>
+    <sys:String x:Key="BtnImportParam">Import Parameters</sys:String>
+    <sys:String x:Key="BtnExportParam">Export Parameters</sys:String>
+
+    <sys:String x:Key="BtnScan">Scan Devices</sys:String>
+    <sys:String x:Key="BtnConnect">Connect Device</sys:String>
+    <sys:String x:Key="BtnDisconnect">Disconnect</sys:String>
+    <sys:String x:Key="BtnChannelSetup">Channel Setup</sys:String>
+    <sys:String x:Key="BtnCalibrate">Calibration</sys:String>
+    <sys:String x:Key="BtnSampleRate">Sample Rate</sys:String>
+
+    <sys:String x:Key="BtnStart">Start Acquisition</sys:String>
+    <sys:String x:Key="BtnPause">Pause</sys:String>
+    <sys:String x:Key="BtnStop">Stop</sys:String>
+    <sys:String x:Key="BtnFreeze">Freeze</sys:String>
+
+    <sys:String x:Key="BtnNewEvent">New Event</sys:String>
+    <sys:String x:Key="BtnRecover">Data Recovery</sys:String>
+
+    <sys:String x:Key="StatusReady">Ready</sys:String>
+    <sys:String x:Key="StatusDeviceNotConnected">Device: Not Connected</sys:String>
+    <sys:String x:Key="StatusAcqStopped">Acquisition: Stopped</sys:String>
+
+    <sys:String x:Key="GroupProject">Project</sys:String>
+    <sys:String x:Key="GroupParamTemplate">Parameters</sys:String>
+    <sys:String x:Key="GroupDevice">Device</sys:String>
+    <sys:String x:Key="GroupChannel">Channel Setup</sys:String>
+    <sys:String x:Key="GroupAcquisition">Acquisition</sys:String>
+    <sys:String x:Key="GroupEvent">Event Storage</sys:String>
+    <sys:String x:Key="GroupChartType">Chart Type</sys:String>
+    <sys:String x:Key="GroupLayout">Layout</sys:String>
+    <sys:String x:Key="GroupStyle">Style</sys:String>
+    <sys:String x:Key="GroupPipeline">Pipeline</sys:String>
+    <sys:String x:Key="GroupFrequency">Frequency</sys:String>
+    <sys:String x:Key="GroupTime">Time Domain</sys:String>
+    <sys:String x:Key="GroupAnalysis">Analysis</sys:String>
+    <sys:String x:Key="GroupModal">Modal Test</sys:String>
+    <sys:String x:Key="GroupAcoustics">Acoustics NVH</sys:String>
+    <sys:String x:Key="GroupReplay">Data Replay</sys:String>
+    <sys:String x:Key="GroupExport">Export</sys:String>
+    <sys:String x:Key="GroupPackage">Package</sys:String>
+    <sys:String x:Key="GroupLanguage">Language</sys:String>
+    <sys:String x:Key="GroupHelp">Help</sys:String>
+
+    <sys:String x:Key="TreeProject">Project Explorer</sys:String>
+    <sys:String x:Key="TreeDevices">Devices</sys:String>
+    <sys:String x:Key="TreeChannels">Channel Config</sys:String>
+    <sys:String x:Key="TreeEvents">Event Data</sys:String>
+    <sys:String x:Key="TreeResults">Analysis Results</sys:String>
+
+    <sys:String x:Key="ColChannel">Channel</sys:String>
+    <sys:String x:Key="ColName">Name</sys:String>
+    <sys:String x:Key="ColType">Type</sys:String>
+    <sys:String x:Key="ColSensor">Sensor</sys:String>
+    <sys:String x:Key="ColRange">Range</sys:String>
+    <sys:String x:Key="ColUnit">Unit</sys:String>
+    <sys:String x:Key="ColSensitivity">Sensitivity</sys:String>
+    <sys:String x:Key="ColSampleRate">Sample Rate</sys:String>
+    <sys:String x:Key="ColStatus">Status</sys:String>
+
+    <sys:String x:Key="AboutTitle">About DH-RTDAS</sys:String>
+    <sys:String x:Key="AboutText">DH-RTDAS Real-Time Data Measurement &amp; Analysis System</sys:String>
+
+</ResourceDictionary>
